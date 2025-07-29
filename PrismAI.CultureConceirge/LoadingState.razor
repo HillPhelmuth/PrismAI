@@ -1,0 +1,47 @@
+<div class="loading-container">
+    <div class="loading-header">
+        <h2 class="loading-title">Creating Your Perfect Experience</h2>
+        <div class="preferences-display">
+            <p class="preferences-text">
+                <span class="preference-item">Theme:</span> @Preferences?.Theme
+                @if (!string.IsNullOrEmpty(Preferences?.Timeframe))
+                {
+                    <span class="preference-separator">•</span>
+                    <span class="preference-item">When:</span> @Preferences.Timeframe
+                }
+            </p>
+        </div>
+    </div>
+    <div class="loading-grid">
+        <div class="loading-steps">
+            @for (int i = 0; i < Steps.Count; i++)
+            {
+                var step = Steps[i];
+                var isCurrent = (i == Steps.Count - 1); // Only the latest step is current
+                <div class="loading-step @(isCurrent ? "current" : "")">
+                    <div class="step-icon-wrapper">
+                        <span class="step-icon">@step.Icon</span>
+                    </div>
+                    <div class="step-content">
+                        <p class="step-label">@step.Label</p>
+                    </div>
+                </div>
+            }
+        </div>
+        
+        @* <div>
+            <hr/>
+            @foreach (var jsonObj in ToolsObjects)
+            {
+                <div style="width:100%; height:5rem; border:1px solid black;overflow:auto; font-size:80%">
+                    <json-viewer data="@jsonObj" style="width: 100%"></json-viewer>
+                </div>
+            }
+        </div> *@
+    </div>
+    <div class="progress-section">
+        <div class="progress-bar-container">
+            <div class="progress-bar"></div>
+        </div>
+    </div>
+</div>

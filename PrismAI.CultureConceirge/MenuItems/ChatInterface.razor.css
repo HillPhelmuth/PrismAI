@@ -1,0 +1,157 @@
+/* Chat container */
+.chat-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background-color: #f8fafc;
+    border-radius: 0.75rem;
+    overflow: hidden;
+}
+
+/* Messages area */
+.messages-area {
+    flex: 1;
+    padding: 1rem;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* Message alignment */
+.message-user {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    gap: 0.5rem;
+}
+
+.message-assistant {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+    gap: 0.5rem;
+}
+
+/* Message bubbles */
+.message-bubble {
+    max-width: 70%;
+    padding: 0.75rem 1rem;
+    border-radius: 1rem;
+    word-wrap: break-word;
+    font-size: 0.875rem;
+    line-height: 1.5;
+}
+
+.message-bubble-user {
+    background-color: #3b82f6;
+    color: white;
+    border-bottom-right-radius: 0.25rem;
+}
+
+.message-bubble-assistant {
+    background-color: white;
+    color: #374151;
+    border: 1px solid #e5e7eb;
+    border-bottom-left-radius: 0.25rem;
+}
+
+.message-bubble-loading {
+    background-color: #f3f4f6;
+    color: #6b7280;
+    border: 1px solid #e5e7eb;
+    border-bottom-left-radius: 0.25rem;
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Message timestamp */
+.message-timestamp {
+    font-size: 0.625rem;
+    color: #9ca3af;
+    margin-top: 0.25rem;
+}
+
+/* Input area */
+.input-area {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1rem;
+    background-color: white;
+    border-top: 1px solid #e5e7eb;
+}
+
+/* Input field */
+::deep .message-input {
+    flex: 1;
+    padding: 0.75rem 1rem;
+    border: 1px solid #d1d5db;
+    border-radius: 1.5rem;
+    outline: none;
+    font-size: 0.875rem;
+    transition: border-color 0.2s ease;
+    width: 80%;
+}
+
+::deep .message-input:focus {
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+/* Send button */
+.send-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    background-color: #3b82f6;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.send-button:hover {
+    background-color: #2563eb;
+}
+
+.send-button:disabled {
+    background-color: #9ca3af;
+    cursor: not-allowed;
+}
+
+/* Icon styling */
+.send-icon {
+    width: 1rem;
+    height: 1rem;
+}
+
+/* Pulse animation */
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+}
+
+/* Scrollbar styling for messages area */
+.messages-area::-webkit-scrollbar {
+    width: 6px;
+}
+
+.messages-area::-webkit-scrollbar-track {
+    background: #f1f5f9;
+}
+
+.messages-area::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 3px;
+}
+
+.messages-area::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8;
+}

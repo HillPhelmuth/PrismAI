@@ -1,0 +1,151 @@
+﻿@inject NavigationManager NavigationManager
+
+@if (Show)
+{
+    <div class="modal-overlay">
+        <div class="modal-content">
+            <button class="modal-close-button" @onclick="OnClose">✖️</button>
+            <h2 class="modal-title">Find More</h2>
+            @if (WebFindResults != null)
+            {
+                <div class="section">
+                    <h3 class="section-title">Web Summary</h3>
+                    <div class="summary-content">@((MarkupString)AsHtml(WebFindResults.ResultsSummaryWithCitations))</div>
+                </div>
+                <div class="section">
+                    <h3 class="section-title">Web Results</h3>
+                    @if (WebFindResults.WebResults?.Count > 0)
+                    {
+                        <ul class="results-list">
+                            @foreach (var web in WebFindResults.WebResults)
+                            {
+                                <li class="result-item">
+                                    <a href="@web.Url" target="_blank" class="result-link">@web.Title</a>
+                                    <div class="result-snippet">@web.Description</div>
+                                </li>
+                            }
+                        </ul>
+                    }
+                    else
+                    {
+                        <div class="no-results">No web results found.</div>
+                    }
+                </div>
+            }
+
+            @if (YoutubeGeneralResults != null)
+            {
+                <div class="section">
+                    <h3 class="section-title">YouTube Video Summary</h3>
+                    <div class="summary-content">@((MarkupString)AsHtml(YoutubeGeneralResults.ResultsSummaryWithCitations))</div>
+                </div>
+                <div class="section">
+                    <h3 class="section-title">YouTube Videos</h3>
+                    @if (YoutubeGeneralResults.YouTubeVideoResults?.Count > 0)
+                    {
+                        <ul class="results-list">
+                            @foreach (var yt in YoutubeGeneralResults.YouTubeVideoResults)
+                            {
+                                <li class="result-item">
+                                    <a href="@yt.Url" target="_blank" class="result-link">@yt.Title</a>
+                                    @if (yt.Thumbnail?.Url != null)
+                                    {
+                                        <img src="@yt.Thumbnail.Url" alt="@yt.Title" class="result-thumbnail" style="max-width:100px;max-height:100px;" />
+                                    }
+                                    <div class="result-snippet">@yt.Description</div>
+                                </li>
+                            }
+                        </ul>
+                    }
+                    else
+                    {
+                        <div class="no-results">No YouTube videos found.</div>
+                    }
+                </div>
+            }
+
+            @if (YoutubeMusicResults != null)
+            {
+                <div class="section">
+                    <h3 class="section-title">YouTube Music Summary</h3>
+                    <div class="summary-content">@((MarkupString)AsHtml(YoutubeMusicResults.ResultsSummaryWithCitations))</div>
+                </div>
+                <div class="section">
+                    <h3 class="section-title">YouTube Music Videos</h3>
+                    @if (YoutubeMusicResults.YouTubeVideoResults?.Count > 0)
+                    {
+                        <ul class="results-list">
+                            @foreach (var yt in YoutubeMusicResults.YouTubeVideoResults)
+                            {
+                                <li class="result-item">
+                                    <a href="@yt.Url" target="_blank" class="result-link">@yt.Title</a>
+                                    @if (yt.Thumbnail?.Url != null)
+                                    {
+                                        <img src="@yt.Thumbnail.Url" alt="@yt.Title" class="result-thumbnail" style="max-width:100px;max-height:100px;" />
+                                    }
+                                    <div class="result-snippet">@yt.Description</div>
+                                </li>
+                            }
+                        </ul>
+                    }
+                    else
+                    {
+                        <div class="no-results">No YouTube music videos found.</div>
+                    }
+                </div>
+            }
+
+            @if (BookResults != null)
+            {
+                <div class="section">
+                    <h3 class="section-title">Books Summary</h3>
+                    <div class="summary-content">@((MarkupString)AsHtml(BookResults.ResultsSummaryWithCitations))</div>
+                </div>
+                <div class="section">
+                    <h3 class="section-title">Books</h3>
+                    @if (BookResults.BookResults?.Count > 0)
+                    {
+                        <ul class="results-list">
+                            @foreach (var book in BookResults.BookResults)
+                            {
+                                <li class="result-item">
+                                    <a href="@book.Url" target="_blank" class="result-link">@book.Title</a>
+                                    @if (!string.IsNullOrEmpty(book.BookThumbnailUrl))
+                                    {
+                                        <img src="@book.BookThumbnailUrl" alt="@book.Title" class="result-thumbnail" style="max-width:100px;max-height:100px;" />
+                                    }
+                                    <div class="result-snippet">@book.Description</div>
+                                    <div class="result-authors">Authors: @book.Authors</div>
+                                    @if (!string.IsNullOrEmpty(book.Publisher))
+                                    {
+                                        <div class="result-publisher">Publisher: @book.Publisher</div>
+                                    }
+                                    @if (!string.IsNullOrEmpty(book.PublishedDate))
+                                    {
+                                        <div class="result-date">Published: @book.PublishedDate</div>
+                                    }
+                                    @if (book.PageCount != null)
+                                    {
+                                        <div class="result-pages">Pages: @book.PageCount</div>
+                                    }
+                                    @if (book.AverageRating != null)
+                                    {
+                                        <div class="result-rating">Rating: @book.AverageRating (@book.RatingsCount ratings)</div>
+                                    }
+                                    @if (!string.IsNullOrEmpty(book.Categories))
+                                    {
+                                        <div class="result-categories">Categories: @book.Categories</div>
+                                    }
+                                </li>
+                            }
+                        </ul>
+                    }
+                    else
+                    {
+                        <div class="no-results">No books found.</div>
+                    }
+                </div>
+            }
+        </div>
+    </div>
+}

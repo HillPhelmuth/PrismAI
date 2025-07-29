@@ -1,0 +1,208 @@
+@using Microsoft.AspNetCore.Components.Forms
+<div class="form-container">
+    <div class="form-header">
+        <h2 class="form-title">What kind of experience are you craving?</h2>
+        <p class="form-subtitle">Tell me your mood, interests, or theme, and I'll curate a perfect multi-sensory experience just for you.</p>
+    </div>
+    @if (_isDebug)
+    {
+       @*  <div >
+            @for (var x = 0; x <= 4; x++)
+            {
+
+                var x1 = x;
+                <button class="px-3 py-1 rounded-full text-sm transition-colors bg-gray-100 text-gray-700 hover:bg-gray-200" @onclick="@(() => LoadDemo(x1))">Ex @x1</button>
+            }
+        </div> *@
+    }
+    <EditForm Model="Preferences" OnValidSubmit="HandleSubmit">
+        <div class="form-sections">
+            <!-- Quick Theme Selection by Category -->
+            <div class="form-section compact">
+                <div class="section-header">
+                    <span class="section-icon">⚡</span>
+                    <h3 class="section-title">Pick an Experience Theme</h3>
+                </div>
+                <div class="compact-categories">
+                    @foreach (var category in GetQuickThemeCategories())
+                    {
+                        <button type="button" class="compact-category-pill @(ExpandedCategories.Contains(category.Name) ? "active" : "")" @onclick="() => ToggleCategory(category.Name)">
+                            @category.Name
+                            <span class="pill-icon">@(ExpandedCategories.Contains(category.Name) ? "×" : "+")</span>
+                        </button>
+                    }
+                </div>
+                @if (ExpandedCategories.Count > 0)
+                {
+                    <div class="compact-themes-container">
+                        @foreach (var category in GetQuickThemeCategories().Where(c => ExpandedCategories.Contains(c.Name)))
+                        {
+                            <div class="compact-themes-section">
+                                <h4 class="compact-section-title">@category.Name</h4>
+                                <div class="compact-themes-grid">
+                                    @foreach (var theme in category.Themes)
+                                    {
+                                        <button type="button" @onclick="() => PopulateTheme(theme)" class="compact-theme-button @(Preferences.Theme == $"{theme.CategoryName} - {theme.Description}" ? "selected" : "")">
+                                            <span>@theme.Icon</span> @theme.Description
+                                        </button>
+                                    }
+                                </div>
+                            </div>
+                        }
+                    </div>
+                }
+            </div>
+            <!-- Custom Theme Input -->
+            <div class="form-section compact">
+                <div class="section-header">
+                    <span class="section-icon teal">🔎</span>
+                    <h3 class="section-title">Or Write Your Own Perfect Experience</h3>
+                </div>
+                <div class="custom-input-section">
+                    <div>
+                        <InputText class="text-input" @bind-Value="Preferences.Theme" placeholder="e.g., cozy mystery night, high-energy sci-fi, romantic Italian evening..." />
+                    </div>
+                </div>
+            </div>
+
+            <!-- Anchor Preferences -->
+            <!-- Add Second Person Button (above both sections) -->
+            @if (!ShowPartnerSection)
+            {
+                <div style="display:flex; justify-content:center; margin-bottom:1rem;">
+                    <button type="button" @onclick="TogglePartnerSection" class="add-partner-button">
+                        <span class="add-icon">+</span> Add A Partner!
+                    </button>
+                </div>
+            }
+            <div class="anchor-preferences-row" style="display:flex; flex-direction:row; gap:2rem;">
+               @*  <div class="form-section">
+                    <div class="section-header">
+                        <span class="section-icon coral">⚓</span>
+                        <h3 class="section-title">Things You Like <span class="optional-text">(Optional)</span></h3>
+                        <p class="section-subtitle">Add things you enjoy to help personalize your experience.</p>
+                    </div>
+                    <div class="anchor-preferences">
+                        <div class="popular-anchors">
+                            @foreach (var anchor in PopularAnchorPreferences.Take(VisibleAnchorCount))
+                            {
+                                <button type="button" @onclick="() => AddAnchorPreference(anchor)" class="anchor-button @(Preferences.AnchorPreferences?.Contains(anchor) == true ? "selected" : "available")" disabled="@(Preferences.AnchorPreferences?.Contains(anchor) == true)">@anchor</button>
+                            }
+                        </div>
+                        @if (VisibleAnchorCount < PopularAnchorPreferences.Count)
+                        {
+                            <button type="button" class="show-more-button" @onclick="ShowMoreAnchors">Show More</button>
+                        }
+                        <div class="anchor-input-section">
+                            <InputText @bind-Value="NewAnchorPreference" placeholder="Add your own..." class="anchor-input" />
+                            <button type="button" @onclick="() => AddAnchorPreference(NewAnchorPreference)" class="add-anchor-button">
+                                <span class="add-icon">+</span>
+                            </button>
+                        </div>
+                        @if (Preferences.AnchorPreferences?.Count > 0)
+                        {
+                        <div class="selected-anchors">
+                            @foreach (var anchor in Preferences.AnchorPreferences)
+                            {
+                            <span class="selected-anchor">
+                                @anchor
+                                <button type="button" @onclick="() => RemoveAnchorPreference(anchor)" class="remove-anchor-button">
+                                    <span class="remove-icon">×</span>
+                                </button>
+                            </span>
+                            }
+                        </div>
+                        }
+                    </div>
+                </div> *@
+                @if (ShowPartnerSection)
+                {
+                    <div class="form-section">
+                        <div class="section-header" style="justify-content: space-between;position:relative">
+                            <div style="display:flex;align-items:center;gap:0.5rem;">
+                                <span class="section-icon coral">🧑‍🤝‍🧑</span>
+                                <h3 class="section-title">What are a few things your partner loves?</h3>
+                            </div>
+                            <button type="button" class="remove-partner-button" style="position:absolute;right:4px;top:4px" @onclick="RemovePartnerSection" title="Remove Second Person">×</button>
+                        </div>
+                        <div class="anchor-preferences">
+                            <div class="popular-anchors">
+                                @foreach (var anchor in PopularAnchorPreferences.Take(VisiblePartnerAnchorCount))
+                                {
+                                    <button type="button" @onclick="() => AddPartnerPreference(anchor)" class="anchor-button @(Preferences.PartnerPreferences?.Contains(anchor) == true ? "selected" : "available")" disabled="@(Preferences.PartnerPreferences?.Contains(anchor) == true)" >@anchor</button>
+                                }
+                            </div>
+                            @if (VisiblePartnerAnchorCount < PopularAnchorPreferences.Count)
+                            {
+                                <button type="button" class="show-more-button" @onclick="ShowMorePartnerAnchors">Show More</button>
+                            }
+                            <div class="anchor-input-section">
+                                <InputText @bind-Value="NewPartnerPreference" placeholder="Add your own..." class="anchor-input" />
+                                <button type="button" @onclick="() => AddPartnerPreference(NewPartnerPreference)" class="add-anchor-button">
+                                    <span class="add-icon">+</span>
+                                </button>
+                            </div>
+                            @if (Preferences.PartnerPreferences?.Count > 0)
+                            {
+                                <div class="selected-anchors">
+                                    @foreach (var anchor in Preferences.PartnerPreferences)
+                                    {
+                                        <span class="selected-anchor">
+                                            @anchor
+                                            <button type="button" @onclick="() => RemovePartnerPreference(anchor)" class="remove-anchor-button">
+                                                <span class="remove-icon">×</span>
+                                            </button>
+                                        </span>
+                                    }
+                                </div>
+                            }
+                        </div>
+                    </div>
+                }
+            </div>
+            <!-- Timeframe Selection -->
+            <div class="form-section">
+                <div class="section-header">
+                    <span class="section-icon coral">📅</span>
+                    <h3 class="section-title">When?</h3>
+                </div>
+                <div class="timeframes-grid">
+                    @foreach (var timeframe in Timeframes)
+                    {
+                    <button type="button" @onclick="() => Preferences.Timeframe = timeframe.Id" class="timeframe-button @(Preferences.Timeframe == timeframe.Id ? "selected" : "")">
+                        @timeframe.Label
+                    </button>
+                    }
+                </div>
+            </div>
+            <!-- Entity Types Selection (Optional) -->
+            <div class="form-section">
+                <div class="section-header">
+                    <span class="section-icon blue">🧩</span>
+                    <h3 class="section-title">Select Specific Recommendations <span class="optional-text">(Optional)</span></h3>
+                    <h4></h4>
+                </div>
+                <div class="entity-types-grid">
+                    @foreach (var entityType in Preferences.EntitySelections)
+                    {
+                        <label class="entity-type-label">
+                            @* <input type="checkbox" value="@entityType" checked="@Preferences.EntityTypes?.Contains(entityType)"
+                                   @onchange="(e) => OnEntityTypeChanged(e, entityType)" /> *@
+                            <InputCheckbox @bind-Value="@entityType.IsSelected" />
+                            <span>@entityType.EntityType.ToString()</span>
+                        </label>
+                    }
+                </div>
+            </div>
+            <!-- Submit Button -->
+            <div class="submit-section">
+                <button type="submit" disabled="@(string.IsNullOrEmpty(Preferences.Theme))" class="submit-button">
+                    <div class="submit-content">
+                        <span class="submit-icon">❤️</span>
+                        <span>Curate My Experience</span>
+                    </div>
+                </button>
+            </div>
+        </div>
+    </EditForm>
+</div>

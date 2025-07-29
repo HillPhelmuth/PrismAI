@@ -1,0 +1,35 @@
+﻿namespace PrismAI.Core.Models.CultureConciergeModels;
+
+public enum RecommendationSlot
+{
+    Artist1,
+    Artist2,
+    Artist3,
+    Book1,
+    Book2,
+    Book3,
+    Brand1,
+    Brand2,
+    Brand3,
+    Destination1,
+    Destination2,
+    Destination3,
+    Movie1,
+    Movie2,
+    Movie3,
+    Person1,
+    Person2,
+    Person3,
+    Place1,
+    Place2,
+    Place3,
+    Podcast1,
+    Podcast2,
+    Podcast3,
+    TvShow1,
+    TvShow2,
+    TvShow3,
+    VideoGame1,
+    VideoGame2,
+    VideoGame3
+}

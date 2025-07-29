@@ -1,0 +1,118 @@
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 50;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+    background-color: white;
+    border-radius: 1rem;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    max-width: 42rem;
+    width: 100%;
+    padding: 2rem;
+    position: relative;
+    animation: fadeIn 0.3s ease-in-out;
+    max-height: 80vh;
+    overflow-y: auto;
+    margin: 1rem;
+}
+
+.modal-close-button {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    color: rgb(100, 116, 139);
+    font-size: 1.25rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.modal-close-button:hover {
+    color: rgb(147, 51, 234);
+}
+
+.modal-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: rgb(91, 33, 182);
+    margin-bottom: 1rem;
+}
+
+.section {
+    margin-bottom: 1.5rem;
+}
+
+.section-title {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: rgb(51, 65, 85);
+    margin-bottom: 0.5rem;
+}
+
+.results-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.result-item {
+    border-bottom: 1px solid rgb(226, 232, 240);
+    padding-bottom: 0.5rem;
+}
+
+.result-link {
+    color: rgb(147, 51, 234);
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.result-link:hover {
+    text-decoration: underline;
+}
+
+.youtube-link {
+    color: rgb(20, 184, 166);
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.youtube-link:hover {
+    text-decoration: underline;
+}
+
+.result-snippet {
+    color: rgb(71, 85, 105);
+    font-size: 0.875rem;
+}
+
+.no-results {
+    color: rgb(148, 163, 184);
+}
+
+.summary-content {
+    color: rgb(51, 65, 85);
+    white-space: pre-line;
+}
+
+.summary-content :global(p) {
+    margin-bottom: 0.875rem;
+}
+
+.summary-content :global(strong) {
+    font-weight: 600;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}

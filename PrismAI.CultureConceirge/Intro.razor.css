@@ -1,0 +1,67 @@
+
+.intro-container {
+	max-width: 700px;
+	margin: 10px auto 0 auto;
+	background: linear-gradient(135deg, #f8fafc 60%, #e0e7ff 100%);
+	border-radius: 24px;
+	box-shadow: 0 6px 32px 0 rgba(80, 80, 180, 0.10), 0 1.5px 6px 0 rgba(0,0,0,0.04);
+	padding: 2.5rem 2rem 2rem 2rem;
+	text-align: center;
+	/*animation: popIn 0.8s cubic-bezier(.68,-0.55,.27,1.55);*/
+}
+    .intro-container.pop-in {
+        animation: popIn 0.8s cubic-bezier(.68,-0.55,.27,1.55);
+    }
+
+.intro-title {
+	font-family: 'Baloo 2', 'Comic Sans MS', cursive, sans-serif;
+	font-size: 2.7rem;
+	color: #4f46e5;
+	margin-bottom: 1.2rem;
+	letter-spacing: 1px;
+	text-shadow: 0 2px 8px #e0e7ff;
+}
+
+.intro-description {
+	font-family: 'Nunito', 'Segoe UI', Arial, sans-serif;
+	font-size: 1.18rem;
+	color: #374151;
+	margin-bottom: 1.1rem;
+	line-height: 1.7;
+	background: rgba(255,255,255,0.7);
+	border-radius: 12px;
+	padding: 1.1rem 1rem;
+	box-shadow: 0 1px 4px 0 rgba(80, 80, 180, 0.04);
+	transition: background 0.3s;
+}
+
+.intro-description:hover {
+	background: #e0e7ff;
+}
+
+@keyframes popIn {
+	0% { opacity: 0; transform: scale(0.95) translateY(30px); }
+	100% { opacity: 1; transform: scale(1) translateY(0); }
+}
+.intro-start-btn {
+	margin-top: 2.2rem;
+	padding: 0.9rem 2.2rem;
+	font-size: 1.25rem;
+	font-family: 'Nunito', 'Segoe UI', Arial, sans-serif;
+	background: linear-gradient(90deg, #6366f1 60%, #818cf8 100%);
+	color: #fff;
+	border: none;
+	border-radius: 16px;
+	box-shadow: 0 2px 12px 0 rgba(80, 80, 180, 0.10);
+	cursor: pointer;
+	font-weight: 700;
+	letter-spacing: 0.5px;
+	transition: background 0.2s, transform 0.15s;
+}
+
+	.intro-start-btn:hover,
+	.intro-start-btn:focus {
+		background: linear-gradient(90deg, #4f46e5 60%, #6366f1 100%);
+		transform: translateY(-2px) scale(1.03);
+		outline: none;
+	}

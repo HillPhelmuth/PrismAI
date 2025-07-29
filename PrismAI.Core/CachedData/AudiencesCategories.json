@@ -1,0 +1,88 @@
+{
+  "duration": 2,
+  "success": true,
+  "results": {
+    "audience_types": [
+      {
+        "parents": [
+          {
+            "type": "urn:audience:communities"
+          }
+        ],
+        "type": "urn:audience:communities"
+      },
+      {
+        "parents": [
+          {
+            "type": "urn:audience:global_issues"
+          }
+        ],
+        "type": "urn:audience:global_issues"
+      },
+      {
+        "parents": [
+          {
+            "type": "urn:audience:hobbies_and_interests"
+          }
+        ],
+        "type": "urn:audience:hobbies_and_interests"
+      },
+      {
+        "parents": [
+          {
+            "type": "urn:audience:investing_interests"
+          }
+        ],
+        "type": "urn:audience:investing_interests"
+      },
+      {
+        "parents": [
+          {
+            "type": "urn:audience:leisure"
+          }
+        ],
+        "type": "urn:audience:leisure"
+      },
+      {
+        "parents": [
+          {
+            "type": "urn:audience:life_stage"
+          }
+        ],
+        "type": "urn:audience:life_stage"
+      },
+      {
+        "parents": [
+          {
+            "type": "urn:audience:lifestyle_preferences_beliefs"
+          }
+        ],
+        "type": "urn:audience:lifestyle_preferences_beliefs"
+      },
+      {
+        "parents": [
+          {
+            "type": "urn:audience:political_preferences"
+          }
+        ],
+        "type": "urn:audience:political_preferences"
+      },
+      {
+        "parents": [
+          {
+            "type": "urn:audience:professional_area"
+          }
+        ],
+        "type": "urn:audience:professional_area"
+      },
+      {
+        "parents": [
+          {
+            "type": "urn:audience:spending_habits"
+          }
+        ],
+        "type": "urn:audience:spending_habits"
+      }
+    ]
+  }
+}

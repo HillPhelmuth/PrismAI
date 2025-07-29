@@ -1,0 +1,145 @@
+.loading-container {
+    max-width: 42rem;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.loading-header {
+    margin-bottom: 2rem;
+}
+
+.loading-title {
+    font-size: 1.875rem;
+    font-weight: 700;
+    color: rgb(30, 41, 59);
+    margin-bottom: 1rem;
+}
+
+.preferences-display {
+    background-color: white;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+    border: 1px solid rgb(226, 232, 240);
+}
+
+.preferences-text {
+    color: rgb(71, 85, 105);
+}
+
+.preference-item {
+    font-weight: 500;
+}
+
+.preference-separator {
+    margin: 0 0.5rem;
+}
+
+.loading-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.loading-grid {
+    display: grid;
+    grid-template-rows: auto auto;
+    grid-row-gap: .5rem;
+}
+
+.loading-step {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    opacity: 0;
+    animation: fadeIn 0.5s ease-in-out forwards;
+}
+
+.current {
+    /* Adding smooth fade-in and out animation to indicate the current step */
+    animation: smoothFade 1.5s ease-in-out infinite;
+}
+
+@keyframes smoothFade {
+    0% {
+        opacity: 1;
+    }
+    40% {
+        opacity: 0.4;
+    }
+    60% {
+        opacity: 0.4;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.step-icon-wrapper {
+    background: linear-gradient(to bottom right, rgb(147, 51, 234), rgb(20, 184, 166));
+    padding: 0.75rem;
+    border-radius: 9999px;
+}
+
+.step-icon {
+    height: 1.5rem;
+    width: 1.5rem;
+    color: white;
+}
+
+.step-content {
+    flex: 1;
+    text-align: left;
+}
+
+.step-label {
+    font-size: 1.125rem;
+    font-weight: 500;
+    color: rgb(30, 41, 59);
+}
+
+.progress-section {
+    margin-top: 3rem;
+}
+
+.progress-bar-container {
+    width: 16rem;
+    height: 0.5rem;
+    background-color: rgb(226, 232, 240);
+    border-radius: 9999px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.progress-bar {
+    height: 100%;
+    background: linear-gradient(to right, rgb(147, 51, 234), rgb(20, 184, 166));
+    border-radius: 9999px;
+    animation: loadingBar 3s ease-in-out infinite;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes loadingBar {
+    0% {
+        width: 0%;
+    }
+
+    50% {
+        width: 70%;
+    }
+
+    100% {
+        width: 100%;
+    }
+}

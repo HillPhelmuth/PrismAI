@@ -1,0 +1,94 @@
+@using PrismAI.Core.Models.CultureConciergeModels
+@* User Profile Form *@
+<div class="form-container">
+    <div class="form-header">
+        <div class="form-title">Your Profile</div>
+        <div class="form-subtitle">Tell us a bit about yourself to personalize your experience.</div>
+    </div>
+    <EditForm Model="_userProfile" OnValidSubmit="SaveProfile">
+        <div class="form-sections">
+            <div class="form-section">
+                <div class="section-header">
+                    <span class="section-title">Basic Information</span>
+                </div>
+                <div class="custom-input-section">
+                    <div class="age-gender-row">
+                        <div class="input-group">
+                            <label class="input-label" for="user-age">Age</label>
+                            <InputSelect id="user-age" class="text-input" @bind-Value="_userProfile.UserAge">
+                                <option value="">Select age range</option>
+                                <option value="@UserAge.Age35AndYounger">35 and younger</option>
+                                <option value="@UserAge.Age36To55">36 to 55</option>
+                                <option value="@UserAge.Age55AndOlder">55 and older</option>
+                            </InputSelect>
+                        </div>
+                        <div class="input-group">
+                            <label class="input-label" for="user-gender">Gender <span class="optional-text">(optional)</span></label>
+                            <InputSelect id="user-gender" class="text-input" @bind-Value="_userProfile.UserGender">
+                                <option value="">Select gender</option>
+                                <option value="female">Female</option>
+                                <option value="male">Male</option>
+                                <option value="Non-binary">Non-binary</option>
+                                <option value="Prefer not to say">Prefer not to say</option>
+                                <option value="Other">Other</option>
+                            </InputSelect>
+                        </div>
+                    </div>
+                    @if (string.IsNullOrEmpty(_userProfile.UserLocation))
+                    {
+                        <label class="input-label" for="user-location">Location <span class="optional-text">(city, country)</span></label>
+                        <InputText id="user-location" class="text-input" @bind-Value="_userProfile.UserLocation" placeholder="e.g. Paris, France"/>
+                    }
+                </div>
+            </div>
+            <div class="form-section">
+                <div class="section-header">
+                    <span class="section-title">Interests</span>
+                    <span class="optional-text">(click to add, or enter your own)</span>
+                </div>
+                <div class="custom-input-section">
+                    <label class="input-label">Tell me a few things you love</label>
+                    <div class="anchor-preferences">
+                        <div class="popular-anchors">
+                            @foreach (var interest in PopularAnchorPreferences.Take(_visibleInterestCount))
+                            {
+                                <button type="button" @onclick="() => AddInterest(interest)" class="anchor-button @(_userProfile.UserInterests?.Contains(interest) == true ? "selected" : "available")" disabled="@(_userProfile.UserInterests?.Contains(interest) == true)">@interest</button>
+                            }
+                        </div>
+                        @if (_visibleInterestCount < PopularAnchorPreferences.Count)
+                        {
+                            <button type="button" class="show-more-button" @onclick="ShowMoreInterests">Show More</button>
+                        }
+                        <div class="anchor-input-section">
+                            <InputText @bind-Value="_newInterest" placeholder="Add your own..." class="anchor-input" />
+                            <button type="button" @onclick="() => AddInterest(_newInterest)" class="add-anchor-button">
+                                <span class="add-icon">+</span>
+                            </button>
+                        </div>
+                        @if (_userProfile.UserInterests?.Count > 0)
+                        {
+                            <div class="selected-anchors">
+                                @foreach (var interest in _userProfile.UserInterests)
+                                {
+                                    <span class="selected-anchor">
+                                        @interest
+                                        <button type="button" @onclick="() => RemoveInterest(interest)" class="remove-anchor-button">
+                                            <span class="remove-icon">×</span>
+                                        </button>
+                                    </span>
+                                }
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+            <div class="submit-section">
+                <button type="submit" class="submit-button">
+                    <span class="submit-content">
+                        <span>Save Profile</span>
+                    </span>
+                </button>
+            </div>
+        </div>
+    </EditForm>
+</div>

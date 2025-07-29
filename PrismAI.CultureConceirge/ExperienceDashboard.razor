@@ -1,0 +1,79 @@
+@if (IsLoadingFindMore)
+{
+    <div class="loading-overlay">
+        <div class="loading-content">
+            <svg class="loading-spinner" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"></path>
+            </svg>
+            <span class="loading-text">@_modalText</span>
+
+            <button class="modal-close-button" @onclick="OnCancel" title="Cancel">✖️</button>
+        </div>
+    </div>
+}
+
+<FindMoreModal Show="ShowFindMoreModal" Results="Results" OnClose="HideFindMoreModal" />
+
+<div class="container">
+    <!-- Experience Header -->
+    <div class="header-section">
+        <div class="header-card">
+            <h1 class="main-title">@Experience.Theme</h1>
+            @* <p class="main-description">@Experience.Description</p> *@
+            <div class="concierge-section">
+                <div class="concierge-header">
+                    <span class="concierge-icon">💬</span>
+                    <h3 class="concierge-title">Your Concierge Says:</h3>
+                </div>
+                <p class="concierge-text">
+                    @Experience.Description
+                </p>
+            </div>
+        </div>
+    </div>
+    <!-- Experience Cards Grid -->
+    <div class="cards-grid">
+        @foreach (var card in Cards)
+        {
+
+            <ExperienceCard Icon="@card.Icon" Title="@card.Title" @bind-Recommendation="@card.Data" IsActive="@(ActiveCard == card.Key)" OnClick="() => ActiveCard = ActiveCard == card.Key ? null : card.Key" RecommendationSelected="HandleFindRequest" AlternativeRequested="HandleGetAlternative" LocationSelected="HandleLocation" />
+
+        }
+    </div>
+    <!-- Experience Timeline -->
+    <div class="timeline-section">
+        <h2 class="timeline-title">Your Experience Timeline</h2>
+        <div class="timeline-overview">
+            @Experience.TimelineDescription
+        </div>
+        <div class="timeline-items">
+            @foreach (var card in Cards.OrderBy(x => x.Data.TimelineOrder))
+            {
+                @if (card.Data != null)
+                {
+                    <div class="timeline-item">
+                        <div class="timeline-icon-wrapper">
+                            <span class="timeline-icon">@card.Icon</span>
+                        </div>
+                        <div class="timeline-content">
+                            <h3 class="timeline-item-title">@card.Title: @card.Data.Title</h3>
+                            <p class="timeline-item-description">@card.Data.Description</p>
+                            <p class="timeline-item-reasoning">@card.Data.Reasoning</p>
+                            <p class="timeline-item-duration">For about @card.Data.EstimatedTimeToComplete minutes</p>
+                        </div>
+                    </div>
+                }
+            }
+        </div>
+    </div>
+    @if (_location is not null)
+    {
+        <div class="map-modal-overlay">
+            <div class="map-modal-content">
+                <button class="map-modal-close-button" @onclick="() => _location = null">✖️</button>
+                <MapViewer Destination="_location"></MapViewer>
+            </div>
+        </div>
+    }
+</div>

@@ -1,0 +1,2714 @@
+{
+	"totalRequestDuration": 5,
+	"success": true,
+	"results": {
+		"audiences": [
+			{
+				"entity_id": "DA61B8AD-6D79-4B0C-BEA0-EC966C93902E",
+				"name": "AAPI",
+				"parents": [
+					{
+						"type": "urn:audience"
+					}
+				],
+				"type": "urn:audience:communities",
+				"id": "urn:audience:communities:aapi",
+				"disambiguation": "Aapi (Communities)",
+				"tags": [
+					{
+						"id": "urn:tag:collection:canonical",
+						"name": "Canonical",
+						"type": "urn:tag:collection"
+					}
+				]
+			},
+			{
+				"entity_id": "A8A43978-5291-46DC-8952-D58EDC7FF82B",
+				"name": "Black",
+				"parents": [
+					{
+						"type": "urn:audience"
+					}
+				],
+				"type": "urn:audience:communities",
+				"id": "urn:audience:communities:black",
+				"disambiguation": "Black (Communities)",
+				"tags": [
+					{
+						"id": "urn:tag:collection:canonical",
+						"name": "Canonical",
+						"type": "urn:tag:collection"
+					}
+				]
+			},
+			{
+				"entity_id": "E47478B9-8ED2-449B-B854-6344059742E3",
+				"name": "Latino",
+				"parents": [
+					{
+						"type": "urn:audience"
+					}
+				],
+				"type": "urn:audience:communities",
+				"id": "urn:audience:communities:latino",
+				"disambiguation": "Latino (Communities)",
+				"tags": [
+					{
+						"id": "urn:tag:collection:canonical",
+						"name": "Canonical",
+						"type": "urn:tag:collection"
+					}
+				]
+			},
+			{
+				"entity_id": "6BED625C-E312-47E9-A4B5-F978C7778269",
+				"name": "LGBTQ",
+				"parents": [
+					{
+						"type": "urn:audience"
+					}
+				],
+				"type": "urn:audience:communities",
+				"id": "urn:audience:communities:lgbtq",
+				"disambiguation": "Lgbtq (Communities)",
+				"tags": [
+					{
+						"id": "urn:tag:collection:canonical",
+						"name": "Canonical",
+						"type": "urn:tag:collection"
+					}
+				]
+			},
+			{
+				"entity_id": "784D31A2-99A5-4E8C-8B89-047B01760CC2",
+				"name": "Animal Issues",
+				"parents": [
+					{
+						"type": "urn:audience"
+					}
+				],
+				"type": "urn:audience:global_issues",
+				"id": "urn:audience:global_issues:animal_issues",
+				"disambiguation": "Animal Issues (Global Issues)",
+				"tags": [
+					{
+						"id": "urn:tag:collection:canonical",
+						"name": "Canonical",
+						"type": "urn:tag:collection"
+					}
+				]
+			},
+			{
+				"entity_id": "FB61D98E-C4BA-4959-A571-0861FD2AC850",
+				"name": "Climate Activism",
+				"parents": [
+					{
+						"type": "urn:audience"
+					}
+				],
+				"type": "urn:audience:global_issues",
+				"id": "urn:audience:global_issues:climate_activism",
+				"disambiguation": "Climate Activism (Global Issues)",
+				"tags": [
+					{
+						"id": "urn:tag:collection:canonical",
+						"name": "Canonical",
+						"type": "urn:tag:collection"
+					}
+				]
+			},
+			{
+				"entity_id": "616F4741-3864-41FD-BFCF-49B76AA025C8",
+				"name": "Education Issues",
+				"parents": [
+					{
+						"type": "urn:audience"
+					}
+				],
+				"type": "urn:audience:global_issues",
+				"id": "urn:audience:global_issues:education_issues",
+				"disambiguation": "Education Issues (Global Issues)",
+				"tags": [
+					{
+						"id": "urn:tag:collection:canonical",
+						"name": "Canonical",
+						"type": "urn:tag:collection"
+					}
+				]
+			},
+			{
+				"entity_id": "2EE4FA44-9A90-470F-839F-2CF54A273E59",
+				"name": "Fair Wages",
+				"parents": [
+					{
+						"type": "urn:audience"
+					}
+				],
+				"type": "urn:audience:global_issues",
+				"id": "urn:audience:global_issues:fair_wages",
+				"disambiguation": "Fair Wages (Global Issues)",
+				"tags": [
+					{
+						"id": "urn:tag:collection:canonical",
+						"name": "Canonical",
+						"type": "urn:tag:collection"
+					}
+				]
+			},
+			{
+				"entity_id": "1EFF8636-B50C-4B57-86DD-6CB2D4F8F397",
+				"name": "Foreign Affairs",
+				"parents": [
+					{
+						"type": "urn:audience"
+					}
+				],
+				"type": "urn:audience:global_issues",
+				"id": "urn:audience:global_issues:foreign_affairs",
+				"disambiguation": "Foreign Affairs (Global Issues)",
+				"tags": [
+					{
+						"id": "urn:tag:collection:canonical",
+						"name": "Canonical",
+						"type": "urn:tag:collection"
+					}
+				]
+			},
+			{
+				"entity_id": "B7970242-69CC-40FB-AFB6-0A5781E613DB",
+				"name": "Gender Equality",
+				"parents": [
+					{
+						"type": "urn:audience"
+					}
+				],
+				"type": "urn:audience:global_issues",
+				"id": "urn:audience:global_issues:gender_equality",
+				"disambiguation": "Gender Equality (Global Issues)",
+				"tags": [
+					{
+						"id": "urn:tag:collection:canonical",
+						"name": "Canonical",
+						"type": "urn:tag:collection"
+					}
+				]
+			},
+			{
+				"entity_id": "B48DAA8A-7398-4C76-9DB0-80E12669ABFD",
+				"name": "Mental Health",
+				"parents": [
+					{
+						"type": "urn:audience"
+					}
+				],
+				"type": "urn:audience:global_issues",
+				"id": "urn:audience:global_issues:mental_health",
+				"disambiguation": "Mental Health (Global Issues)",
+				"tags": [
+					{
+						"id": "urn:tag:collection:canonical",
+						"name": "Canonical",
+						"type": "urn:tag:collection"
+					}
+				]
+			},
+			{
+				"entity_id": "BAC54F13-A15E-49E8-A645-BCACD5683B14",
+				"name": "Ocean Health",
+				"parents": [
+					{
+						"type": "urn:audience"
+					}
+				],
+				"type": "urn:audience:global_issues",
+				"id": "urn:audience:global_issues:ocean_health",
+				"disambiguation": "Ocean Health (Global Issues)",
+				"tags": [
+					{
+						"id": "urn:tag:collection:canonical",
+						"name": "Canonical",
+						"type": "urn:tag:collection"
+					}
+				]
+			},
+			{
+				"entity_id": "9D25E87E-030C-4EE7-B049-F24967AAD596",
+				"name": "Racial Justice",
+				"parents": [
+					{
+						"type": "urn:audience"
+					}
+				],
+				"type": "urn:audience:global_issues",
+				"id": "urn:audience:global_issues:racial_justice",
+				"disambiguation": "Racial Justice (Global Issues)",
+				"tags": [
+					{
+						"id": "urn:tag:collection:canonical",
+						"name": "Canonical",
+						"type": "urn:tag:collection"
+					}
+				]
+			},
+			{
+				"entity_id": "109574B3-A21D-4935-AC94-1DC3C7B56BEC",
+				"name": "Sustainability",
+				"parents": [
+					{
+						"type": "urn:audience"
+					}
+				],
+				"type": "urn:audience:global_issues",
+				"id": "urn:audience:global_issues:sustainability",
+				"disambiguation": "Sustainability (Global Issues)",
+				"tags": [
+					{
+						"id": "urn:tag:collection:canonical",
+						"name": "Canonical",
+						"type": "urn:tag:collection"
+					}
+				]
+			},
+			{
+				"entity_id": "C956BAAF-4449-4B0B-BCA1-D3B06644B165",
+				"name": "Wealth Inequality",
+				"parents": [
+					{
+						"type": "urn:audience"
+					}
+				],
+				"type": "urn:audience:global_issues",
+				"id": "urn:audience:global_issues:wealth_inequality",
+				"disambiguation": "Wealth Inequality (Global Issues)",
+				"tags": [
+					{
+						"id": "urn:tag:collection:canonical",
+						"name": "Canonical",
+						"type": "urn:tag:collection"
+					}
+				]
+			},
+			{
+				"entity_id": "1D7AF41D-8ECF-414C-B6C9-7CA9FA276DBD",
+				"name": "Adrenaline Rushers",
+				"parents": [
+					{
+						"type": "urn:audience"
+					}
+				],
+				"type": "urn:audience:hobbies_and_interests",
+				"id": "urn:audience:hobbies_and_interests:adrenaline_rushers",
+				"disambiguation": "Adrenaline Rushers (Hobbies And Interests)",
+				"tags": [
+					{
+						"id": "urn:tag:collection:canonical",
+						"name": "Canonical",
+						"type": "urn:tag:collection"
+					}
+				]
+			},
+			{
+				"entity_id": "DBDCB7B7-B015-425F-9C3E-619C9C4245EB",
+				"name": "Adventuring",
+				"parents": [
+					{
+						"type": "urn:audience"
+					}
+				],
+				"type": "urn:audience:hobbies_and_interests",
+				"id": "urn:audience:hobbies_and_interests:adventuring",
+				"disambiguation": "Adventuring (Hobbies And Interests)",
+				"tags": [
+					{
+						"id": "urn:tag:collection:canonical",
+						"name": "Canonical",
+						"type": "urn:tag:collection"
+					}
+				]
+			},
+			{
+				"entity_id": "31C1423A-6A88-4028-ADEC-C3042BE765B9",
+				"name": "American Football",
+				"parents": [
+					{
+						"type": "urn:audience"
+					}
+				],
+				"type": "urn:audience:hobbies_and_interests",
+				"id": "urn:audience:hobbies_and_interests:american_football",
+				"disambiguation": "American Football (Hobbies And Interests)",
+				"tags": [
+					{
+						"id": "urn:tag:collection:canonical",
+						"name": "Canonical",
+						"type": "urn:tag:collection"
+					}
+				]
+			},
+			{
+				"entity_id": "67A1B149-175D-4005-85E1-C0A395A1FA4F",
+				"name": "Architecture",
+				"parents": [
+					{
+						"type": "urn:audience"
+					}
+				],
+				"type": "urn:audience:hobbies_and_interests",
+				"id": "urn:audience:hobbies_and_interests:architecture",
+				"disambiguation": "Architecture (Hobbies And Interests)",
+				"tags": [
+					{
+						"id": "urn:tag:collection:canonical",
+						"name": "Canonical",
+						"type": "urn:tag:collection"
+					}
+				]
+			},
+			{
+				"entity_id": "604A723B-3E2C-4795-89AA-DF5BA0C3B3C5",
+				"name": "Arts Crafts",
+				"parents": [
+					{
+						"type": "urn:audience"
+					}
+				],
+				"type": "urn:audience:hobbies_and_interests",
+				"id": "urn:audience:hobbies_and_interests:arts_crafts",
+				"disambiguation": "Arts Crafts (Hobbies And Interests)",
+				"tags": [
+					{
+						"id": "urn:tag:collection:canonical",
+						"name": "Canonical",
+						"type": "urn:tag:collection"
+					}
+				]
+			},
+			{
+				"entity_id": "F8369494-BD42-4DA1-A056-2315241E2401",
+				"name": "Automotive",
+				"parents": [
+					{
+						"type": "urn:audience"
+					}
+				],
+				"type": "urn:audience:hobbies_and_interests",
+				"id": "urn:audience:hobbies_and_interests:automotive",
+				"disambiguation": "Automotive (Hobbies And Interests)",
+				"tags": [
+					{
+						"id": "urn:tag:collection:canonical",
+						"name": "Canonical",
+						"type": "urn:tag:collection"
+					}
+				]
+			},
+			{
+				"entity_id": "E8694D82-FE70-4EA5-A87B-53B90607EA75",
+				"name": "Baseball",
+				"parents": [
+					{
+						"type": "urn:audience"
+					}
+				],
+				"type": "urn:audience:hobbies_and_interests",
+				"id": "urn:audience:hobbies_and_interests:baseball",
+				"disambiguation": "Baseball (Hobbies And Interests)",
+				"tags": [
+					{
+						"id": "urn:tag:collection:canonical",
+						"name": "Canonical",
+						"type": "urn:tag:collection"
+					}
+				]
+			},
+			{
+				"entity_id": "53E66B25-2B9E-4821-8257-65F66B62DD80",
+				"name": "Basketball",
+				"parents": [
+					{
+						"type": "urn:audience"
+					}
+				],
+				"type": "urn:audience:hobbies_and_interests",
+				"id": "urn:audience:hobbies_and_interests:basketball",
+				"disambiguation": "Basketball (Hobbies And Interests)",
+				"tags": [
+					{
+						"id": "urn:tag:collection:canonical",
+						"name": "Canonical",
+						"type": "urn:tag:collection"
+					}
+				]
+			},
+			{
+				"entity_id": "E7EC95B5-91D3-4B36-90CD-868680D13C93",
+				"name": "Casual Escapists",
+				"parents": [
+					{
+						"type": "urn:audience"
+					}
+				],
+				"type": "urn:audience:hobbies_and_interests",
+				"id": "urn:audience:hobbies_and_interests:casual_escapists",
+				"disambiguation": "Casual Escapists (Hobbies And Interests)",
+				"tags": [
+					{
+						"id": "urn:tag:collection:canonical",
+						"name": "Canonical",
+						"type": "urn:tag:collection"
+					}
+				]
+			},
+			{
+				"entity_id": "1B095F7B-1A06-4F65-AE32-BB9E9EAC26D6",
+				"name": "Dance",
+				"parents": [
+					{
+						"type": "urn:audience"
+					}
+				],
+				"type": "urn:audience:hobbies_and_interests",
+				"id": "urn:audience:hobbies_and_interests:dance",
+				"disambiguation": "Dance (Hobbies And Interests)",
+				"tags": [
+					{
+						"id": "urn:tag:collection:canonical",
+						"name": "Canonical",
+						"type": "urn:tag:collection"
+					}
+				]
+			},
+			{
+				"entity_id": "2D160ADC-1673-4D12-9530-D6E78DE07087",
+				"name": "Fishing",
+				"parents": [
+					{
+						"type": "urn:audience"
+					}
+				],
+				"type": "urn:audience:hobbies_and_interests",
+				"id": "urn:audience:hobbies_and_interests:fishing",
+				"disambiguation": "Fishing (Hobbies And Interests)",
+				"tags": [
+					{
+						"id": "urn:tag:collection:canonical",
+						"name": "Canonical",
+						"type": "urn:tag:collection"
+					}
+				]
+			},
+			{
+				"entity_id": "566BE3C4-C712-4B76-916D-2EFC0D26BD81",
+				"name": "Golf",
+				"parents": [
+					{
+						"type": "urn:audience"
+					}
+				],
+				"type": "urn:audience:hobbies_and_interests",
+				"id": "urn:audience:hobbies_and_interests:golf",
+				"disambiguation": "Golf (Hobbies And Interests)",
+				"tags": [
+					{
+						"id": "urn:tag:collection:canonical",
+						"name": "Canonical",
+						"type": "urn:tag:collection"
+					}
+				]
+			},
+			{
+				"entity_id": "8F0407D3-64F3-47BF-A6B1-BA4C30465F71",
+				"name": "Health And Beauty",
+				"parents": [
+					{
+						"type": "urn:audience"
+					}
+				],
+				"type": "urn:audience:hobbies_and_interests",
+				"id": "urn:audience:hobbies_and_interests:health_and_beauty",
+				"disambiguation": "Health And Beauty (Hobbies And Interests)",
+				"tags": [
+					{
+						"id": "urn:tag:collection:canonical",
+						"name": "Canonical",
+						"type": "urn:tag:collection"
+					}
+				]
+			},
+			{
+				"entity_id": "FA88A1F6-8CEF-4F6A-8FD1-FE7A739052D7",
+				"name": "High Fashion",
+				"parents": [
+					{
+						"type": "urn:audience"
+					}
+				],
+				"type": "urn:audience:hobbies_and_interests",
+				"id": "urn:audience:hobbies_and_interests:high_fashion",
+				"disambiguation": "High Fashion (Hobbies And Interests)",
+				"tags": [
+					{
+						"id": "urn:tag:collection:canonical",
+						"name": "Canonical",
+						"type": "urn:tag:collection"
+					}
+				]
+			},
+			{
+				"entity_id": "73B662F7-7DB7-4D0C-A36B-2E8E75ACDF49",
+				"name": "Hiking",
+				"parents": [
+					{
+						"type": "urn:audience"
+					}
+				],
+				"type": "urn:audience:hobbies_and_interests",
+				"id": "urn:audience:hobbies_and_interests:hiking",
+				"disambiguation": "Hiking (Hobbies And Interests)",
+				"tags": [
+					{
+						"id": "urn:tag:collection:canonical",
+						"name": "Canonical",
+						"type": "urn:tag:collection"
+					}
+				]
+			},
+			{
+				"entity_id": "1CA32D17-6D03-453C-8B91-12B4604076E1",
+				"name": "Hockey",
+				"parents": [
+					{
+						"type": "urn:audience"
+					}
+				],
+				"type": "urn:audience:hobbies_and_interests",
+				"id": "urn:audience:hobbies_and_interests:hockey",
+				"disambiguation": "Hockey (Hobbies And Interests)",
+				"tags": [
+					{
+						"id": "urn:tag:collection:canonical",
+						"name": "Canonical",
+						"type": "urn:tag:collection"
+					}
+				]
+			},
+			{
+				"entity_id": "7F86E72A-AF3C-4AA9-B125-7155E9261466",
+				"name": "Home Decor",
+				"parents": [
+					{
+						"type": "urn:audience"
+					}
+				],
+				"type": "urn:audience:hobbies_and_interests",
+				"id": "urn:audience:hobbies_and_interests:home_decor",
+				"disambiguation": "Home Decor (Hobbies And Interests)",
+				"tags": [
+					{
+						"id": "urn:tag:collection:canonical",
+						"name": "Canonical",
+						"type": "urn:tag:collection"
+					}
+				]
+			},
+			{
+				"entity_id": "9130A837-ED3C-4BA9-9825-5D0D57D119CD",
+				"name": "Home Organization",
+				"parents": [
+					{
+						"type": "urn:audience"
+					}
+				],
+				"type": "urn:audience:hobbies_and_interests",
+				"id": "urn:audience:hobbies_and_interests:home_organization",
+				"disambiguation": "Home Organization (Hobbies And Interests)",
+				"tags": [
+					{
+						"id": "urn:tag:collection:canonical",
+						"name": "Canonical",
+						"type": "urn:tag:collection"
+					}
+				]
+			},
+			{
+				"entity_id": "ED9B04EF-C693-44C8-82DE-C2B138710601",
+				"name": "Jewellery",
+				"parents": [
+					{
+						"type": "urn:audience"
+					}
+				],
+				"type": "urn:audience:hobbies_and_interests",
+				"id": "urn:audience:hobbies_and_interests:jewellery",
+				"disambiguation": "Jewellery (Hobbies And Interests)",
+				"tags": [
+					{
+						"id": "urn:tag:collection:canonical",
+						"name": "Canonical",
+						"type": "urn:tag:collection"
+					}
+				]
+			},
+			{
+				"entity_id": "663BAA0C-44CF-4794-8827-E36FBEF3E5F5",
+				"name": "Martial Arts",
+				"parents": [
+					{
+						"type": "urn:audience"
+					}
+				],
+				"type": "urn:audience:hobbies_and_interests",
+				"id": "urn:audience:hobbies_and_interests:martial_arts",
+				"disambiguation": "Martial Arts (Hobbies And Interests)",
+				"tags": [
+					{
+						"id": "urn:tag:collection:canonical",
+						"name": "Canonical",
+						"type": "urn:tag:collection"
+					}
+				]
+			},
+			{
+				"entity_id": "1C3735D4-FE2D-4CDE-811A-9B2BFE767DAD",
+				"name": "Meditation",
+				"parents": [
+					{
+						"type": "urn:audience"
+					}
+				],
+				"type": "urn:audience:hobbies_and_interests",
+				"id": "urn:audience:hobbies_and_interests:meditation",
+				"disambiguation": "Meditation (Hobbies And Interests)",
+				"tags": [
+					{
+						"id": "urn:tag:collection:canonical",
+						"name": "Canonical",
+						"type": "urn:tag:collection"
+					}
+				]
+			},
+			{
+				"entity_id": "107AE5DB-906C-430C-969E-3886C39BDD8C",
+				"name": "Motorcycles",
+				"parents": [
+					{
+						"type": "urn:audience"
+					}
+				],
+				"type": "urn:audience:hobbies_and_interests",
+				"id": "urn:audience:hobbies_and_interests:motorcycles",
+				"disambiguation": "Motorcycles (Hobbies And Interests)",
+				"tags": [
+					{
+						"id": "urn:tag:collection:canonical",
+						"name": "Canonical",
+						"type": "urn:tag:collection"
+					}
+				]
+			},
+			{
+				"entity_id": "15D9D8DF-28AF-425A-AF2E-835DFB53E778",
+				"name": "Musician",
+				"parents": [
+					{
+						"type": "urn:audience"
+					}
+				],
+				"type": "urn:audience:hobbies_and_interests",
+				"id": "urn:audience:hobbies_and_interests:musician",
+				"disambiguation": "Musician (Hobbies And Interests)",
+				"tags": [
+					{
+						"id": "urn:tag:collection:canonical",
+						"name": "Canonical",
+						"type": "urn:tag:collection"
+					}
+				]
+			},
+			{
+				"entity_id": "AAAE9FAA-FE3D-4732-9E82-BD4CED485D60",
+				"name": "Outdoors",
+				"parents": [
+					{
+						"type": "urn:audience"
+					}
+				],
+				"type": "urn:audience:hobbies_and_interests",
+				"id": "urn:audience:hobbies_and_interests:outdoors",
+				"disambiguation": "Outdoors (Hobbies And Interests)",
+				"tags": [
+					{
+						"id": "urn:tag:collection:canonical",
+						"name": "Canonical",
+						"type": "urn:tag:collection"
+					}
+				]
+			},
+			{
+				"entity_id": "7010BFFD-33F5-460C-8660-3E49C570FF47",
+				"name": "Perfume",
+				"parents": [
+					{
+						"type": "urn:audience"
+					}
+				],
+				"type": "urn:audience:hobbies_and_interests",
+				"id": "urn:audience:hobbies_and_interests:perfume",
+				"disambiguation": "Perfume (Hobbies And Interests)",
+				"tags": [
+					{
+						"id": "urn:tag:collection:canonical",
+						"name": "Canonical",
+						"type": "urn:tag:collection"
+					}
+				]
+			},
+			{
+				"entity_id": "7DCA3589-E6FF-4582-BE24-5A2D09D71336",
+				"name": "Photography",
+				"parents": [
+					{
+						"type": "urn:audience"
+					}
+				],
+				"type": "urn:audience:hobbies_and_interests",
+				"id": "urn:audience:hobbies_and_interests:photography",
+				"disambiguation": "Photography (Hobbies And Interests)",
+				"tags": [
+					{
+						"id": "urn:tag:collection:canonical",
+						"name": "Canonical",
+						"type": "urn:tag:collection"
+					}
+				]
+			},
+			{
+				"entity_id": "9D36D8C6-B39C-48AE-87A6-F63E59328577",
+				"name": "Racing",
+				"parents": [
+					{
+						"type": "urn:audience"
+					}
+				],
+				"type": "urn:audience:hobbies_and_interests",
+				"id": "urn:audience:hobbies_and_interests:racing",
+				"disambiguation": "Racing (Hobbies And Interests)",
+				"tags": [
+					{
+						"id": "urn:tag:collection:canonical",
+						"name": "Canonical",
+						"type": "urn:tag:collection"
+					}
+				]
+			},
+			{
+				"entity_id": "EEFA88EB-0D5D-4290-B0AB-F7840DE970DB",
+				"name": "Running",
+				"parents": [
+					{
+						"type": "urn:audience"
+					}
+				],
+				"type": "urn:audience:hobbies_and_interests",
+				"id": "urn:audience:hobbies_and_interests:running",
+				"disambiguation": "Running (Hobbies And Interests)",
+				"tags": [
+					{
+						"id": "urn:tag:collection:canonical",
+						"name": "Canonical",
+						"type": "urn:tag:collection"
+					}
+				]
+			},
+			{
+				"entity_id": "471BEA15-6E9F-4347-B3DF-46E4A6045B8E",
+				"name": "Secret Unravelers",
+				"parents": [
+					{
+						"type": "urn:audience"
+					}
+				],
+				"type": "urn:audience:hobbies_and_interests",
+				"id": "urn:audience:hobbies_and_interests:secret_unravelers",
+				"disambiguation": "Secret Unravelers (Hobbies And Interests)",
+				"tags": [
+					{
+						"id": "urn:tag:collection:canonical",
+						"name": "Canonical",
+						"type": "urn:tag:collection"
+					}
+				]
+			},
+			{
+				"entity_id": "D4B24E84-C439-4D7C-B2DC-92F7C704DE76",
+				"name": "Sneakerheads",
+				"parents": [
+					{
+						"type": "urn:audience"
+					}
+				],
+				"type": "urn:audience:hobbies_and_interests",
+				"id": "urn:audience:hobbies_and_interests:sneakerheads",
+				"disambiguation": "Sneakerheads (Hobbies And Interests)",
+				"tags": [
+					{
+						"id": "urn:tag:collection:canonical",
+						"name": "Canonical",
+						"type": "urn:tag:collection"
+					}
+				]
+			},
+			{
+				"entity_id": "8C44B7FB-384C-445D-8FB0-01AD0BB54248",
+				"name": "Soccer",
+				"parents": [
+					{
+						"type": "urn:audience"
+					}
+				],
+				"type": "urn:audience:hobbies_and_interests",
+				"id": "urn:audience:hobbies_and_interests:soccer",
+				"disambiguation": "Soccer (Hobbies And Interests)",
+				"tags": [
+					{
+						"id": "urn:tag:collection:canonical",
+						"name": "Canonical",
+						"type": "urn:tag:collection"
+					}
+				]
+			},
+			{
+				"entity_id": "174B1FE8-CDCE-4896-ADF5-E59981B9AE95",
+				"name": "Spy Enthusiast",
+				"parents": [
+					{
+						"type": "urn:audience"
+					}
+				],
+				"type": "urn:audience:hobbies_and_interests",
+				"id": "urn:audience:hobbies_and_interests:spy_enthusiast",
+				"disambiguation": "Spy Enthusiast (Hobbies And Interests)",
+				"tags": [
+					{
+						"id": "urn:tag:collection:canonical",
+						"name": "Canonical",
+						"type": "urn:tag:collection"
+					}
+				]
+			},
+			{
+				"entity_id": "1F3BBF4D-D14C-4C1D-B9BD-8F8CDCEA55FA",
+				"name": "Street Fashion",
+				"parents": [
+					{
+						"type": "urn:audience"
+					}
+				],
+				"type": "urn:audience:hobbies_and_interests",
+				"id": "urn:audience:hobbies_and_interests:street_fashion",
+				"disambiguation": "Street Fashion (Hobbies And Interests)",
+				"tags": [
+					{
+						"id": "urn:tag:collection:canonical",
+						"name": "Canonical",
+						"type": "urn:tag:collection"
+					}
+				]
+			},
+			{
+				"entity_id": "7A1AEC8A-06B4-4834-B1E1-FD45648D9BE3",
+				"name": "Swimming",
+				"parents": [
+					{
+						"type": "urn:audience"
+					}
+				],
+				"type": "urn:audience:hobbies_and_interests",
+				"id": "urn:audience:hobbies_and_interests:swimming",
+				"disambiguation": "Swimming (Hobbies And Interests)",
+				"tags": [
+					{
+						"id": "urn:tag:collection:canonical",
+						"name": "Canonical",
+						"type": "urn:tag:collection"
+					}
+				]
+			},
+			{
+				"entity_id": "965CD575-A0AD-4128-88B6-DE0C599D644F",
+				"name": "Tattoos",
+				"parents": [
+					{
+						"type": "urn:audience"
+					}
+				],
+				"type": "urn:audience:hobbies_and_interests",
+				"id": "urn:audience:hobbies_and_interests:tattoos",
+				"disambiguation": "Tattoos (Hobbies And Interests)",
+				"tags": [
+					{
+						"id": "urn:tag:collection:canonical",
+						"name": "Canonical",
+						"type": "urn:tag:collection"
+					}
+				]
+			},
+			{
+				"entity_id": "689CB6FD-E1A9-4B06-9932-3093B8F61A97",
+				"name": "Tennis",
+				"parents": [
+					{
+						"type": "urn:audience"
+					}
+				],
+				"type": "urn:audience:hobbies_and_interests",
+				"id": "urn:audience:hobbies_and_interests:tennis",
+				"disambiguation": "Tennis (Hobbies And Interests)",
+				"tags": [
+					{
+						"id": "urn:tag:collection:canonical",
+						"name": "Canonical",
+						"type": "urn:tag:collection"
+					}
+				]
+			},
+			{
+				"entity_id": "7CB916B9-1D27-4D76-8D97-2CC5950385CA",
+				"name": "Travel",
+				"parents": [
+					{
+						"type": "urn:audience"
+					}
+				],
+				"type": "urn:audience:hobbies_and_interests",
+				"id": "urn:audience:hobbies_and_interests:travel",
+				"disambiguation": "Travel (Hobbies And Interests)",
+				"tags": [
+					{
+						"id": "urn:tag:collection:canonical",
+						"name": "Canonical",
+						"type": "urn:tag:collection"
+					}
+				]
+			},
+			{
+				"entity_id": "803132BB-07E8-4D55-A37D-8B9EFB3E095F",
+				"name": "Video Gamer",
+				"parents": [
+					{
+						"type": "urn:audience"
+					}
+				],
+				"type": "urn:audience:hobbies_and_interests",
+				"id": "urn:audience:hobbies_and_interests:video_gamer",
+				"disambiguation": "Video Gamer (Hobbies And Interests)",
+				"tags": [
+					{
+						"id": "urn:tag:collection:canonical",
+						"name": "Canonical",
+						"type": "urn:tag:collection"
+					}
+				]
+			},
+			{
+				"entity_id": "40A2CD3E-0A56-4341-9996-9EF819D39398",
+				"name": "Watches",
+				"parents": [
+					{
+						"type": "urn:audience"
+					}
+				],
+				"type": "urn:audience:hobbies_and_interests",
+				"id": "urn:audience:hobbies_and_interests:watches",
+				"disambiguation": "Watches (Hobbies And Interests)",
+				"tags": [
+					{
+						"id": "urn:tag:collection:canonical",
+						"name": "Canonical",
+						"type": "urn:tag:collection"
+					}
+				]
+			},
+			{
+				"entity_id": "14F62034-5661-4B52-822B-D2D88A3D1B02",
+				"name": "Wine Enthusiast",
+				"parents": [
+					{
+						"type": "urn:audience"
+					}
+				],
+				"type": "urn:audience:hobbies_and_interests",
+				"id": "urn:audience:hobbies_and_interests:wine_enthusiast",
+				"disambiguation": "Wine Enthusiast (Hobbies And Interests)",
+				"tags": [
+					{
+						"id": "urn:tag:collection:canonical",
+						"name": "Canonical",
+						"type": "urn:tag:collection"
+					}
+				]
+			},
+			{
+				"entity_id": "FE2A1718-8970-46D1-947F-D23B199F906D",
+				"name": "Wrestling",
+				"parents": [
+					{
+						"type": "urn:audience"
+					}
+				],
+				"type": "urn:audience:hobbies_and_interests",
+				"id": "urn:audience:hobbies_and_interests:wrestling",
+				"disambiguation": "Wrestling (Hobbies And Interests)",
+				"tags": [
+					{
+						"id": "urn:tag:collection:canonical",
+						"name": "Canonical",
+						"type": "urn:tag:collection"
+					}
+				]
+			},
+			{
+				"entity_id": "F488B2E4-21FE-4AFA-8B2E-0DA5A0F4E756",
+				"name": "Yoga",
+				"parents": [
+					{
+						"type": "urn:audience"
+					}
+				],
+				"type": "urn:audience:hobbies_and_interests",
+				"id": "urn:audience:hobbies_and_interests:yoga",
+				"disambiguation": "Yoga (Hobbies And Interests)",
+				"tags": [
+					{
+						"id": "urn:tag:collection:canonical",
+						"name": "Canonical",
+						"type": "urn:tag:collection"
+					}
+				]
+			},
+			{
+				"entity_id": "2C606C12-C64F-46B1-BAE6-4FB0C278E612",
+				"name": "Angel Start Up Investing",
+				"parents": [
+					{
+						"type": "urn:audience"
+					}
+				],
+				"type": "urn:audience:investing_interests",
+				"id": "urn:audience:investing_interests:angel_start_up_investing",
+				"disambiguation": "Angel Start Up Investing (Investing Interests)",
+				"tags": [
+					{
+						"id": "urn:tag:collection:canonical",
+						"name": "Canonical",
+						"type": "urn:tag:collection"
+					}
+				]
+			},
+			{
+				"entity_id": "42D6F3D0-AD4A-4AC8-B3EE-229775638336",
+				"name": "Art Collectibles",
+				"parents": [
+					{
+						"type": "urn:audience"
+					}
+				],
+				"type": "urn:audience:investing_interests",
+				"id": "urn:audience:investing_interests:art_collectibles",
+				"disambiguation": "Art Collectibles (Investing Interests)",
+				"tags": [
+					{
+						"id": "urn:tag:collection:canonical",
+						"name": "Canonical",
+						"type": "urn:tag:collection"
+					}
+				]
+			},
+			{
+				"entity_id": "C11DC8FF-5EDC-4B64-9504-1CD64C1B10FA",
+				"name": "Cryptocurrency Enthusiasts",
+				"parents": [
+					{
+						"type": "urn:audience"
+					}
+				],
+				"type": "urn:audience:investing_interests",
+				"id": "urn:audience:investing_interests:cryptocurrency_enthusiasts",
+				"disambiguation": "Cryptocurrency Enthusiasts (Investing Interests)",
+				"tags": [
+					{
+						"id": "urn:tag:collection:canonical",
+						"name": "Canonical",
+						"type": "urn:tag:collection"
+					}
+				]
+			},
+			{
+				"entity_id": "35DD51F5-4C89-436D-9A36-1C6BDD1D1508",
+				"name": "NFT Collectors",
+				"parents": [
+					{
+						"type": "urn:audience"
+					}
+				],
+				"type": "urn:audience:investing_interests",
+				"id": "urn:audience:investing_interests:nft_collectors",
+				"disambiguation": "Nft Collectors (Investing Interests)",
+				"tags": [
+					{
+						"id": "urn:tag:collection:canonical",
+						"name": "Canonical",
+						"type": "urn:tag:collection"
+					}
+				]
+			},
+			{
+				"entity_id": "2248A93C-17C0-4BCD-A671-19DB6BDB98D3",
+				"name": "Real Estate",
+				"parents": [
+					{
+						"type": "urn:audience"
+					}
+				],
+				"type": "urn:audience:investing_interests",
+				"id": "urn:audience:investing_interests:real_estate",
+				"disambiguation": "Real Estate (Investing Interests)",
+				"tags": [
+					{
+						"id": "urn:tag:collection:canonical",
+						"name": "Canonical",
+						"type": "urn:tag:collection"
+					}
+				]
+			},
+			{
+				"entity_id": "1B2E2B7F-2FF5-495F-9389-FD4D35A03144",
+				"name": "Stocks Bonds",
+				"parents": [
+					{
+						"type": "urn:audience"
+					}
+				],
+				"type": "urn:audience:investing_interests",
+				"id": "urn:audience:investing_interests:stocks_bonds",
+				"disambiguation": "Stocks Bonds (Investing Interests)",
+				"tags": [
+					{
+						"id": "urn:tag:collection:canonical",
+						"name": "Canonical",
+						"type": "urn:tag:collection"
+					}
+				]
+			},
+			{
+				"entity_id": "AAF408EF-5947-4035-BD34-6678F4A94994",
+				"name": "Arts Culture",
+				"parents": [
+					{
+						"type": "urn:audience"
+					}
+				],
+				"type": "urn:audience:leisure",
+				"id": "urn:audience:leisure:arts_culture",
+				"disambiguation": "Arts Culture (Leisure)",
+				"tags": [
+					{
+						"id": "urn:tag:collection:canonical",
+						"name": "Canonical",
+						"type": "urn:tag:collection"
+					}
+				]
+			},
+			{
+				"entity_id": "2EFF1AB9-814F-48D2-B2DE-D418ED8385AE",
+				"name": "Avid Reader",
+				"parents": [
+					{
+						"type": "urn:audience"
+					}
+				],
+				"type": "urn:audience:leisure",
+				"id": "urn:audience:leisure:avid_reader",
+				"disambiguation": "Avid Reader (Leisure)",
+				"tags": [
+					{
+						"id": "urn:tag:collection:canonical",
+						"name": "Canonical",
+						"type": "urn:tag:collection"
+					}
+				]
+			},
+			{
+				"entity_id": "AB40A444-E528-43FE-BE78-E014301CFD80",
+				"name": "Cinephile",
+				"parents": [
+					{
+						"type": "urn:audience"
+					}
+				],
+				"type": "urn:audience:leisure",
+				"id": "urn:audience:leisure:cinephile",
+				"disambiguation": "Cinephile (Leisure)",
+				"tags": [
+					{
+						"id": "urn:tag:collection:canonical",
+						"name": "Canonical",
+						"type": "urn:tag:collection"
+					}
+				]
+			},
+			{
+				"entity_id": "AFA24856-F432-40E3-AADF-C939A033F77E",
+				"name": "Coffee",
+				"parents": [
+					{
+						"type": "urn:audience"
+					}
+				],
+				"type": "urn:audience:leisure",
+				"id": "urn:audience:leisure:coffee",
+				"disambiguation": "Coffee (Leisure)",
+				"tags": [
+					{
+						"id": "urn:tag:collection:canonical",
+						"name": "Canonical",
+						"type": "urn:tag:collection"
+					}
+				]
+			},
+			{
+				"entity_id": "D1F0EE4A-FDB3-48DC-919C-5A94F3D4EC85",
+				"name": "Cooking",
+				"parents": [
+					{
+						"type": "urn:audience"
+					}
+				],
+				"type": "urn:audience:leisure",
+				"id": "urn:audience:leisure:cooking",
+				"disambiguation": "Cooking (Leisure)",
+				"tags": [
+					{
+						"id": "urn:tag:collection:canonical",
+						"name": "Canonical",
+						"type": "urn:tag:collection"
+					}
+				]
+			},
+			{
+				"entity_id": "E1C2F640-4C29-4F79-AD75-82CDE3DB4622",
+				"name": "Exercising",
+				"parents": [
+					{
+						"type": "urn:audience"
+					}
+				],
+				"type": "urn:audience:leisure",
+				"id": "urn:audience:leisure:exercising",
+				"disambiguation": "Exercising (Leisure)",
+				"tags": [
+					{
+						"id": "urn:tag:collection:canonical",
+						"name": "Canonical",
+						"type": "urn:tag:collection"
+					}
+				]
+			},
+			{
+				"entity_id": "F86C9FE1-16D1-4CFA-8E33-77AD4FEDBB60",
+				"name": "Foodie",
+				"parents": [
+					{
+						"type": "urn:audience"
+					}
+				],
+				"type": "urn:audience:leisure",
+				"id": "urn:audience:leisure:foodie",
+				"disambiguation": "Foodie (Leisure)",
+				"tags": [
+					{
+						"id": "urn:tag:collection:canonical",
+						"name": "Canonical",
+						"type": "urn:tag:collection"
+					}
+				]
+			},
+			{
+				"entity_id": "8371AF94-2F4C-4139-BC87-E3FBEA695D88",
+				"name": "Museums",
+				"parents": [
+					{
+						"type": "urn:audience"
+					}
+				],
+				"type": "urn:audience:leisure",
+				"id": "urn:audience:leisure:museums",
+				"disambiguation": "Museums (Leisure)",
+				"tags": [
+					{
+						"id": "urn:tag:collection:canonical",
+						"name": "Canonical",
+						"type": "urn:tag:collection"
+					}
+				]
+			},
+			{
+				"entity_id": "61D4EAAB-8591-4CCC-BEFC-5F0D18C4F3BD",
+				"name": "Music Festivals",
+				"parents": [
+					{
+						"type": "urn:audience"
+					}
+				],
+				"type": "urn:audience:leisure",
+				"id": "urn:audience:leisure:music_festivals",
+				"disambiguation": "Music Festivals (Leisure)",
+				"tags": [
+					{
+						"id": "urn:tag:collection:canonical",
+						"name": "Canonical",
+						"type": "urn:tag:collection"
+					}
+				]
+			},
+			{
+				"entity_id": "3A9990DA-AA86-4934-AC8D-4088E91700AA",
+				"name": "News Junkie",
+				"parents": [
+					{
+						"type": "urn:audience"
+					}
+				],
+				"type": "urn:audience:leisure",
+				"id": "urn:audience:leisure:news_junkie",
+				"disambiguation": "News Junkie (Leisure)",
+				"tags": [
+					{
+						"id": "urn:tag:collection:canonical",
+						"name": "Canonical",
+						"type": "urn:tag:collection"
+					}
+				]
+			},
+			{
+				"entity_id": "539308D1-B0B5-4C9D-8B67-E7B565B59B09",
+				"name": "Political Junkie",
+				"parents": [
+					{
+						"type": "urn:audience"
+					}
+				],
+				"type": "urn:audience:leisure",
+				"id": "urn:audience:leisure:political_junkie",
+				"disambiguation": "Political Junkie (Leisure)",
+				"tags": [
+					{
+						"id": "urn:tag:collection:canonical",
+						"name": "Canonical",
+						"type": "urn:tag:collection"
+					}
+				]
+			},
+			{
+				"entity_id": "DBF3D836-74E1-4A50-BAF7-6F3426ADA64A",
+				"name": "Engaged",
+				"parents": [
+					{
+						"type": "urn:audience"
+					}
+				],
+				"type": "urn:audience:life_stage",
+				"id": "urn:audience:life_stage:engaged",
+				"disambiguation": "Engaged (Life Stage)",
+				"tags": [
+					{
+						"id": "urn:tag:collection:canonical",
+						"name": "Canonical",
+						"type": "urn:tag:collection"
+					}
+				]
+			},
+			{
+				"entity_id": "22D0A7AF-7833-49F3-8E36-42E8D91EEC8B",
+				"name": "Parents With Young Children",
+				"parents": [
+					{
+						"type": "urn:audience"
+					}
+				],
+				"type": "urn:audience:life_stage",
+				"id": "urn:audience:life_stage:parents_with_young_children",
+				"disambiguation": "Parents With Young Children (Life Stage)",
+				"tags": [
+					{
+						"id": "urn:tag:collection:canonical",
+						"name": "Canonical",
+						"type": "urn:tag:collection"
+					}
+				]
+			},
+			{
+				"entity_id": "B88B7B93-BD33-4910-B44E-24B06C6C8164",
+				"name": "Retirement",
+				"parents": [
+					{
+						"type": "urn:audience"
+					}
+				],
+				"type": "urn:audience:life_stage",
+				"id": "urn:audience:life_stage:retirement",
+				"disambiguation": "Retirement (Life Stage)",
+				"tags": [
+					{
+						"id": "urn:tag:collection:canonical",
+						"name": "Canonical",
+						"type": "urn:tag:collection"
+					}
+				]
+			},
+			{
+				"entity_id": "61419C52-AA82-48FB-A68E-F873A417E040",
+				"name": "Single",
+				"parents": [
+					{
+						"type": "urn:audience"
+					}
+				],
+				"type": "urn:audience:life_stage",
+				"id": "urn:audience:life_stage:single",
+				"disambiguation": "Single (Life Stage)",
+				"tags": [
+					{
+						"id": "urn:tag:collection:canonical",
+						"name": "Canonical",
+						"type": "urn:tag:collection"
+					}
+				]
+			},
+			{
+				"entity_id": "5F4CF648-08CD-4031-A17E-491E90A4DD4C",
+				"name": "Astrology",
+				"parents": [
+					{
+						"type": "urn:audience"
+					}
+				],
+				"type": "urn:audience:lifestyle_preferences_beliefs",
+				"id": "urn:audience:lifestyle_preferences_beliefs:astrology",
+				"disambiguation": "Astrology (Lifestyle Preferences Beliefs)",
+				"tags": [
+					{
+						"id": "urn:tag:collection:canonical",
+						"name": "Canonical",
+						"type": "urn:tag:collection"
+					}
+				]
+			},
+			{
+				"entity_id": "2A7B1369-BF0D-46E2-AAEE-780817162FF4",
+				"name": "Christianity",
+				"parents": [
+					{
+						"type": "urn:audience"
+					}
+				],
+				"type": "urn:audience:lifestyle_preferences_beliefs",
+				"id": "urn:audience:lifestyle_preferences_beliefs:christianity",
+				"disambiguation": "Christianity (Lifestyle Preferences Beliefs)",
+				"tags": [
+					{
+						"id": "urn:tag:collection:canonical",
+						"name": "Canonical",
+						"type": "urn:tag:collection"
+					}
+				]
+			},
+			{
+				"entity_id": "F854077D-E466-4181-A7E4-4CDA52981EA2",
+				"name": "Healthy Eating",
+				"parents": [
+					{
+						"type": "urn:audience"
+					}
+				],
+				"type": "urn:audience:lifestyle_preferences_beliefs",
+				"id": "urn:audience:lifestyle_preferences_beliefs:healthy_eating",
+				"disambiguation": "Healthy Eating (Lifestyle Preferences Beliefs)",
+				"tags": [
+					{
+						"id": "urn:tag:collection:canonical",
+						"name": "Canonical",
+						"type": "urn:tag:collection"
+					}
+				]
+			},
+			{
+				"entity_id": "87A86EE9-5CA0-4C1F-8237-E3EE73C72281",
+				"name": "Islam",
+				"parents": [
+					{
+						"type": "urn:audience"
+					}
+				],
+				"type": "urn:audience:lifestyle_preferences_beliefs",
+				"id": "urn:audience:lifestyle_preferences_beliefs:islam",
+				"disambiguation": "Islam (Lifestyle Preferences Beliefs)",
+				"tags": [
+					{
+						"id": "urn:tag:collection:canonical",
+						"name": "Canonical",
+						"type": "urn:tag:collection"
+					}
+				]
+			},
+			{
+				"entity_id": "399883E7-F468-4BD6-9209-91DAD7BF3537",
+				"name": "Judaism",
+				"parents": [
+					{
+						"type": "urn:audience"
+					}
+				],
+				"type": "urn:audience:lifestyle_preferences_beliefs",
+				"id": "urn:audience:lifestyle_preferences_beliefs:judaism",
+				"disambiguation": "Judaism (Lifestyle Preferences Beliefs)",
+				"tags": [
+					{
+						"id": "urn:tag:collection:canonical",
+						"name": "Canonical",
+						"type": "urn:tag:collection"
+					}
+				]
+			},
+			{
+				"entity_id": "D3839B31-2A5F-4DA3-8C04-528D9611039E",
+				"name": "Organic Ingredients",
+				"parents": [
+					{
+						"type": "urn:audience"
+					}
+				],
+				"type": "urn:audience:lifestyle_preferences_beliefs",
+				"id": "urn:audience:lifestyle_preferences_beliefs:organic_ingredients",
+				"disambiguation": "Organic Ingredients (Lifestyle Preferences Beliefs)",
+				"tags": [
+					{
+						"id": "urn:tag:collection:canonical",
+						"name": "Canonical",
+						"type": "urn:tag:collection"
+					}
+				]
+			},
+			{
+				"entity_id": "439B29E4-F9B2-4FA7-8095-123F6833DE5F",
+				"name": "Spirituality",
+				"parents": [
+					{
+						"type": "urn:audience"
+					}
+				],
+				"type": "urn:audience:lifestyle_preferences_beliefs",
+				"id": "urn:audience:lifestyle_preferences_beliefs:spirituality",
+				"disambiguation": "Spirituality (Lifestyle Preferences Beliefs)",
+				"tags": [
+					{
+						"id": "urn:tag:collection:canonical",
+						"name": "Canonical",
+						"type": "urn:tag:collection"
+					}
+				]
+			},
+			{
+				"entity_id": "7819CC7E-FEAF-4FC6-B0D8-EFED92CD46AE",
+				"name": "Veganism",
+				"parents": [
+					{
+						"type": "urn:audience"
+					}
+				],
+				"type": "urn:audience:lifestyle_preferences_beliefs",
+				"id": "urn:audience:lifestyle_preferences_beliefs:veganism",
+				"disambiguation": "Veganism (Lifestyle Preferences Beliefs)",
+				"tags": [
+					{
+						"id": "urn:tag:collection:canonical",
+						"name": "Canonical",
+						"type": "urn:tag:collection"
+					}
+				]
+			},
+			{
+				"entity_id": "A2F107FD-2A38-4100-AFFB-037A6A2DF338",
+				"name": "Politically Center",
+				"parents": [
+					{
+						"type": "urn:audience"
+					}
+				],
+				"type": "urn:audience:political_preferences",
+				"id": "urn:audience:political_preferences:politically_center",
+				"disambiguation": "Politically Center (Political Preferences)",
+				"tags": [
+					{
+						"id": "urn:tag:collection:canonical",
+						"name": "Canonical",
+						"type": "urn:tag:collection"
+					}
+				]
+			},
+			{
+				"entity_id": "555258C9-2696-496A-B1C1-C46A6F7795C8",
+				"name": "Politically Conservative",
+				"parents": [
+					{
+						"type": "urn:audience"
+					}
+				],
+				"type": "urn:audience:political_preferences",
+				"id": "urn:audience:political_preferences:politically_conservative",
+				"disambiguation": "Politically Conservative (Political Preferences)",
+				"tags": [
+					{
+						"id": "urn:tag:collection:canonical",
+						"name": "Canonical",
+						"type": "urn:tag:collection"
+					}
+				]
+			},
+			{
+				"entity_id": "B3A035FD-0D99-4980-98FD-A5B81D7E402A",
+				"name": "Politically Progressive",
+				"parents": [
+					{
+						"type": "urn:audience"
+					}
+				],
+				"type": "urn:audience:political_preferences",
+				"id": "urn:audience:political_preferences:politically_progressive",
+				"disambiguation": "Politically Progressive (Political Preferences)",
+				"tags": [
+					{
+						"id": "urn:tag:collection:canonical",
+						"name": "Canonical",
+						"type": "urn:tag:collection"
+					}
+				]
+			},
+			{
+				"entity_id": "6CE667C5-82C8-44EC-8E23-01AF8F9949D1",
+				"name": "Advertising Design",
+				"parents": [
+					{
+						"type": "urn:audience"
+					}
+				],
+				"type": "urn:audience:professional_area",
+				"id": "urn:audience:professional_area:advertising_design",
+				"disambiguation": "Advertising Design (Professional Area)",
+				"tags": [
+					{
+						"id": "urn:tag:collection:canonical",
+						"name": "Canonical",
+						"type": "urn:tag:collection"
+					}
+				]
+			},
+			{
+				"entity_id": "A6230919-E0C8-4707-89E5-F7C5BCE86A70",
+				"name": "Business Professional",
+				"parents": [
+					{
+						"type": "urn:audience"
+					}
+				],
+				"type": "urn:audience:professional_area",
+				"id": "urn:audience:professional_area:business_professional",
+				"disambiguation": "Business Professional (Professional Area)",
+				"tags": [
+					{
+						"id": "urn:tag:collection:canonical",
+						"name": "Canonical",
+						"type": "urn:tag:collection"
+					}
+				]
+			},
+			{
+				"entity_id": "0E757BF5-3C77-41AF-AAB7-790AEB0505B7",
+				"name": "Finance Professional",
+				"parents": [
+					{
+						"type": "urn:audience"
+					}
+				],
+				"type": "urn:audience:professional_area",
+				"id": "urn:audience:professional_area:finance_professional",
+				"disambiguation": "Finance Professional (Professional Area)",
+				"tags": [
+					{
+						"id": "urn:tag:collection:canonical",
+						"name": "Canonical",
+						"type": "urn:tag:collection"
+					}
+				]
+			},
+			{
+				"entity_id": "20561289-536A-41EE-A841-23A6ED3D583B",
+				"name": "Hospitality Professional",
+				"parents": [
+					{
+						"type": "urn:audience"
+					}
+				],
+				"type": "urn:audience:professional_area",
+				"id": "urn:audience:professional_area:hospitality_professional",
+				"disambiguation": "Hospitality Professional (Professional Area)",
+				"tags": [
+					{
+						"id": "urn:tag:collection:canonical",
+						"name": "Canonical",
+						"type": "urn:tag:collection"
+					}
+				]
+			},
+			{
+				"entity_id": "98C407BC-7949-4440-A933-451853D966E4",
+				"name": "Marketing Professional",
+				"parents": [
+					{
+						"type": "urn:audience"
+					}
+				],
+				"type": "urn:audience:professional_area",
+				"id": "urn:audience:professional_area:marketing_professional",
+				"disambiguation": "Marketing Professional (Professional Area)",
+				"tags": [
+					{
+						"id": "urn:tag:collection:canonical",
+						"name": "Canonical",
+						"type": "urn:tag:collection"
+					}
+				]
+			},
+			{
+				"entity_id": "7A247E73-7190-4340-8EAD-227EEFB22780",
+				"name": "Medical Professional",
+				"parents": [
+					{
+						"type": "urn:audience"
+					}
+				],
+				"type": "urn:audience:professional_area",
+				"id": "urn:audience:professional_area:medical_professional",
+				"disambiguation": "Medical Professional (Professional Area)",
+				"tags": [
+					{
+						"id": "urn:tag:collection:canonical",
+						"name": "Canonical",
+						"type": "urn:tag:collection"
+					}
+				]
+			},
+			{
+				"entity_id": "7D3C0540-10B0-42BB-93BE-676F0C37242F",
+				"name": "Retail Professional",
+				"parents": [
+					{
+						"type": "urn:audience"
+					}
+				],
+				"type": "urn:audience:professional_area",
+				"id": "urn:audience:professional_area:retail_professional",
+				"disambiguation": "Retail Professional (Professional Area)",
+				"tags": [
+					{
+						"id": "urn:tag:collection:canonical",
+						"name": "Canonical",
+						"type": "urn:tag:collection"
+					}
+				]
+			},
+			{
+				"entity_id": "EFCD3505-3119-4BBD-86D0-0B9F344C0C94",
+				"name": "Sales Professional",
+				"parents": [
+					{
+						"type": "urn:audience"
+					}
+				],
+				"type": "urn:audience:professional_area",
+				"id": "urn:audience:professional_area:sales_professional",
+				"disambiguation": "Sales Professional (Professional Area)",
+				"tags": [
+					{
+						"id": "urn:tag:collection:canonical",
+						"name": "Canonical",
+						"type": "urn:tag:collection"
+					}
+				]
+			},
+			{
+				"entity_id": "F81DBC4E-5DB2-43B5-9456-B1409FCF1441",
+				"name": "Technology Professional",
+				"parents": [
+					{
+						"type": "urn:audience"
+					}
+				],
+				"type": "urn:audience:professional_area",
+				"id": "urn:audience:professional_area:technology_professional",
+				"disambiguation": "Technology Professional (Professional Area)",
+				"tags": [
+					{
+						"id": "urn:tag:collection:canonical",
+						"name": "Canonical",
+						"type": "urn:tag:collection"
+					}
+				]
+			},
+			{
+				"entity_id": "F66B9D4E-1503-4BA1-8ABB-745652CA2A12",
+				"name": "Boutique Hotels",
+				"parents": [
+					{
+						"type": "urn:audience"
+					}
+				],
+				"type": "urn:audience:spending_habits",
+				"id": "urn:audience:spending_habits:boutique_hotels",
+				"disambiguation": "Boutique Hotels (Spending Habits)",
+				"tags": [
+					{
+						"id": "urn:tag:collection:canonical",
+						"name": "Canonical",
+						"type": "urn:tag:collection"
+					}
+				]
+			},
+			{
+				"entity_id": "B374F423-E1E6-4783-AA1E-48A6B2B5635F",
+				"name": "Discount Shoppers",
+				"parents": [
+					{
+						"type": "urn:audience"
+					}
+				],
+				"type": "urn:audience:spending_habits",
+				"id": "urn:audience:spending_habits:discount_shoppers",
+				"disambiguation": "Discount Shoppers (Spending Habits)",
+				"tags": [
+					{
+						"id": "urn:tag:collection:canonical",
+						"name": "Canonical",
+						"type": "urn:tag:collection"
+					}
+				]
+			},
+			{
+				"entity_id": "ED8798A4-1EB1-4E53-80EA-4FD08BD3C148",
+				"name": "Gourmand Fine Dining",
+				"parents": [
+					{
+						"type": "urn:audience"
+					}
+				],
+				"type": "urn:audience:spending_habits",
+				"id": "urn:audience:spending_habits:gourmand_fine_dining",
+				"disambiguation": "Gourmand Fine Dining (Spending Habits)",
+				"tags": [
+					{
+						"id": "urn:tag:collection:canonical",
+						"name": "Canonical",
+						"type": "urn:tag:collection"
+					}
+				]
+			},
+			{
+				"entity_id": "F9619A04-A80C-4FB8-BBD4-7E653E31075F",
+				"name": "Technology Enthusiast",
+				"parents": [
+					{
+						"type": "urn:audience"
+					}
+				],
+				"type": "urn:audience:spending_habits",
+				"id": "urn:audience:spending_habits:technology_enthusiast",
+				"disambiguation": "Technology Enthusiast (Spending Habits)",
+				"tags": [
+					{
+						"id": "urn:tag:collection:canonical",
+						"name": "Canonical",
+						"type": "urn:tag:collection"
+					}
+				]
+			},
+			{
+				"entity_id": "7553AEF3-0213-4419-8C17-E4CDF28B2BB0",
+				"name": "Vintage Apparel",
+				"parents": [
+					{
+						"type": "urn:audience"
+					}
+				],
+				"type": "urn:audience:spending_habits",
+				"id": "urn:audience:spending_habits:vintage_apparel",
+				"disambiguation": "Vintage Apparel (Spending Habits)",
+				"tags": [
+					{
+						"id": "urn:tag:collection:canonical",
+						"name": "Canonical",
+						"type": "urn:tag:collection"
+					}
+				]
+			},
+			{
+				"entity_id": "B966ABDA-92B7-4C91-B598-C65CE6013C9B",
+				"name": "Watch Collecting",
+				"parents": [
+					{
+						"type": "urn:audience"
+					}
+				],
+				"type": "urn:audience:spending_habits",
+				"id": "urn:audience:spending_habits:watch_collecting",
+				"disambiguation": "Watch Collecting (Spending Habits)",
+				"tags": [
+					{
+						"id": "urn:tag:collection:canonical",
+						"name": "Canonical",
+						"type": "urn:tag:collection"
+					}
+				]
+			}
+		]
+	},
+	"SimpleAudienceData": [
+		{
+			"Name": "AAPI",
+			"CategoryName": "urn:audience:communities",
+			"AudienceEntityId": "DA61B8AD-6D79-4B0C-BEA0-EC966C93902E",
+			"DisambiguatedName": "Aapi (Communities)",
+			"AudienceTagId": "urn:audience:communities:aapi"
+		},
+		{
+			"Name": "Black",
+			"CategoryName": "urn:audience:communities",
+			"AudienceEntityId": "A8A43978-5291-46DC-8952-D58EDC7FF82B",
+			"DisambiguatedName": "Black (Communities)",
+			"AudienceTagId": "urn:audience:communities:black"
+		},
+		{
+			"Name": "Latino",
+			"CategoryName": "urn:audience:communities",
+			"AudienceEntityId": "E47478B9-8ED2-449B-B854-6344059742E3",
+			"DisambiguatedName": "Latino (Communities)",
+			"AudienceTagId": "urn:audience:communities:latino"
+		},
+		{
+			"Name": "LGBTQ",
+			"CategoryName": "urn:audience:communities",
+			"AudienceEntityId": "6BED625C-E312-47E9-A4B5-F978C7778269",
+			"DisambiguatedName": "Lgbtq (Communities)",
+			"AudienceTagId": "urn:audience:communities:lgbtq"
+		},
+		{
+			"Name": "Animal Issues",
+			"CategoryName": "urn:audience:global_issues",
+			"AudienceEntityId": "784D31A2-99A5-4E8C-8B89-047B01760CC2",
+			"DisambiguatedName": "Animal Issues (Global Issues)",
+			"AudienceTagId": "urn:audience:global_issues:animal_issues"
+		},
+		{
+			"Name": "Climate Activism",
+			"CategoryName": "urn:audience:global_issues",
+			"AudienceEntityId": "FB61D98E-C4BA-4959-A571-0861FD2AC850",
+			"DisambiguatedName": "Climate Activism (Global Issues)",
+			"AudienceTagId": "urn:audience:global_issues:climate_activism"
+		},
+		{
+			"Name": "Education Issues",
+			"CategoryName": "urn:audience:global_issues",
+			"AudienceEntityId": "616F4741-3864-41FD-BFCF-49B76AA025C8",
+			"DisambiguatedName": "Education Issues (Global Issues)",
+			"AudienceTagId": "urn:audience:global_issues:education_issues"
+		},
+		{
+			"Name": "Fair Wages",
+			"CategoryName": "urn:audience:global_issues",
+			"AudienceEntityId": "2EE4FA44-9A90-470F-839F-2CF54A273E59",
+			"DisambiguatedName": "Fair Wages (Global Issues)",
+			"AudienceTagId": "urn:audience:global_issues:fair_wages"
+		},
+		{
+			"Name": "Foreign Affairs",
+			"CategoryName": "urn:audience:global_issues",
+			"AudienceEntityId": "1EFF8636-B50C-4B57-86DD-6CB2D4F8F397",
+			"DisambiguatedName": "Foreign Affairs (Global Issues)",
+			"AudienceTagId": "urn:audience:global_issues:foreign_affairs"
+		},
+		{
+			"Name": "Gender Equality",
+			"CategoryName": "urn:audience:global_issues",
+			"AudienceEntityId": "B7970242-69CC-40FB-AFB6-0A5781E613DB",
+			"DisambiguatedName": "Gender Equality (Global Issues)",
+			"AudienceTagId": "urn:audience:global_issues:gender_equality"
+		},
+		{
+			"Name": "Mental Health",
+			"CategoryName": "urn:audience:global_issues",
+			"AudienceEntityId": "B48DAA8A-7398-4C76-9DB0-80E12669ABFD",
+			"DisambiguatedName": "Mental Health (Global Issues)",
+			"AudienceTagId": "urn:audience:global_issues:mental_health"
+		},
+		{
+			"Name": "Ocean Health",
+			"CategoryName": "urn:audience:global_issues",
+			"AudienceEntityId": "BAC54F13-A15E-49E8-A645-BCACD5683B14",
+			"DisambiguatedName": "Ocean Health (Global Issues)",
+			"AudienceTagId": "urn:audience:global_issues:ocean_health"
+		},
+		{
+			"Name": "Racial Justice",
+			"CategoryName": "urn:audience:global_issues",
+			"AudienceEntityId": "9D25E87E-030C-4EE7-B049-F24967AAD596",
+			"DisambiguatedName": "Racial Justice (Global Issues)",
+			"AudienceTagId": "urn:audience:global_issues:racial_justice"
+		},
+		{
+			"Name": "Sustainability",
+			"CategoryName": "urn:audience:global_issues",
+			"AudienceEntityId": "109574B3-A21D-4935-AC94-1DC3C7B56BEC",
+			"DisambiguatedName": "Sustainability (Global Issues)",
+			"AudienceTagId": "urn:audience:global_issues:sustainability"
+		},
+		{
+			"Name": "Wealth Inequality",
+			"CategoryName": "urn:audience:global_issues",
+			"AudienceEntityId": "C956BAAF-4449-4B0B-BCA1-D3B06644B165",
+			"DisambiguatedName": "Wealth Inequality (Global Issues)",
+			"AudienceTagId": "urn:audience:global_issues:wealth_inequality"
+		},
+		{
+			"Name": "Adrenaline Rushers",
+			"CategoryName": "urn:audience:hobbies_and_interests",
+			"AudienceEntityId": "1D7AF41D-8ECF-414C-B6C9-7CA9FA276DBD",
+			"DisambiguatedName": "Adrenaline Rushers (Hobbies And Interests)",
+			"AudienceTagId": "urn:audience:hobbies_and_interests:adrenaline_rushers"
+		},
+		{
+			"Name": "Adventuring",
+			"CategoryName": "urn:audience:hobbies_and_interests",
+			"AudienceEntityId": "DBDCB7B7-B015-425F-9C3E-619C9C4245EB",
+			"DisambiguatedName": "Adventuring (Hobbies And Interests)",
+			"AudienceTagId": "urn:audience:hobbies_and_interests:adventuring"
+		},
+		{
+			"Name": "American Football",
+			"CategoryName": "urn:audience:hobbies_and_interests",
+			"AudienceEntityId": "31C1423A-6A88-4028-ADEC-C3042BE765B9",
+			"DisambiguatedName": "American Football (Hobbies And Interests)",
+			"AudienceTagId": "urn:audience:hobbies_and_interests:american_football"
+		},
+		{
+			"Name": "Architecture",
+			"CategoryName": "urn:audience:hobbies_and_interests",
+			"AudienceEntityId": "67A1B149-175D-4005-85E1-C0A395A1FA4F",
+			"DisambiguatedName": "Architecture (Hobbies And Interests)",
+			"AudienceTagId": "urn:audience:hobbies_and_interests:architecture"
+		},
+		{
+			"Name": "Arts Crafts",
+			"CategoryName": "urn:audience:hobbies_and_interests",
+			"AudienceEntityId": "604A723B-3E2C-4795-89AA-DF5BA0C3B3C5",
+			"DisambiguatedName": "Arts Crafts (Hobbies And Interests)",
+			"AudienceTagId": "urn:audience:hobbies_and_interests:arts_crafts"
+		},
+		{
+			"Name": "Automotive",
+			"CategoryName": "urn:audience:hobbies_and_interests",
+			"AudienceEntityId": "F8369494-BD42-4DA1-A056-2315241E2401",
+			"DisambiguatedName": "Automotive (Hobbies And Interests)",
+			"AudienceTagId": "urn:audience:hobbies_and_interests:automotive"
+		},
+		{
+			"Name": "Baseball",
+			"CategoryName": "urn:audience:hobbies_and_interests",
+			"AudienceEntityId": "E8694D82-FE70-4EA5-A87B-53B90607EA75",
+			"DisambiguatedName": "Baseball (Hobbies And Interests)",
+			"AudienceTagId": "urn:audience:hobbies_and_interests:baseball"
+		},
+		{
+			"Name": "Basketball",
+			"CategoryName": "urn:audience:hobbies_and_interests",
+			"AudienceEntityId": "53E66B25-2B9E-4821-8257-65F66B62DD80",
+			"DisambiguatedName": "Basketball (Hobbies And Interests)",
+			"AudienceTagId": "urn:audience:hobbies_and_interests:basketball"
+		},
+		{
+			"Name": "Casual Escapists",
+			"CategoryName": "urn:audience:hobbies_and_interests",
+			"AudienceEntityId": "E7EC95B5-91D3-4B36-90CD-868680D13C93",
+			"DisambiguatedName": "Casual Escapists (Hobbies And Interests)",
+			"AudienceTagId": "urn:audience:hobbies_and_interests:casual_escapists"
+		},
+		{
+			"Name": "Dance",
+			"CategoryName": "urn:audience:hobbies_and_interests",
+			"AudienceEntityId": "1B095F7B-1A06-4F65-AE32-BB9E9EAC26D6",
+			"DisambiguatedName": "Dance (Hobbies And Interests)",
+			"AudienceTagId": "urn:audience:hobbies_and_interests:dance"
+		},
+		{
+			"Name": "Fishing",
+			"CategoryName": "urn:audience:hobbies_and_interests",
+			"AudienceEntityId": "2D160ADC-1673-4D12-9530-D6E78DE07087",
+			"DisambiguatedName": "Fishing (Hobbies And Interests)",
+			"AudienceTagId": "urn:audience:hobbies_and_interests:fishing"
+		},
+		{
+			"Name": "Golf",
+			"CategoryName": "urn:audience:hobbies_and_interests",
+			"AudienceEntityId": "566BE3C4-C712-4B76-916D-2EFC0D26BD81",
+			"DisambiguatedName": "Golf (Hobbies And Interests)",
+			"AudienceTagId": "urn:audience:hobbies_and_interests:golf"
+		},
+		{
+			"Name": "Health And Beauty",
+			"CategoryName": "urn:audience:hobbies_and_interests",
+			"AudienceEntityId": "8F0407D3-64F3-47BF-A6B1-BA4C30465F71",
+			"DisambiguatedName": "Health And Beauty (Hobbies And Interests)",
+			"AudienceTagId": "urn:audience:hobbies_and_interests:health_and_beauty"
+		},
+		{
+			"Name": "High Fashion",
+			"CategoryName": "urn:audience:hobbies_and_interests",
+			"AudienceEntityId": "FA88A1F6-8CEF-4F6A-8FD1-FE7A739052D7",
+			"DisambiguatedName": "High Fashion (Hobbies And Interests)",
+			"AudienceTagId": "urn:audience:hobbies_and_interests:high_fashion"
+		},
+		{
+			"Name": "Hiking",
+			"CategoryName": "urn:audience:hobbies_and_interests",
+			"AudienceEntityId": "73B662F7-7DB7-4D0C-A36B-2E8E75ACDF49",
+			"DisambiguatedName": "Hiking (Hobbies And Interests)",
+			"AudienceTagId": "urn:audience:hobbies_and_interests:hiking"
+		},
+		{
+			"Name": "Hockey",
+			"CategoryName": "urn:audience:hobbies_and_interests",
+			"AudienceEntityId": "1CA32D17-6D03-453C-8B91-12B4604076E1",
+			"DisambiguatedName": "Hockey (Hobbies And Interests)",
+			"AudienceTagId": "urn:audience:hobbies_and_interests:hockey"
+		},
+		{
+			"Name": "Home Decor",
+			"CategoryName": "urn:audience:hobbies_and_interests",
+			"AudienceEntityId": "7F86E72A-AF3C-4AA9-B125-7155E9261466",
+			"DisambiguatedName": "Home Decor (Hobbies And Interests)",
+			"AudienceTagId": "urn:audience:hobbies_and_interests:home_decor"
+		},
+		{
+			"Name": "Home Organization",
+			"CategoryName": "urn:audience:hobbies_and_interests",
+			"AudienceEntityId": "9130A837-ED3C-4BA9-9825-5D0D57D119CD",
+			"DisambiguatedName": "Home Organization (Hobbies And Interests)",
+			"AudienceTagId": "urn:audience:hobbies_and_interests:home_organization"
+		},
+		{
+			"Name": "Jewellery",
+			"CategoryName": "urn:audience:hobbies_and_interests",
+			"AudienceEntityId": "ED9B04EF-C693-44C8-82DE-C2B138710601",
+			"DisambiguatedName": "Jewellery (Hobbies And Interests)",
+			"AudienceTagId": "urn:audience:hobbies_and_interests:jewellery"
+		},
+		{
+			"Name": "Martial Arts",
+			"CategoryName": "urn:audience:hobbies_and_interests",
+			"AudienceEntityId": "663BAA0C-44CF-4794-8827-E36FBEF3E5F5",
+			"DisambiguatedName": "Martial Arts (Hobbies And Interests)",
+			"AudienceTagId": "urn:audience:hobbies_and_interests:martial_arts"
+		},
+		{
+			"Name": "Meditation",
+			"CategoryName": "urn:audience:hobbies_and_interests",
+			"AudienceEntityId": "1C3735D4-FE2D-4CDE-811A-9B2BFE767DAD",
+			"DisambiguatedName": "Meditation (Hobbies And Interests)",
+			"AudienceTagId": "urn:audience:hobbies_and_interests:meditation"
+		},
+		{
+			"Name": "Motorcycles",
+			"CategoryName": "urn:audience:hobbies_and_interests",
+			"AudienceEntityId": "107AE5DB-906C-430C-969E-3886C39BDD8C",
+			"DisambiguatedName": "Motorcycles (Hobbies And Interests)",
+			"AudienceTagId": "urn:audience:hobbies_and_interests:motorcycles"
+		},
+		{
+			"Name": "Musician",
+			"CategoryName": "urn:audience:hobbies_and_interests",
+			"AudienceEntityId": "15D9D8DF-28AF-425A-AF2E-835DFB53E778",
+			"DisambiguatedName": "Musician (Hobbies And Interests)",
+			"AudienceTagId": "urn:audience:hobbies_and_interests:musician"
+		},
+		{
+			"Name": "Outdoors",
+			"CategoryName": "urn:audience:hobbies_and_interests",
+			"AudienceEntityId": "AAAE9FAA-FE3D-4732-9E82-BD4CED485D60",
+			"DisambiguatedName": "Outdoors (Hobbies And Interests)",
+			"AudienceTagId": "urn:audience:hobbies_and_interests:outdoors"
+		},
+		{
+			"Name": "Perfume",
+			"CategoryName": "urn:audience:hobbies_and_interests",
+			"AudienceEntityId": "7010BFFD-33F5-460C-8660-3E49C570FF47",
+			"DisambiguatedName": "Perfume (Hobbies And Interests)",
+			"AudienceTagId": "urn:audience:hobbies_and_interests:perfume"
+		},
+		{
+			"Name": "Photography",
+			"CategoryName": "urn:audience:hobbies_and_interests",
+			"AudienceEntityId": "7DCA3589-E6FF-4582-BE24-5A2D09D71336",
+			"DisambiguatedName": "Photography (Hobbies And Interests)",
+			"AudienceTagId": "urn:audience:hobbies_and_interests:photography"
+		},
+		{
+			"Name": "Racing",
+			"CategoryName": "urn:audience:hobbies_and_interests",
+			"AudienceEntityId": "9D36D8C6-B39C-48AE-87A6-F63E59328577",
+			"DisambiguatedName": "Racing (Hobbies And Interests)",
+			"AudienceTagId": "urn:audience:hobbies_and_interests:racing"
+		},
+		{
+			"Name": "Running",
+			"CategoryName": "urn:audience:hobbies_and_interests",
+			"AudienceEntityId": "EEFA88EB-0D5D-4290-B0AB-F7840DE970DB",
+			"DisambiguatedName": "Running (Hobbies And Interests)",
+			"AudienceTagId": "urn:audience:hobbies_and_interests:running"
+		},
+		{
+			"Name": "Secret Unravelers",
+			"CategoryName": "urn:audience:hobbies_and_interests",
+			"AudienceEntityId": "471BEA15-6E9F-4347-B3DF-46E4A6045B8E",
+			"DisambiguatedName": "Secret Unravelers (Hobbies And Interests)",
+			"AudienceTagId": "urn:audience:hobbies_and_interests:secret_unravelers"
+		},
+		{
+			"Name": "Sneakerheads",
+			"CategoryName": "urn:audience:hobbies_and_interests",
+			"AudienceEntityId": "D4B24E84-C439-4D7C-B2DC-92F7C704DE76",
+			"DisambiguatedName": "Sneakerheads (Hobbies And Interests)",
+			"AudienceTagId": "urn:audience:hobbies_and_interests:sneakerheads"
+		},
+		{
+			"Name": "Soccer",
+			"CategoryName": "urn:audience:hobbies_and_interests",
+			"AudienceEntityId": "8C44B7FB-384C-445D-8FB0-01AD0BB54248",
+			"DisambiguatedName": "Soccer (Hobbies And Interests)",
+			"AudienceTagId": "urn:audience:hobbies_and_interests:soccer"
+		},
+		{
+			"Name": "Spy Enthusiast",
+			"CategoryName": "urn:audience:hobbies_and_interests",
+			"AudienceEntityId": "174B1FE8-CDCE-4896-ADF5-E59981B9AE95",
+			"DisambiguatedName": "Spy Enthusiast (Hobbies And Interests)",
+			"AudienceTagId": "urn:audience:hobbies_and_interests:spy_enthusiast"
+		},
+		{
+			"Name": "Street Fashion",
+			"CategoryName": "urn:audience:hobbies_and_interests",
+			"AudienceEntityId": "1F3BBF4D-D14C-4C1D-B9BD-8F8CDCEA55FA",
+			"DisambiguatedName": "Street Fashion (Hobbies And Interests)",
+			"AudienceTagId": "urn:audience:hobbies_and_interests:street_fashion"
+		},
+		{
+			"Name": "Swimming",
+			"CategoryName": "urn:audience:hobbies_and_interests",
+			"AudienceEntityId": "7A1AEC8A-06B4-4834-B1E1-FD45648D9BE3",
+			"DisambiguatedName": "Swimming (Hobbies And Interests)",
+			"AudienceTagId": "urn:audience:hobbies_and_interests:swimming"
+		},
+		{
+			"Name": "Tattoos",
+			"CategoryName": "urn:audience:hobbies_and_interests",
+			"AudienceEntityId": "965CD575-A0AD-4128-88B6-DE0C599D644F",
+			"DisambiguatedName": "Tattoos (Hobbies And Interests)",
+			"AudienceTagId": "urn:audience:hobbies_and_interests:tattoos"
+		},
+		{
+			"Name": "Tennis",
+			"CategoryName": "urn:audience:hobbies_and_interests",
+			"AudienceEntityId": "689CB6FD-E1A9-4B06-9932-3093B8F61A97",
+			"DisambiguatedName": "Tennis (Hobbies And Interests)",
+			"AudienceTagId": "urn:audience:hobbies_and_interests:tennis"
+		},
+		{
+			"Name": "Travel",
+			"CategoryName": "urn:audience:hobbies_and_interests",
+			"AudienceEntityId": "7CB916B9-1D27-4D76-8D97-2CC5950385CA",
+			"DisambiguatedName": "Travel (Hobbies And Interests)",
+			"AudienceTagId": "urn:audience:hobbies_and_interests:travel"
+		},
+		{
+			"Name": "Video Gamer",
+			"CategoryName": "urn:audience:hobbies_and_interests",
+			"AudienceEntityId": "803132BB-07E8-4D55-A37D-8B9EFB3E095F",
+			"DisambiguatedName": "Video Gamer (Hobbies And Interests)",
+			"AudienceTagId": "urn:audience:hobbies_and_interests:video_gamer"
+		},
+		{
+			"Name": "Watches",
+			"CategoryName": "urn:audience:hobbies_and_interests",
+			"AudienceEntityId": "40A2CD3E-0A56-4341-9996-9EF819D39398",
+			"DisambiguatedName": "Watches (Hobbies And Interests)",
+			"AudienceTagId": "urn:audience:hobbies_and_interests:watches"
+		},
+		{
+			"Name": "Wine Enthusiast",
+			"CategoryName": "urn:audience:hobbies_and_interests",
+			"AudienceEntityId": "14F62034-5661-4B52-822B-D2D88A3D1B02",
+			"DisambiguatedName": "Wine Enthusiast (Hobbies And Interests)",
+			"AudienceTagId": "urn:audience:hobbies_and_interests:wine_enthusiast"
+		},
+		{
+			"Name": "Wrestling",
+			"CategoryName": "urn:audience:hobbies_and_interests",
+			"AudienceEntityId": "FE2A1718-8970-46D1-947F-D23B199F906D",
+			"DisambiguatedName": "Wrestling (Hobbies And Interests)",
+			"AudienceTagId": "urn:audience:hobbies_and_interests:wrestling"
+		},
+		{
+			"Name": "Yoga",
+			"CategoryName": "urn:audience:hobbies_and_interests",
+			"AudienceEntityId": "F488B2E4-21FE-4AFA-8B2E-0DA5A0F4E756",
+			"DisambiguatedName": "Yoga (Hobbies And Interests)",
+			"AudienceTagId": "urn:audience:hobbies_and_interests:yoga"
+		},
+		{
+			"Name": "Angel Start Up Investing",
+			"CategoryName": "urn:audience:investing_interests",
+			"AudienceEntityId": "2C606C12-C64F-46B1-BAE6-4FB0C278E612",
+			"DisambiguatedName": "Angel Start Up Investing (Investing Interests)",
+			"AudienceTagId": "urn:audience:investing_interests:angel_start_up_investing"
+		},
+		{
+			"Name": "Art Collectibles",
+			"CategoryName": "urn:audience:investing_interests",
+			"AudienceEntityId": "42D6F3D0-AD4A-4AC8-B3EE-229775638336",
+			"DisambiguatedName": "Art Collectibles (Investing Interests)",
+			"AudienceTagId": "urn:audience:investing_interests:art_collectibles"
+		},
+		{
+			"Name": "Cryptocurrency Enthusiasts",
+			"CategoryName": "urn:audience:investing_interests",
+			"AudienceEntityId": "C11DC8FF-5EDC-4B64-9504-1CD64C1B10FA",
+			"DisambiguatedName": "Cryptocurrency Enthusiasts (Investing Interests)",
+			"AudienceTagId": "urn:audience:investing_interests:cryptocurrency_enthusiasts"
+		},
+		{
+			"Name": "NFT Collectors",
+			"CategoryName": "urn:audience:investing_interests",
+			"AudienceEntityId": "35DD51F5-4C89-436D-9A36-1C6BDD1D1508",
+			"DisambiguatedName": "Nft Collectors (Investing Interests)",
+			"AudienceTagId": "urn:audience:investing_interests:nft_collectors"
+		},
+		{
+			"Name": "Real Estate",
+			"CategoryName": "urn:audience:investing_interests",
+			"AudienceEntityId": "2248A93C-17C0-4BCD-A671-19DB6BDB98D3",
+			"DisambiguatedName": "Real Estate (Investing Interests)",
+			"AudienceTagId": "urn:audience:investing_interests:real_estate"
+		},
+		{
+			"Name": "Stocks Bonds",
+			"CategoryName": "urn:audience:investing_interests",
+			"AudienceEntityId": "1B2E2B7F-2FF5-495F-9389-FD4D35A03144",
+			"DisambiguatedName": "Stocks Bonds (Investing Interests)",
+			"AudienceTagId": "urn:audience:investing_interests:stocks_bonds"
+		},
+		{
+			"Name": "Arts Culture",
+			"CategoryName": "urn:audience:leisure",
+			"AudienceEntityId": "AAF408EF-5947-4035-BD34-6678F4A94994",
+			"DisambiguatedName": "Arts Culture (Leisure)",
+			"AudienceTagId": "urn:audience:leisure:arts_culture"
+		},
+		{
+			"Name": "Avid Reader",
+			"CategoryName": "urn:audience:leisure",
+			"AudienceEntityId": "2EFF1AB9-814F-48D2-B2DE-D418ED8385AE",
+			"DisambiguatedName": "Avid Reader (Leisure)",
+			"AudienceTagId": "urn:audience:leisure:avid_reader"
+		},
+		{
+			"Name": "Cinephile",
+			"CategoryName": "urn:audience:leisure",
+			"AudienceEntityId": "AB40A444-E528-43FE-BE78-E014301CFD80",
+			"DisambiguatedName": "Cinephile (Leisure)",
+			"AudienceTagId": "urn:audience:leisure:cinephile"
+		},
+		{
+			"Name": "Coffee",
+			"CategoryName": "urn:audience:leisure",
+			"AudienceEntityId": "AFA24856-F432-40E3-AADF-C939A033F77E",
+			"DisambiguatedName": "Coffee (Leisure)",
+			"AudienceTagId": "urn:audience:leisure:coffee"
+		},
+		{
+			"Name": "Cooking",
+			"CategoryName": "urn:audience:leisure",
+			"AudienceEntityId": "D1F0EE4A-FDB3-48DC-919C-5A94F3D4EC85",
+			"DisambiguatedName": "Cooking (Leisure)",
+			"AudienceTagId": "urn:audience:leisure:cooking"
+		},
+		{
+			"Name": "Exercising",
+			"CategoryName": "urn:audience:leisure",
+			"AudienceEntityId": "E1C2F640-4C29-4F79-AD75-82CDE3DB4622",
+			"DisambiguatedName": "Exercising (Leisure)",
+			"AudienceTagId": "urn:audience:leisure:exercising"
+		},
+		{
+			"Name": "Foodie",
+			"CategoryName": "urn:audience:leisure",
+			"AudienceEntityId": "F86C9FE1-16D1-4CFA-8E33-77AD4FEDBB60",
+			"DisambiguatedName": "Foodie (Leisure)",
+			"AudienceTagId": "urn:audience:leisure:foodie"
+		},
+		{
+			"Name": "Museums",
+			"CategoryName": "urn:audience:leisure",
+			"AudienceEntityId": "8371AF94-2F4C-4139-BC87-E3FBEA695D88",
+			"DisambiguatedName": "Museums (Leisure)",
+			"AudienceTagId": "urn:audience:leisure:museums"
+		},
+		{
+			"Name": "Music Festivals",
+			"CategoryName": "urn:audience:leisure",
+			"AudienceEntityId": "61D4EAAB-8591-4CCC-BEFC-5F0D18C4F3BD",
+			"DisambiguatedName": "Music Festivals (Leisure)",
+			"AudienceTagId": "urn:audience:leisure:music_festivals"
+		},
+		{
+			"Name": "News Junkie",
+			"CategoryName": "urn:audience:leisure",
+			"AudienceEntityId": "3A9990DA-AA86-4934-AC8D-4088E91700AA",
+			"DisambiguatedName": "News Junkie (Leisure)",
+			"AudienceTagId": "urn:audience:leisure:news_junkie"
+		},
+		{
+			"Name": "Political Junkie",
+			"CategoryName": "urn:audience:leisure",
+			"AudienceEntityId": "539308D1-B0B5-4C9D-8B67-E7B565B59B09",
+			"DisambiguatedName": "Political Junkie (Leisure)",
+			"AudienceTagId": "urn:audience:leisure:political_junkie"
+		},
+		{
+			"Name": "Engaged",
+			"CategoryName": "urn:audience:life_stage",
+			"AudienceEntityId": "DBF3D836-74E1-4A50-BAF7-6F3426ADA64A",
+			"DisambiguatedName": "Engaged (Life Stage)",
+			"AudienceTagId": "urn:audience:life_stage:engaged"
+		},
+		{
+			"Name": "Parents With Young Children",
+			"CategoryName": "urn:audience:life_stage",
+			"AudienceEntityId": "22D0A7AF-7833-49F3-8E36-42E8D91EEC8B",
+			"DisambiguatedName": "Parents With Young Children (Life Stage)",
+			"AudienceTagId": "urn:audience:life_stage:parents_with_young_children"
+		},
+		{
+			"Name": "Retirement",
+			"CategoryName": "urn:audience:life_stage",
+			"AudienceEntityId": "B88B7B93-BD33-4910-B44E-24B06C6C8164",
+			"DisambiguatedName": "Retirement (Life Stage)",
+			"AudienceTagId": "urn:audience:life_stage:retirement"
+		},
+		{
+			"Name": "Single",
+			"CategoryName": "urn:audience:life_stage",
+			"AudienceEntityId": "61419C52-AA82-48FB-A68E-F873A417E040",
+			"DisambiguatedName": "Single (Life Stage)",
+			"AudienceTagId": "urn:audience:life_stage:single"
+		},
+		{
+			"Name": "Astrology",
+			"CategoryName": "urn:audience:lifestyle_preferences_beliefs",
+			"AudienceEntityId": "5F4CF648-08CD-4031-A17E-491E90A4DD4C",
+			"DisambiguatedName": "Astrology (Lifestyle Preferences Beliefs)",
+			"AudienceTagId": "urn:audience:lifestyle_preferences_beliefs:astrology"
+		},
+		{
+			"Name": "Christianity",
+			"CategoryName": "urn:audience:lifestyle_preferences_beliefs",
+			"AudienceEntityId": "2A7B1369-BF0D-46E2-AAEE-780817162FF4",
+			"DisambiguatedName": "Christianity (Lifestyle Preferences Beliefs)",
+			"AudienceTagId": "urn:audience:lifestyle_preferences_beliefs:christianity"
+		},
+		{
+			"Name": "Healthy Eating",
+			"CategoryName": "urn:audience:lifestyle_preferences_beliefs",
+			"AudienceEntityId": "F854077D-E466-4181-A7E4-4CDA52981EA2",
+			"DisambiguatedName": "Healthy Eating (Lifestyle Preferences Beliefs)",
+			"AudienceTagId": "urn:audience:lifestyle_preferences_beliefs:healthy_eating"
+		},
+		{
+			"Name": "Islam",
+			"CategoryName": "urn:audience:lifestyle_preferences_beliefs",
+			"AudienceEntityId": "87A86EE9-5CA0-4C1F-8237-E3EE73C72281",
+			"DisambiguatedName": "Islam (Lifestyle Preferences Beliefs)",
+			"AudienceTagId": "urn:audience:lifestyle_preferences_beliefs:islam"
+		},
+		{
+			"Name": "Judaism",
+			"CategoryName": "urn:audience:lifestyle_preferences_beliefs",
+			"AudienceEntityId": "399883E7-F468-4BD6-9209-91DAD7BF3537",
+			"DisambiguatedName": "Judaism (Lifestyle Preferences Beliefs)",
+			"AudienceTagId": "urn:audience:lifestyle_preferences_beliefs:judaism"
+		},
+		{
+			"Name": "Organic Ingredients",
+			"CategoryName": "urn:audience:lifestyle_preferences_beliefs",
+			"AudienceEntityId": "D3839B31-2A5F-4DA3-8C04-528D9611039E",
+			"DisambiguatedName": "Organic Ingredients (Lifestyle Preferences Beliefs)",
+			"AudienceTagId": "urn:audience:lifestyle_preferences_beliefs:organic_ingredients"
+		},
+		{
+			"Name": "Spirituality",
+			"CategoryName": "urn:audience:lifestyle_preferences_beliefs",
+			"AudienceEntityId": "439B29E4-F9B2-4FA7-8095-123F6833DE5F",
+			"DisambiguatedName": "Spirituality (Lifestyle Preferences Beliefs)",
+			"AudienceTagId": "urn:audience:lifestyle_preferences_beliefs:spirituality"
+		},
+		{
+			"Name": "Veganism",
+			"CategoryName": "urn:audience:lifestyle_preferences_beliefs",
+			"AudienceEntityId": "7819CC7E-FEAF-4FC6-B0D8-EFED92CD46AE",
+			"DisambiguatedName": "Veganism (Lifestyle Preferences Beliefs)",
+			"AudienceTagId": "urn:audience:lifestyle_preferences_beliefs:veganism"
+		},
+		{
+			"Name": "Politically Center",
+			"CategoryName": "urn:audience:political_preferences",
+			"AudienceEntityId": "A2F107FD-2A38-4100-AFFB-037A6A2DF338",
+			"DisambiguatedName": "Politically Center (Political Preferences)",
+			"AudienceTagId": "urn:audience:political_preferences:politically_center"
+		},
+		{
+			"Name": "Politically Conservative",
+			"CategoryName": "urn:audience:political_preferences",
+			"AudienceEntityId": "555258C9-2696-496A-B1C1-C46A6F7795C8",
+			"DisambiguatedName": "Politically Conservative (Political Preferences)",
+			"AudienceTagId": "urn:audience:political_preferences:politically_conservative"
+		},
+		{
+			"Name": "Politically Progressive",
+			"CategoryName": "urn:audience:political_preferences",
+			"AudienceEntityId": "B3A035FD-0D99-4980-98FD-A5B81D7E402A",
+			"DisambiguatedName": "Politically Progressive (Political Preferences)",
+			"AudienceTagId": "urn:audience:political_preferences:politically_progressive"
+		},
+		{
+			"Name": "Advertising Design",
+			"CategoryName": "urn:audience:professional_area",
+			"AudienceEntityId": "6CE667C5-82C8-44EC-8E23-01AF8F9949D1",
+			"DisambiguatedName": "Advertising Design (Professional Area)",
+			"AudienceTagId": "urn:audience:professional_area:advertising_design"
+		},
+		{
+			"Name": "Business Professional",
+			"CategoryName": "urn:audience:professional_area",
+			"AudienceEntityId": "A6230919-E0C8-4707-89E5-F7C5BCE86A70",
+			"DisambiguatedName": "Business Professional (Professional Area)",
+			"AudienceTagId": "urn:audience:professional_area:business_professional"
+		},
+		{
+			"Name": "Finance Professional",
+			"CategoryName": "urn:audience:professional_area",
+			"AudienceEntityId": "0E757BF5-3C77-41AF-AAB7-790AEB0505B7",
+			"DisambiguatedName": "Finance Professional (Professional Area)",
+			"AudienceTagId": "urn:audience:professional_area:finance_professional"
+		},
+		{
+			"Name": "Hospitality Professional",
+			"CategoryName": "urn:audience:professional_area",
+			"AudienceEntityId": "20561289-536A-41EE-A841-23A6ED3D583B",
+			"DisambiguatedName": "Hospitality Professional (Professional Area)",
+			"AudienceTagId": "urn:audience:professional_area:hospitality_professional"
+		},
+		{
+			"Name": "Marketing Professional",
+			"CategoryName": "urn:audience:professional_area",
+			"AudienceEntityId": "98C407BC-7949-4440-A933-451853D966E4",
+			"DisambiguatedName": "Marketing Professional (Professional Area)",
+			"AudienceTagId": "urn:audience:professional_area:marketing_professional"
+		},
+		{
+			"Name": "Medical Professional",
+			"CategoryName": "urn:audience:professional_area",
+			"AudienceEntityId": "7A247E73-7190-4340-8EAD-227EEFB22780",
+			"DisambiguatedName": "Medical Professional (Professional Area)",
+			"AudienceTagId": "urn:audience:professional_area:medical_professional"
+		},
+		{
+			"Name": "Retail Professional",
+			"CategoryName": "urn:audience:professional_area",
+			"AudienceEntityId": "7D3C0540-10B0-42BB-93BE-676F0C37242F",
+			"DisambiguatedName": "Retail Professional (Professional Area)",
+			"AudienceTagId": "urn:audience:professional_area:retail_professional"
+		},
+		{
+			"Name": "Sales Professional",
+			"CategoryName": "urn:audience:professional_area",
+			"AudienceEntityId": "EFCD3505-3119-4BBD-86D0-0B9F344C0C94",
+			"DisambiguatedName": "Sales Professional (Professional Area)",
+			"AudienceTagId": "urn:audience:professional_area:sales_professional"
+		},
+		{
+			"Name": "Technology Professional",
+			"CategoryName": "urn:audience:professional_area",
+			"AudienceEntityId": "F81DBC4E-5DB2-43B5-9456-B1409FCF1441",
+			"DisambiguatedName": "Technology Professional (Professional Area)",
+			"AudienceTagId": "urn:audience:professional_area:technology_professional"
+		},
+		{
+			"Name": "Boutique Hotels",
+			"CategoryName": "urn:audience:spending_habits",
+			"AudienceEntityId": "F66B9D4E-1503-4BA1-8ABB-745652CA2A12",
+			"DisambiguatedName": "Boutique Hotels (Spending Habits)",
+			"AudienceTagId": "urn:audience:spending_habits:boutique_hotels"
+		},
+		{
+			"Name": "Discount Shoppers",
+			"CategoryName": "urn:audience:spending_habits",
+			"AudienceEntityId": "B374F423-E1E6-4783-AA1E-48A6B2B5635F",
+			"DisambiguatedName": "Discount Shoppers (Spending Habits)",
+			"AudienceTagId": "urn:audience:spending_habits:discount_shoppers"
+		},
+		{
+			"Name": "Gourmand Fine Dining",
+			"CategoryName": "urn:audience:spending_habits",
+			"AudienceEntityId": "ED8798A4-1EB1-4E53-80EA-4FD08BD3C148",
+			"DisambiguatedName": "Gourmand Fine Dining (Spending Habits)",
+			"AudienceTagId": "urn:audience:spending_habits:gourmand_fine_dining"
+		},
+		{
+			"Name": "Technology Enthusiast",
+			"CategoryName": "urn:audience:spending_habits",
+			"AudienceEntityId": "F9619A04-A80C-4FB8-BBD4-7E653E31075F",
+			"DisambiguatedName": "Technology Enthusiast (Spending Habits)",
+			"AudienceTagId": "urn:audience:spending_habits:technology_enthusiast"
+		},
+		{
+			"Name": "Vintage Apparel",
+			"CategoryName": "urn:audience:spending_habits",
+			"AudienceEntityId": "7553AEF3-0213-4419-8C17-E4CDF28B2BB0",
+			"DisambiguatedName": "Vintage Apparel (Spending Habits)",
+			"AudienceTagId": "urn:audience:spending_habits:vintage_apparel"
+		},
+		{
+			"Name": "Watch Collecting",
+			"CategoryName": "urn:audience:spending_habits",
+			"AudienceEntityId": "B966ABDA-92B7-4C91-B598-C65CE6013C9B",
+			"DisambiguatedName": "Watch Collecting (Spending Habits)",
+			"AudienceTagId": "urn:audience:spending_habits:watch_collecting"
+		}
+	]
+}

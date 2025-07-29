@@ -1,0 +1,314 @@
+/* UserProfileForm specific tweaks, reusing InputForm styles */
+
+.form-container {
+    max-width: 54rem;
+    margin: 2rem auto;
+}
+
+.form-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.form-title {
+    font-size: 2.25rem;
+    font-weight: 700;
+    color: rgb(30, 41, 59);
+    margin-bottom: 1rem;
+}
+
+.form-subtitle {
+    font-size: 1.125rem;
+    color: rgb(71, 85, 105);
+    max-width: 32rem;
+    margin: 0 auto;
+}
+
+.form-sections {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.form-section {
+    background-color: white;
+    border-radius: 1rem;
+    padding: 2rem;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+    border: 1px solid rgb(226, 232, 240);
+}
+
+.section-header {
+    display: flex;
+    align-items: baseline;
+    gap: 1.25rem;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.section-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: rgb(30, 41, 59);
+    margin-bottom: 0;
+    margin-right: 1rem;
+    display: inline;
+}
+
+.section-icon {
+    height: 1.25rem;
+    width: 1.25rem;
+    color: rgb(147, 51, 234);
+}
+
+    .section-icon.teal {
+        color: rgb(20, 184, 166);
+    }
+
+    .section-icon.coral {
+        color: rgb(245, 101, 101);
+    }
+
+    .section-icon.blue {
+        color: rgb(59, 130, 246);
+    }
+
+.optional-text {
+    font-size: 1.125rem;
+    color: rgb(100, 116, 139);
+    font-weight: 500;
+    margin-left: 0.5rem;
+    display: inline;
+}
+
+.custom-input-section {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.input-label {
+    display: block;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: rgb(51, 65, 85);
+    margin-bottom: 0.5rem;
+}
+
+::deep .text-input,
+select,
+textarea {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border-radius: 0.5rem;
+    border: 1px solid rgb(203, 213, 225);
+    transition: all 0.2s ease;
+    font-size: 1rem;
+    background: white;
+    color: rgb(30, 41, 59);
+}
+
+    .text-input:focus,
+    select:focus,
+    textarea:focus {
+        outline: none;
+        box-shadow: 0 0 0 2px rgb(147, 51, 234);
+        border-color: transparent;
+    }
+
+.submit-section {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.submit-button {
+    background: linear-gradient(to right, rgb(147, 51, 234), rgb(20, 184, 166));
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 0.75rem;
+    font-weight: 600;
+    font-size: 1.125rem;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    transform: scale(1);
+    transition: all 0.2s ease;
+    border: none;
+    cursor: pointer;
+}
+
+    .submit-button:hover:not(:disabled) {
+        box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        transform: scale(1.05);
+    }
+
+    .submit-button:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+        transform: none;
+    }
+
+.submit-content {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+@media (max-width: 600px) {
+    .form-container {
+        padding: 0 0.5rem;
+    }
+
+    .form-section {
+        padding: 1rem;
+    }
+}
+
+/* --- Anchor Preferences Styles (localized for UserProfileForm) --- */
+.anchor-preferences {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.popular-anchors {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.anchor-button {
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    font-size: 0.875rem;
+    transition: background-color 0.2s ease;
+    border: none;
+    cursor: pointer;
+}
+
+    .anchor-button.available {
+        background-color: rgb(241, 245, 249);
+        color: rgb(51, 65, 85);
+    }
+
+        .anchor-button.available:hover {
+            background-color: rgb(221, 214, 254);
+        }
+
+    .anchor-button.selected {
+        background-color: rgb(237, 233, 254);
+        color: rgb(108, 43, 193);
+        cursor: not-allowed;
+    }
+
+.anchor-input-section {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+::deep .anchor-input {
+    flex: 1;
+    padding: 0.5rem;
+    border: 1px solid rgb(203, 213, 225);
+    border-radius: 0.5rem;
+    transition: all 0.2s ease;
+    width: 80%;
+}
+
+.anchor-input:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgb(147, 51, 234);
+    border-color: transparent;
+}
+
+.add-anchor-button {
+    padding: 0.5rem 1rem;
+    background-color: rgb(147, 51, 234);
+    color: white;
+    border-radius: 0.5rem;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+    .add-anchor-button:hover {
+        background-color: rgb(126, 34, 206);
+    }
+
+.add-icon {
+    height: 1rem;
+    width: 1rem;
+}
+
+.selected-anchors {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.selected-anchor {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    font-size: 0.875rem;
+    background-color: rgb(237, 233, 254);
+    color: rgb(108, 43, 193);
+}
+
+.remove-anchor-button {
+    margin-left: 0.25rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: inherit;
+}
+
+    .remove-anchor-button:hover {
+        color: rgb(79, 29, 149);
+    }
+
+.remove-icon {
+    height: 0.75rem;
+    width: 0.75rem;
+}
+
+.show-more-button {
+    display: block;
+    margin: 0.5rem auto 0 auto;
+    padding: 0.35rem 1.25rem;
+    border-radius: 9999px;
+    border: 1px solid rgb(196, 181, 253);
+    background: rgb(250, 245, 255);
+    color: rgb(108, 43, 193);
+    font-size: 0.95rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.2s, border-color 0.2s;
+}
+
+    .show-more-button:hover {
+        background: rgb(237, 233, 254);
+        border-color: rgb(147, 51, 234);
+    }
+
+.age-gender-row {
+    display: flex;
+    gap: 2rem;
+    align-items: flex-end;
+    margin-bottom: 1rem;
+}
+
+.input-group {
+    flex: 1 1 0;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+}
+
+@media (max-width: 700px) {
+    .age-gender-row {
+        flex-direction: column;
+        gap: 1rem;
+    }
+}

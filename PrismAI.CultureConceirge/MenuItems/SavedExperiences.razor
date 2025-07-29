@@ -1,0 +1,24 @@
+<div class="saved-experiences-list">
+    @* <h4>Saved Experiences</h4> *@
+    @if (SavedExperienceItems.Count == 0)
+    {
+        <div class="empty-saved">No saved experiences yet.</div>
+    }
+    else
+    {
+        <div class="dropdown-container">
+            <select class="saved-dropdown" @bind="_selectedKey">
+                <option value="" disabled selected>Select a saved experience...</option>
+                @foreach (var exp in SavedExperienceItems)
+                {
+                    <option value="@exp.Key">@exp.DisplayName.Replace(ExperienceStoragePrefix,"").Replace('_',' ')</option>
+                }
+            </select>
+            <button class="load-btn" @onclick="@(() => LoadSelectedExperience())" disabled="@(string.IsNullOrEmpty(_selectedKey))">Load Exp</button>
+            <button class="load-btn" @onclick="@(() => LoadSelectedExperience(true))" disabled="@(string.IsNullOrEmpty(_selectedKey))">Load Prefs</button>
+            <button class="delete-btn" @onclick="DeleteSelectedExperience" disabled="@(string.IsNullOrEmpty(_selectedKey))">🗑️</button>
+
+        </div>
+    }
+</div>
+

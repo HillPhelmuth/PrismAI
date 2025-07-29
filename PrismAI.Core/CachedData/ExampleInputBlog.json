@@ -1,0 +1,11 @@
+{
+  "ContentType": "Blog Article",
+  "Topic": "blog post on my personal career change in my mid-30s (from lawyer to software engineer).",
+  "TargetAudience": "The ideal reader is a mid-career professional from any demanding, non-technical field (like finance, consulting, or marketing) who feels stuck and is curious about pivoting to software engineering. They are seeking a relatable, first-hand account that demystifies the process of learning to code later in life and proves that a dramatic career shift is achievable.",
+  "CulturalReferences": [
+    "Tech",
+    "Law",
+    "Career"
+  ],
+  "AdditionalContext": "I like to include one or two trending movie or tv show references."
+}

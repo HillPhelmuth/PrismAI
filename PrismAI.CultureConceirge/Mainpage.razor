@@ -1,0 +1,85 @@
+﻿@page "/"
+
+<div class="main-layout" @onclick="HandleOuterClick">
+    <Header @ref="_header" OnStartOver="HandleStartOver" 
+            OnShowChatModal="HandleShowChat"
+            OnShowSavedExperiences="HandleShowSavedExperiences"
+            SavedExperienceItems="SavedExperiences" 
+            ExperienceSelected="LoadExperienceAsync"
+            ChatMessages="ChatMessages"
+            OnSendMessage="HandleSendMessage"
+            IsChatLoading="IsChatLoading" OnShowUserProfile="HandleProfileEdit"></Header>
+    <div class="main-container">
+        @if (CurrentView == "intro")
+        {
+            <Intro OnStart="HandleIntroStart" />
+        }
+        else if (CurrentView == "profile")
+        {
+            <UserProfileForm OnProfileSaved="HandleProfileSaved" ></UserProfileForm>
+        }
+        else if (CurrentView == "input")
+        {
+            <InputForm OnSubmit="HandlePreferencesSubmit" Preferences="UserPreferences" />
+        }
+        else if (CurrentView == "loading")
+        {
+            <LoadingState @ref="_loadingState" Preferences="@UserPreferences" ToolsObjects="_toolCalls" CurrentStep="_currentStep" />
+        }
+        else if (CurrentView == "results" && Experience != null)
+        {
+            <CascadingValue Name="Location" Value="_locationPoint">
+                <ExperienceDashboard @ref="_experienceDashboard" Experience="@Experience" OnStartOver="HandleStartOver"/>
+            </CascadingValue>
+        }
+    </div>
+</div>
+@if (_showSavedExperiencesModal)
+{
+    <div class="modal-backdrop" @onclick="@(() => _showSavedExperiencesModal = false)">
+        <div class="modal-content" @onclick:stopPropagation="true">
+            <div class="modal-header">
+                <h3>Saved Experiences</h3>
+                <button class="modal-close-btn" @onclick="@(() => _showSavedExperiencesModal = false)">×</button>
+            </div>
+            <div class="modal-body">
+                <SavedExperiences SavedExperienceItems="SavedExperiences" 
+                                  ExperienceSelected="LoadExperienceAsync" />
+            </div>
+        </div>
+    </div>
+}
+
+@* Modal for Chat Interface *@
+@if (_showChatModal)
+{
+    <div class="modal-backdrop">
+        <div class="modal-content modal-content-large" @onclick:stopPropagation="true">
+            <div class="modal-header">
+                <h3>Prism AI Experience Agent</h3>
+                <button class="modal-close-btn" @onclick="@(() => _showChatModal = false)">×</button>
+            </div>
+            <div class="modal-body modal-body-chat">
+                <ChatInterface @ref="_chatInterface" Messages="@ChatMessages" 
+                               OnSendMessage="HandleSendMessage" Section="@CurrentView"
+                               IsLoading="@IsChatLoading" />
+            </div>
+        </div>
+    </div>
+}
+@if (_showUserProfile)
+{
+    <div class="modal-backdrop">
+        <div class="modal-content modal-content-large" @onclick:stopPropagation="true">
+            <div class="modal-header">
+                @* <h3>Chat Interface</h3> *@
+                <button class="modal-close-btn" @onclick="@(() => _showUserProfile = false)">×</button>
+            </div>
+            
+            <div class="modal-body modal-body-chat">
+                <UserProfileForm OnProfileSaved="@(() => CurrentView = "input")"></UserProfileForm>
+            </div>
+        </div>
+    </div>
+}
+

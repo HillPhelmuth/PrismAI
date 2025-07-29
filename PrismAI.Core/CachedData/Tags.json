@@ -1,0 +1,1764 @@
+{
+  "duration": 64,
+  "success": true,
+  "results": {
+    "tag_types": [
+      {
+        "parents": [
+          {
+            "type": "artist"
+          }
+        ],
+        "type": "urn:tag:artist:qloo"
+      },
+      {
+        "parents": [
+          {
+            "type": "artist"
+          }
+        ],
+        "type": "urn:tag:audience:qloo"
+      },
+      {
+        "parents": [
+          {
+            "type": "artist"
+          }
+        ],
+        "type": "urn:tag:complexity:qloo"
+      },
+      {
+        "parents": [
+          {
+            "type": "artist"
+          }
+        ],
+        "type": "urn:tag:instrument:qloo"
+      },
+      {
+        "parents": [
+          {
+            "type": "artist"
+          }
+        ],
+        "type": "urn:tag:music:qloo"
+      },
+      {
+        "parents": [
+          {
+            "type": "artist"
+          }
+        ],
+        "type": "urn:tag:obscurity:qloo"
+      },
+      {
+        "parents": [
+          {
+            "type": "artist"
+          }
+        ],
+        "type": "urn:tag:style:qloo"
+      },
+      {
+        "parents": [
+          {
+            "type": "artist"
+          }
+        ],
+        "type": "urn:tag:theme:qloo"
+      },
+      {
+        "parents": [
+          {
+            "type": "book"
+          }
+        ],
+        "type": "urn:tag:backdrop:qloo"
+      },
+      {
+        "parents": [
+          {
+            "type": "book"
+          }
+        ],
+        "type": "urn:tag:book_format:qloo"
+      },
+      {
+        "parents": [
+          {
+            "type": "book"
+          }
+        ],
+        "type": "urn:tag:historical_context:qloo"
+      },
+      {
+        "parents": [
+          {
+            "type": "book"
+          }
+        ],
+        "type": "urn:tag:influence:qloo"
+      },
+      {
+        "parents": [
+          {
+            "type": "book"
+          }
+        ],
+        "type": "urn:tag:motif:qloo"
+      },
+      {
+        "parents": [
+          {
+            "type": "book"
+          }
+        ],
+        "type": "urn:tag:narrative:qloo"
+      },
+      {
+        "parents": [
+          {
+            "type": "book"
+          }
+        ],
+        "type": "urn:tag:social_commentary:qloo"
+      },
+      {
+        "parents": [
+          {
+            "type": "book"
+          }
+        ],
+        "type": "urn:tag:subgenre:qloo"
+      },
+      {
+        "parents": [
+          {
+            "type": "book"
+          }
+        ],
+        "type": "urn:tag:target_audience:qloo"
+      },
+      {
+        "parents": [
+          {
+            "type": "book"
+          }
+        ],
+        "type": "urn:tag:theme:qloo"
+      },
+      {
+        "parents": [
+          {
+            "type": "brand"
+          }
+        ],
+        "type": "urn:tag:adjective:qloo"
+      },
+      {
+        "parents": [
+          {
+            "type": "brand"
+          }
+        ],
+        "type": "urn:tag:aesthetic_property:qloo"
+      },
+      {
+        "parents": [
+          {
+            "type": "brand"
+          }
+        ],
+        "type": "urn:tag:customer_identity:qloo"
+      },
+      {
+        "parents": [
+          {
+            "type": "brand"
+          }
+        ],
+        "type": "urn:tag:customer_segment:qloo"
+      },
+      {
+        "parents": [
+          {
+            "type": "brand"
+          }
+        ],
+        "type": "urn:tag:emotional_tone:qloo"
+      },
+      {
+        "parents": [
+          {
+            "type": "brand"
+          }
+        ],
+        "type": "urn:tag:industry:qloo"
+      },
+      {
+        "parents": [
+          {
+            "type": "brand"
+          }
+        ],
+        "type": "urn:tag:influencer_appeal:qloo"
+      },
+      {
+        "parents": [
+          {
+            "type": "brand"
+          }
+        ],
+        "type": "urn:tag:keyword:qloo"
+      },
+      {
+        "parents": [
+          {
+            "type": "brand"
+          }
+        ],
+        "type": "urn:tag:lifestyle:qloo"
+      },
+      {
+        "parents": [
+          {
+            "type": "brand"
+          }
+        ],
+        "type": "urn:tag:personal_style:qloo"
+      },
+      {
+        "parents": [
+          {
+            "type": "brand"
+          }
+        ],
+        "type": "urn:tag:product_service:qloo"
+      },
+      {
+        "parents": [
+          {
+            "type": "destination"
+          }
+        ],
+        "type": "urn:tag:activity:qloo"
+      },
+      {
+        "parents": [
+          {
+            "type": "destination"
+          }
+        ],
+        "type": "urn:tag:attraction_type:qloo"
+      },
+      {
+        "parents": [
+          {
+            "type": "destination"
+          }
+        ],
+        "type": "urn:tag:characteristic:qloo"
+      },
+      {
+        "parents": [
+          {
+            "type": "destination"
+          }
+        ],
+        "type": "urn:tag:climate:qloo"
+      },
+      {
+        "parents": [
+          {
+            "type": "destination"
+          }
+        ],
+        "type": "urn:tag:cuisine:qloo"
+      },
+      {
+        "parents": [
+          {
+            "type": "destination"
+          }
+        ],
+        "type": "urn:tag:culinary_experience:qloo"
+      },
+      {
+        "parents": [
+          {
+            "type": "destination"
+          }
+        ],
+        "type": "urn:tag:culture:qloo"
+      },
+      {
+        "parents": [
+          {
+            "type": "destination"
+          }
+        ],
+        "type": "urn:tag:demographic_characteristic:qloo"
+      },
+      {
+        "parents": [
+          {
+            "type": "destination"
+          }
+        ],
+        "type": "urn:tag:ideal_traveler:qloo"
+      },
+      {
+        "parents": [
+          {
+            "type": "destination"
+          }
+        ],
+        "type": "urn:tag:scenery:qloo"
+      },
+      {
+        "parents": [
+          {
+            "type": "destination"
+          }
+        ],
+        "type": "urn:tag:shopping:qloo"
+      },
+      {
+        "parents": [
+          {
+            "type": "destination"
+          }
+        ],
+        "type": "urn:tag:socioeconomics:qloo"
+      },
+      {
+        "parents": [
+          {
+            "type": "destination"
+          }
+        ],
+        "type": "urn:tag:transport:qloo"
+      },
+      {
+        "parents": [
+          {
+            "type": "destination"
+          }
+        ],
+        "type": "urn:tag:weather:qloo"
+      },
+      {
+        "parents": [
+          {
+            "type": "movie"
+          }
+        ],
+        "type": "urn:tag:archetype:qloo"
+      },
+      {
+        "parents": [
+          {
+            "type": "movie"
+          }
+        ],
+        "type": "urn:tag:audience:qloo"
+      },
+      {
+        "parents": [
+          {
+            "type": "movie"
+          }
+        ],
+        "type": "urn:tag:character:qloo"
+      },
+      {
+        "parents": [
+          {
+            "type": "movie"
+          }
+        ],
+        "type": "urn:tag:keyword:qloo"
+      },
+      {
+        "parents": [
+          {
+            "type": "movie"
+          }
+        ],
+        "type": "urn:tag:plot:qloo"
+      },
+      {
+        "parents": [
+          {
+            "type": "movie"
+          }
+        ],
+        "type": "urn:tag:style:qloo"
+      },
+      {
+        "parents": [
+          {
+            "type": "movie"
+          }
+        ],
+        "type": "urn:tag:subgenre:qloo"
+      },
+      {
+        "parents": [
+          {
+            "type": "person"
+          }
+        ],
+        "type": "urn:tag:business_venture:qloo"
+      },
+      {
+        "parents": [
+          {
+            "type": "person"
+          }
+        ],
+        "type": "urn:tag:category:qloo"
+      },
+      {
+        "parents": [
+          {
+            "type": "person"
+          }
+        ],
+        "type": "urn:tag:endorsement:qloo"
+      },
+      {
+        "parents": [
+          {
+            "type": "person"
+          }
+        ],
+        "type": "urn:tag:ethnicity:qloo"
+      },
+      {
+        "parents": [
+          {
+            "type": "person"
+          }
+        ],
+        "type": "urn:tag:gender:qloo"
+      },
+      {
+        "parents": [
+          {
+            "type": "person"
+          }
+        ],
+        "type": "urn:tag:hobby:qloo"
+      },
+      {
+        "parents": [
+          {
+            "type": "person"
+          }
+        ],
+        "type": "urn:tag:language:qloo"
+      },
+      {
+        "parents": [
+          {
+            "type": "person"
+          }
+        ],
+        "type": "urn:tag:nationality:qloo"
+      },
+      {
+        "parents": [
+          {
+            "type": "person"
+          }
+        ],
+        "type": "urn:tag:occupation:qloo"
+      },
+      {
+        "parents": [
+          {
+            "type": "person"
+          }
+        ],
+        "type": "urn:tag:personal_style:qloo"
+      },
+      {
+        "parents": [
+          {
+            "type": "person"
+          }
+        ],
+        "type": "urn:tag:philanthropy:qloo"
+      },
+      {
+        "parents": [
+          {
+            "type": "person"
+          }
+        ],
+        "type": "urn:tag:religion:qloo"
+      },
+      {
+        "parents": [
+          {
+            "type": "person"
+          }
+        ],
+        "type": "urn:tag:residence:qloo"
+      },
+      {
+        "parents": [
+          {
+            "type": "place"
+          }
+        ],
+        "type": "urn:tag:ambience:qloo"
+      },
+      {
+        "parents": [
+          {
+            "type": "place"
+          }
+        ],
+        "type": "urn:tag:amenity:qloo"
+      },
+      {
+        "parents": [
+          {
+            "type": "place"
+          }
+        ],
+        "type": "urn:tag:cuisine:qloo"
+      },
+      {
+        "parents": [
+          {
+            "type": "place"
+          }
+        ],
+        "type": "urn:tag:decor:qloo"
+      },
+      {
+        "parents": [
+          {
+            "type": "place"
+          }
+        ],
+        "type": "urn:tag:dietary_option:qloo"
+      },
+      {
+        "parents": [
+          {
+            "type": "place"
+          }
+        ],
+        "type": "urn:tag:dining_option:qloo"
+      },
+      {
+        "parents": [
+          {
+            "type": "place"
+          }
+        ],
+        "type": "urn:tag:good_for:qloo"
+      },
+      {
+        "parents": [
+          {
+            "type": "place"
+          }
+        ],
+        "type": "urn:tag:noise_level:qloo"
+      },
+      {
+        "parents": [
+          {
+            "type": "place"
+          }
+        ],
+        "type": "urn:tag:room_type:qloo"
+      },
+      {
+        "parents": [
+          {
+            "type": "place"
+          }
+        ],
+        "type": "urn:tag:service_type:qloo"
+      },
+      {
+        "parents": [
+          {
+            "type": "place"
+          }
+        ],
+        "type": "urn:tag:setting:qloo"
+      },
+      {
+        "parents": [
+          {
+            "type": "place"
+          }
+        ],
+        "type": "urn:tag:sustainability_initiative:qloo"
+      },
+      {
+        "parents": [
+          {
+            "type": "place"
+          }
+        ],
+        "type": "urn:tag:views:qloo"
+      },
+      {
+        "parents": [
+          {
+            "type": "place"
+          }
+        ],
+        "type": "urn:tag:wellness_facility:qloo"
+      },
+      {
+        "parents": [
+          {
+            "type": "podcast"
+          }
+        ],
+        "type": "urn:tag:archetype:qloo"
+      },
+      {
+        "parents": [
+          {
+            "type": "podcast"
+          }
+        ],
+        "type": "urn:tag:audience:qloo"
+      },
+      {
+        "parents": [
+          {
+            "type": "podcast"
+          }
+        ],
+        "type": "urn:tag:content:qloo"
+      },
+      {
+        "parents": [
+          {
+            "type": "podcast"
+          }
+        ],
+        "type": "urn:tag:host:qloo"
+      },
+      {
+        "parents": [
+          {
+            "type": "podcast"
+          }
+        ],
+        "type": "urn:tag:keyword:qloo"
+      },
+      {
+        "parents": [
+          {
+            "type": "podcast"
+          }
+        ],
+        "type": "urn:tag:style:qloo"
+      },
+      {
+        "parents": [
+          {
+            "type": "podcast"
+          }
+        ],
+        "type": "urn:tag:subgenre:qloo"
+      },
+      {
+        "parents": [
+          {
+            "type": "podcast"
+          }
+        ],
+        "type": "urn:tag:theme:qloo"
+      },
+      {
+        "parents": [
+          {
+            "type": "tv"
+          }
+        ],
+        "type": "urn:tag:archetype:qloo"
+      },
+      {
+        "parents": [
+          {
+            "type": "tv"
+          }
+        ],
+        "type": "urn:tag:audience:qloo"
+      },
+      {
+        "parents": [
+          {
+            "type": "tv"
+          }
+        ],
+        "type": "urn:tag:character:qloo"
+      },
+      {
+        "parents": [
+          {
+            "type": "tv"
+          }
+        ],
+        "type": "urn:tag:keyword:qloo"
+      },
+      {
+        "parents": [
+          {
+            "type": "tv"
+          }
+        ],
+        "type": "urn:tag:plot:qloo"
+      },
+      {
+        "parents": [
+          {
+            "type": "tv"
+          }
+        ],
+        "type": "urn:tag:style:qloo"
+      },
+      {
+        "parents": [
+          {
+            "type": "tv"
+          }
+        ],
+        "type": "urn:tag:subgenre:qloo"
+      },
+      {
+        "parents": [
+          {
+            "type": "urn:entity:actor"
+          }
+        ],
+        "type": "urn:tag:genre:media"
+      },
+      {
+        "parents": [
+          {
+            "type": "urn:entity:album"
+          }
+        ],
+        "type": "urn:tag:genre"
+      },
+      {
+        "parents": [
+          {
+            "type": "urn:entity:artist"
+          }
+        ],
+        "type": "urn:tag:artist:qloo"
+      },
+      {
+        "parents": [
+          {
+            "type": "urn:entity:artist"
+          }
+        ],
+        "type": "urn:tag:complexity:qloo"
+      },
+      {
+        "parents": [
+          {
+            "type": "urn:entity:artist"
+          }
+        ],
+        "type": "urn:tag:genre:music"
+      },
+      {
+        "parents": [
+          {
+            "type": "urn:entity:author"
+          }
+        ],
+        "type": "urn:tag:genre"
+      },
+      {
+        "parents": [
+          {
+            "type": "urn:entity:book"
+          }
+        ],
+        "type": "urn:tag:genre"
+      },
+      {
+        "parents": [
+          {
+            "type": "urn:entity:brand"
+          }
+        ],
+        "type": "urn:tag:adjective:qloo"
+      },
+      {
+        "parents": [
+          {
+            "type": "urn:entity:brand"
+          }
+        ],
+        "type": "urn:tag:aesthetic_property:qloo"
+      },
+      {
+        "parents": [
+          {
+            "type": "urn:entity:brand"
+          }
+        ],
+        "type": "urn:tag:genre:brand"
+      },
+      {
+        "parents": [
+          {
+            "type": "urn:entity:brand"
+          }
+        ],
+        "type": "urn:tag:wikipedia_category"
+      },
+      {
+        "parents": [
+          {
+            "type": "urn:entity:destination"
+          }
+        ],
+        "type": "urn:tag:genre"
+      },
+      {
+        "parents": [
+          {
+            "type": "urn:entity:director"
+          }
+        ],
+        "type": "urn:tag:genre:media"
+      },
+      {
+        "parents": [
+          {
+            "type": "urn:entity:event"
+          }
+        ],
+        "type": "urn:tag:accessibility"
+      },
+      {
+        "parents": [
+          {
+            "type": "urn:entity:event"
+          }
+        ],
+        "type": "urn:tag:age"
+      },
+      {
+        "parents": [
+          {
+            "type": "urn:entity:event"
+          }
+        ],
+        "type": "urn:tag:ambience"
+      },
+      {
+        "parents": [
+          {
+            "type": "urn:entity:event"
+          }
+        ],
+        "type": "urn:tag:attraction_type"
+      },
+      {
+        "parents": [
+          {
+            "type": "urn:entity:event"
+          }
+        ],
+        "type": "urn:tag:environment"
+      },
+      {
+        "parents": [
+          {
+            "type": "urn:entity:event"
+          }
+        ],
+        "type": "urn:tag:era"
+      },
+      {
+        "parents": [
+          {
+            "type": "urn:entity:event"
+          }
+        ],
+        "type": "urn:tag:event_type"
+      },
+      {
+        "parents": [
+          {
+            "type": "urn:entity:event"
+          }
+        ],
+        "type": "urn:tag:genre"
+      },
+      {
+        "parents": [
+          {
+            "type": "urn:entity:event"
+          }
+        ],
+        "type": "urn:tag:group"
+      },
+      {
+        "parents": [
+          {
+            "type": "urn:entity:event"
+          }
+        ],
+        "type": "urn:tag:keyword"
+      },
+      {
+        "parents": [
+          {
+            "type": "urn:entity:event"
+          }
+        ],
+        "type": "urn:tag:restrictions"
+      },
+      {
+        "parents": [
+          {
+            "type": "urn:entity:event"
+          }
+        ],
+        "type": "urn:tag:significance"
+      },
+      {
+        "parents": [
+          {
+            "type": "urn:entity:event"
+          }
+        ],
+        "type": "urn:tag:size"
+      },
+      {
+        "parents": [
+          {
+            "type": "urn:entity:event"
+          }
+        ],
+        "type": "urn:tag:streaming_service"
+      },
+      {
+        "parents": [
+          {
+            "type": "urn:entity:event"
+          }
+        ],
+        "type": "urn:tag:transport"
+      },
+      {
+        "parents": [
+          {
+            "type": "urn:entity:event"
+          }
+        ],
+        "type": "urn:tag:vibe"
+      },
+      {
+        "parents": [
+          {
+            "type": "urn:entity:event"
+          }
+        ],
+        "type": "urn:tag:wikipedia_category"
+      },
+      {
+        "parents": [
+          {
+            "type": "urn:entity:event"
+          }
+        ],
+        "type": null
+      },
+      {
+        "parents": [
+          {
+            "type": "urn:entity:movie"
+          }
+        ],
+        "type": "urn:tag:archetype:qloo"
+      },
+      {
+        "parents": [
+          {
+            "type": "urn:entity:movie"
+          }
+        ],
+        "type": "urn:tag:audience:qloo"
+      },
+      {
+        "parents": [
+          {
+            "type": "urn:entity:movie"
+          }
+        ],
+        "type": "urn:tag:character:qloo"
+      },
+      {
+        "parents": [
+          {
+            "type": "urn:entity:movie"
+          }
+        ],
+        "type": "urn:tag:genre:media"
+      },
+      {
+        "parents": [
+          {
+            "type": "urn:entity:movie"
+          }
+        ],
+        "type": "urn:tag:keyword:media"
+      },
+      {
+        "parents": [
+          {
+            "type": "urn:entity:movie"
+          }
+        ],
+        "type": "urn:tag:keyword:qloo"
+      },
+      {
+        "parents": [
+          {
+            "type": "urn:entity:movie"
+          }
+        ],
+        "type": "urn:tag:plot:qloo"
+      },
+      {
+        "parents": [
+          {
+            "type": "urn:entity:movie"
+          }
+        ],
+        "type": "urn:tag:streaming_service:media"
+      },
+      {
+        "parents": [
+          {
+            "type": "urn:entity:movie"
+          }
+        ],
+        "type": "urn:tag:style:qloo"
+      },
+      {
+        "parents": [
+          {
+            "type": "urn:entity:movie"
+          }
+        ],
+        "type": "urn:tag:subgenre:qloo"
+      },
+      {
+        "parents": [
+          {
+            "type": "urn:entity:person"
+          }
+        ],
+        "type": "urn:tag:genre"
+      },
+      {
+        "parents": [
+          {
+            "type": "urn:entity:person"
+          }
+        ],
+        "type": "urn:tag:wikipedia_category"
+      },
+      {
+        "parents": [
+          {
+            "type": "urn:entity:place"
+          }
+        ],
+        "type": "urn:tag:accessibility:place"
+      },
+      {
+        "parents": [
+          {
+            "type": "urn:entity:place"
+          }
+        ],
+        "type": "urn:tag:activities:place"
+      },
+      {
+        "parents": [
+          {
+            "type": "urn:entity:place"
+          }
+        ],
+        "type": "urn:tag:ambience:place"
+      },
+      {
+        "parents": [
+          {
+            "type": "urn:entity:place"
+          }
+        ],
+        "type": "urn:tag:ambience:qloo"
+      },
+      {
+        "parents": [
+          {
+            "type": "urn:entity:place"
+          }
+        ],
+        "type": "urn:tag:amenity:place"
+      },
+      {
+        "parents": [
+          {
+            "type": "urn:entity:place"
+          }
+        ],
+        "type": "urn:tag:amenity:qloo"
+      },
+      {
+        "parents": [
+          {
+            "type": "urn:entity:place"
+          }
+        ],
+        "type": "urn:tag:business:place"
+      },
+      {
+        "parents": [
+          {
+            "type": "urn:entity:place"
+          }
+        ],
+        "type": "urn:tag:category:place"
+      },
+      {
+        "parents": [
+          {
+            "type": "urn:entity:place"
+          }
+        ],
+        "type": "urn:tag:children:place"
+      },
+      {
+        "parents": [
+          {
+            "type": "urn:entity:place"
+          }
+        ],
+        "type": "urn:tag:collection:place"
+      },
+      {
+        "parents": [
+          {
+            "type": "urn:entity:place"
+          }
+        ],
+        "type": "urn:tag:cost_description:place"
+      },
+      {
+        "parents": [
+          {
+            "type": "urn:entity:place"
+          }
+        ],
+        "type": "urn:tag:credit_card:place"
+      },
+      {
+        "parents": [
+          {
+            "type": "urn:entity:place"
+          }
+        ],
+        "type": "urn:tag:deities_represented:place"
+      },
+      {
+        "parents": [
+          {
+            "type": "urn:entity:place"
+          }
+        ],
+        "type": "urn:tag:dining_options:place"
+      },
+      {
+        "parents": [
+          {
+            "type": "urn:entity:place"
+          }
+        ],
+        "type": "urn:tag:event:place"
+      },
+      {
+        "parents": [
+          {
+            "type": "urn:entity:place"
+          }
+        ],
+        "type": "urn:tag:exams:place"
+      },
+      {
+        "parents": [
+          {
+            "type": "urn:entity:place"
+          }
+        ],
+        "type": "urn:tag:genre:place"
+      },
+      {
+        "parents": [
+          {
+            "type": "urn:entity:place"
+          }
+        ],
+        "type": "urn:tag:getting_here:place"
+      },
+      {
+        "parents": [
+          {
+            "type": "urn:entity:place"
+          }
+        ],
+        "type": "urn:tag:inclusivity:place"
+      },
+      {
+        "parents": [
+          {
+            "type": "urn:entity:place"
+          }
+        ],
+        "type": "urn:tag:offerings:place"
+      },
+      {
+        "parents": [
+          {
+            "type": "urn:entity:place"
+          }
+        ],
+        "type": "urn:tag:parking:place"
+      },
+      {
+        "parents": [
+          {
+            "type": "urn:entity:place"
+          }
+        ],
+        "type": "urn:tag:payments:place"
+      },
+      {
+        "parents": [
+          {
+            "type": "urn:entity:place"
+          }
+        ],
+        "type": "urn:tag:pets:place"
+      },
+      {
+        "parents": [
+          {
+            "type": "urn:entity:place"
+          }
+        ],
+        "type": "urn:tag:planning:place"
+      },
+      {
+        "parents": [
+          {
+            "type": "urn:entity:place"
+          }
+        ],
+        "type": "urn:tag:recycling:place"
+      },
+      {
+        "parents": [
+          {
+            "type": "urn:entity:place"
+          }
+        ],
+        "type": "urn:tag:resy:collection:place"
+      },
+      {
+        "parents": [
+          {
+            "type": "urn:entity:place"
+          }
+        ],
+        "type": "urn:tag:service_options:place"
+      },
+      {
+        "parents": [
+          {
+            "type": "urn:entity:place"
+          }
+        ],
+        "type": "urn:tag:specialty_dish:place"
+      },
+      {
+        "parents": [
+          {
+            "type": "urn:entity:podcast"
+          }
+        ],
+        "type": "urn:tag:content:qloo"
+      },
+      {
+        "parents": [
+          {
+            "type": "urn:entity:podcast"
+          }
+        ],
+        "type": "urn:tag:genre"
+      },
+      {
+        "parents": [
+          {
+            "type": "urn:entity:tv_show"
+          }
+        ],
+        "type": "urn:tag:genre:media"
+      },
+      {
+        "parents": [
+          {
+            "type": "urn:entity:tv_show"
+          }
+        ],
+        "type": "urn:tag:keyword:media"
+      },
+      {
+        "parents": [
+          {
+            "type": "urn:entity:tv_show"
+          }
+        ],
+        "type": "urn:tag:streaming_service:media"
+      },
+      {
+        "parents": [
+          {
+            "type": "urn:entity:videogame"
+          }
+        ],
+        "type": "urn:tag:genre"
+      },
+      {
+        "parents": [
+          {
+            "type": "urn:entity:videogame"
+          }
+        ],
+        "type": "urn:tag:wikipedia_category"
+      },
+      {
+        "parents": [
+          {
+            "type": "videogame"
+          }
+        ],
+        "type": "urn:tag:art_style:qloo"
+      },
+      {
+        "parents": [
+          {
+            "type": "videogame"
+          }
+        ],
+        "type": "urn:tag:audience:qloo"
+      },
+      {
+        "parents": [
+          {
+            "type": "videogame"
+          }
+        ],
+        "type": "urn:tag:category:qloo"
+      },
+      {
+        "parents": [
+          {
+            "type": "videogame"
+          }
+        ],
+        "type": "urn:tag:content_rating:qloo"
+      },
+      {
+        "parents": [
+          {
+            "type": "videogame"
+          }
+        ],
+        "type": "urn:tag:content_warning:qloo"
+      },
+      {
+        "parents": [
+          {
+            "type": "videogame"
+          }
+        ],
+        "type": "urn:tag:emotional_tone:qloo"
+      },
+      {
+        "parents": [
+          {
+            "type": "videogame"
+          }
+        ],
+        "type": "urn:tag:gameplay_type:qloo"
+      },
+      {
+        "parents": [
+          {
+            "type": "videogame"
+          }
+        ],
+        "type": "urn:tag:platform:qloo"
+      },
+      {
+        "parents": [
+          {
+            "type": "videogame"
+          }
+        ],
+        "type": "urn:tag:player_mode:qloo"
+      },
+      {
+        "parents": [
+          {
+            "type": "videogame"
+          }
+        ],
+        "type": "urn:tag:skill_level:qloo"
+      },
+      {
+        "parents": [
+          {
+            "type": "videogame"
+          }
+        ],
+        "type": "urn:tag:subgenre:qloo"
+      }
+    ],
+    "ParentChildTagTypes": [
+      {
+        "parentTag": "artist",
+        "subTags": [
+          "urn:tag:artist:qloo",
+          "urn:tag:audience:qloo",
+          "urn:tag:complexity:qloo",
+          "urn:tag:instrument:qloo",
+          "urn:tag:music:qloo",
+          "urn:tag:obscurity:qloo",
+          "urn:tag:style:qloo",
+          "urn:tag:theme:qloo"
+        ]
+      },
+      {
+        "parentTag": "book",
+        "subTags": [
+          "urn:tag:backdrop:qloo",
+          "urn:tag:book_format:qloo",
+          "urn:tag:historical_context:qloo",
+          "urn:tag:influence:qloo",
+          "urn:tag:motif:qloo",
+          "urn:tag:narrative:qloo",
+          "urn:tag:social_commentary:qloo",
+          "urn:tag:subgenre:qloo",
+          "urn:tag:target_audience:qloo",
+          "urn:tag:theme:qloo"
+        ]
+      },
+      {
+        "parentTag": "brand",
+        "subTags": [
+          "urn:tag:adjective:qloo",
+          "urn:tag:aesthetic_property:qloo",
+          "urn:tag:customer_identity:qloo",
+          "urn:tag:customer_segment:qloo",
+          "urn:tag:emotional_tone:qloo",
+          "urn:tag:industry:qloo",
+          "urn:tag:influencer_appeal:qloo",
+          "urn:tag:keyword:qloo",
+          "urn:tag:lifestyle:qloo",
+          "urn:tag:personal_style:qloo",
+          "urn:tag:product_service:qloo"
+        ]
+      },
+      {
+        "parentTag": "destination",
+        "subTags": [
+          "urn:tag:activity:qloo",
+          "urn:tag:attraction_type:qloo",
+          "urn:tag:characteristic:qloo",
+          "urn:tag:climate:qloo",
+          "urn:tag:cuisine:qloo",
+          "urn:tag:culinary_experience:qloo",
+          "urn:tag:culture:qloo",
+          "urn:tag:demographic_characteristic:qloo",
+          "urn:tag:ideal_traveler:qloo",
+          "urn:tag:scenery:qloo",
+          "urn:tag:shopping:qloo",
+          "urn:tag:socioeconomics:qloo",
+          "urn:tag:transport:qloo",
+          "urn:tag:weather:qloo"
+        ]
+      },
+      {
+        "parentTag": "movie",
+        "subTags": [
+          "urn:tag:archetype:qloo",
+          "urn:tag:audience:qloo",
+          "urn:tag:character:qloo",
+          "urn:tag:keyword:qloo",
+          "urn:tag:plot:qloo",
+          "urn:tag:style:qloo",
+          "urn:tag:subgenre:qloo"
+        ]
+      },
+      {
+        "parentTag": "person",
+        "subTags": [
+          "urn:tag:business_venture:qloo",
+          "urn:tag:category:qloo",
+          "urn:tag:endorsement:qloo",
+          "urn:tag:ethnicity:qloo",
+          "urn:tag:gender:qloo",
+          "urn:tag:hobby:qloo",
+          "urn:tag:language:qloo",
+          "urn:tag:nationality:qloo",
+          "urn:tag:occupation:qloo",
+          "urn:tag:personal_style:qloo",
+          "urn:tag:philanthropy:qloo",
+          "urn:tag:religion:qloo",
+          "urn:tag:residence:qloo"
+        ]
+      },
+      {
+        "parentTag": "place",
+        "subTags": [
+          "urn:tag:ambience:qloo",
+          "urn:tag:amenity:qloo",
+          "urn:tag:cuisine:qloo",
+          "urn:tag:decor:qloo",
+          "urn:tag:dietary_option:qloo",
+          "urn:tag:dining_option:qloo",
+          "urn:tag:good_for:qloo",
+          "urn:tag:noise_level:qloo",
+          "urn:tag:room_type:qloo",
+          "urn:tag:service_type:qloo",
+          "urn:tag:setting:qloo",
+          "urn:tag:sustainability_initiative:qloo",
+          "urn:tag:views:qloo",
+          "urn:tag:wellness_facility:qloo"
+        ]
+      },
+      {
+        "parentTag": "podcast",
+        "subTags": [
+          "urn:tag:archetype:qloo",
+          "urn:tag:audience:qloo",
+          "urn:tag:content:qloo",
+          "urn:tag:host:qloo",
+          "urn:tag:keyword:qloo",
+          "urn:tag:style:qloo",
+          "urn:tag:subgenre:qloo",
+          "urn:tag:theme:qloo"
+        ]
+      },
+      {
+        "parentTag": "tv_show",
+        "subTags": [
+          "urn:tag:archetype:qloo",
+          "urn:tag:audience:qloo",
+          "urn:tag:character:qloo",
+          "urn:tag:keyword:qloo",
+          "urn:tag:plot:qloo",
+          "urn:tag:style:qloo",
+          "urn:tag:subgenre:qloo"
+        ]
+      },
+      {
+        "parentTag": "urn:entity:actor",
+        "subTags": [
+          "urn:tag:genre:media"
+        ]
+      },
+      {
+        "parentTag": "urn:entity:album",
+        "subTags": [
+          "urn:tag:genre"
+        ]
+      },
+      {
+        "parentTag": "urn:entity:artist",
+        "subTags": [
+          "urn:tag:artist:qloo",
+          "urn:tag:complexity:qloo",
+          "urn:tag:genre:music"
+        ]
+      },
+      {
+        "parentTag": "urn:entity:author",
+        "subTags": [
+          "urn:tag:genre"
+        ]
+      },
+      {
+        "parentTag": "urn:entity:book",
+        "subTags": [
+          "urn:tag:genre"
+        ]
+      },
+      {
+        "parentTag": "urn:entity:brand",
+        "subTags": [
+          "urn:tag:adjective:qloo",
+          "urn:tag:aesthetic_property:qloo",
+          "urn:tag:genre:brand",
+          "urn:tag:wikipedia_category"
+        ]
+      },
+      {
+        "parentTag": "urn:entity:destination",
+        "subTags": [
+          "urn:tag:genre"
+        ]
+      },
+      {
+        "parentTag": "urn:entity:director",
+        "subTags": [
+          "urn:tag:genre:media"
+        ]
+      },
+      {
+        "parentTag": "urn:entity:event",
+        "subTags": [
+          "urn:tag:accessibility",
+          "urn:tag:age",
+          "urn:tag:ambience",
+          "urn:tag:attraction_type",
+          "urn:tag:environment",
+          "urn:tag:era",
+          "urn:tag:event_type",
+          "urn:tag:genre",
+          "urn:tag:group",
+          "urn:tag:keyword",
+          "urn:tag:restrictions",
+          "urn:tag:significance",
+          "urn:tag:size",
+          "urn:tag:streaming_service",
+          "urn:tag:transport",
+          "urn:tag:vibe",
+          "urn:tag:wikipedia_category"
+        ]
+      },
+      {
+        "parentTag": "urn:entity:movie",
+        "subTags": [
+          "urn:tag:archetype:qloo",
+          "urn:tag:audience:qloo",
+          "urn:tag:character:qloo",
+          "urn:tag:genre:media",
+          "urn:tag:keyword:media",
+          "urn:tag:keyword:qloo",
+          "urn:tag:plot:qloo",
+          "urn:tag:streaming_service:media",
+          "urn:tag:style:qloo",
+          "urn:tag:subgenre:qloo"
+        ]
+      },
+      {
+        "parentTag": "urn:entity:person",
+        "subTags": [
+          "urn:tag:genre",
+          "urn:tag:wikipedia_category"
+        ]
+      },
+      {
+        "parentTag": "urn:entity:place",
+        "subTags": [
+          "urn:tag:accessibility:place",
+          "urn:tag:activities:place",
+          "urn:tag:ambience:place",
+          "urn:tag:ambience:qloo",
+          "urn:tag:amenity:place",
+          "urn:tag:amenity:qloo",
+          "urn:tag:business:place",
+          "urn:tag:category:place",
+          "urn:tag:children:place",
+          "urn:tag:collection:place",
+          "urn:tag:cost_description:place",
+          "urn:tag:credit_card:place",
+          "urn:tag:deities_represented:place",
+          "urn:tag:dining_options:place",
+          "urn:tag:event:place",
+          "urn:tag:exams:place",
+          "urn:tag:genre:place",
+          "urn:tag:getting_here:place",
+          "urn:tag:inclusivity:place",
+          "urn:tag:offerings:place",
+          "urn:tag:parking:place",
+          "urn:tag:payments:place",
+          "urn:tag:pets:place",
+          "urn:tag:planning:place",
+          "urn:tag:recycling:place",
+          "urn:tag:resy:collection:place",
+          "urn:tag:service_options:place",
+          "urn:tag:specialty_dish:place"
+        ]
+      },
+      {
+        "parentTag": "urn:entity:podcast",
+        "subTags": [
+          "urn:tag:content:qloo",
+          "urn:tag:genre"
+        ]
+      },
+      {
+        "parentTag": "urn:entity:tv_show",
+        "subTags": [
+          "urn:tag:genre:media",
+          "urn:tag:keyword:media",
+          "urn:tag:streaming_service:media"
+        ]
+      },
+      {
+        "parentTag": "urn:entity:videogame",
+        "subTags": [
+          "urn:tag:genre",
+          "urn:tag:wikipedia_category"
+        ]
+      },
+      {
+        "parentTag": "videogame",
+        "subTags": [
+          "urn:tag:art_style:qloo",
+          "urn:tag:audience:qloo",
+          "urn:tag:category:qloo",
+          "urn:tag:content_rating:qloo",
+          "urn:tag:content_warning:qloo",
+          "urn:tag:emotional_tone:qloo",
+          "urn:tag:gameplay_type:qloo",
+          "urn:tag:platform:qloo",
+          "urn:tag:player_mode:qloo",
+          "urn:tag:skill_level:qloo",
+          "urn:tag:subgenre:qloo"
+        ]
+      }
+    ]
+  },
+  "AsMarkdown": "| Parent | Children |\r\n| ------ | -------- |\r\n| artist | urn:tag:artist:qloo\u003Cbr/\u003Eurn:tag:audience:qloo\u003Cbr/\u003Eurn:tag:complexity:qloo\u003Cbr/\u003Eurn:tag:instrument:qloo\u003Cbr/\u003Eurn:tag:music:qloo\u003Cbr/\u003Eurn:tag:obscurity:qloo\u003Cbr/\u003Eurn:tag:style:qloo\u003Cbr/\u003Eurn:tag:theme:qloo |\r\n| book | urn:tag:backdrop:qloo\u003Cbr/\u003Eurn:tag:book_format:qloo\u003Cbr/\u003Eurn:tag:historical_context:qloo\u003Cbr/\u003Eurn:tag:influence:qloo\u003Cbr/\u003Eurn:tag:motif:qloo\u003Cbr/\u003Eurn:tag:narrative:qloo\u003Cbr/\u003Eurn:tag:social_commentary:qloo\u003Cbr/\u003Eurn:tag:subgenre:qloo\u003Cbr/\u003Eurn:tag:target_audience:qloo\u003Cbr/\u003Eurn:tag:theme:qloo |\r\n| brand | urn:tag:adjective:qloo\u003Cbr/\u003Eurn:tag:aesthetic_property:qloo\u003Cbr/\u003Eurn:tag:customer_identity:qloo\u003Cbr/\u003Eurn:tag:customer_segment:qloo\u003Cbr/\u003Eurn:tag:emotional_tone:qloo\u003Cbr/\u003Eurn:tag:industry:qloo\u003Cbr/\u003Eurn:tag:influencer_appeal:qloo\u003Cbr/\u003Eurn:tag:keyword:qloo\u003Cbr/\u003Eurn:tag:lifestyle:qloo\u003Cbr/\u003Eurn:tag:personal_style:qloo\u003Cbr/\u003Eurn:tag:product_service:qloo |\r\n| destination | urn:tag:activity:qloo\u003Cbr/\u003Eurn:tag:attraction_type:qloo\u003Cbr/\u003Eurn:tag:characteristic:qloo\u003Cbr/\u003Eurn:tag:climate:qloo\u003Cbr/\u003Eurn:tag:cuisine:qloo\u003Cbr/\u003Eurn:tag:culinary_experience:qloo\u003Cbr/\u003Eurn:tag:culture:qloo\u003Cbr/\u003Eurn:tag:demographic_characteristic:qloo\u003Cbr/\u003Eurn:tag:ideal_traveler:qloo\u003Cbr/\u003Eurn:tag:scenery:qloo\u003Cbr/\u003Eurn:tag:shopping:qloo\u003Cbr/\u003Eurn:tag:socioeconomics:qloo\u003Cbr/\u003Eurn:tag:transport:qloo\u003Cbr/\u003Eurn:tag:weather:qloo |\r\n| movie | urn:tag:archetype:qloo\u003Cbr/\u003Eurn:tag:audience:qloo\u003Cbr/\u003Eurn:tag:character:qloo\u003Cbr/\u003Eurn:tag:keyword:qloo\u003Cbr/\u003Eurn:tag:plot:qloo\u003Cbr/\u003Eurn:tag:style:qloo\u003Cbr/\u003Eurn:tag:subgenre:qloo |\r\n| person | urn:tag:business_venture:qloo\u003Cbr/\u003Eurn:tag:category:qloo\u003Cbr/\u003Eurn:tag:endorsement:qloo\u003Cbr/\u003Eurn:tag:ethnicity:qloo\u003Cbr/\u003Eurn:tag:gender:qloo\u003Cbr/\u003Eurn:tag:hobby:qloo\u003Cbr/\u003Eurn:tag:language:qloo\u003Cbr/\u003Eurn:tag:nationality:qloo\u003Cbr/\u003Eurn:tag:occupation:qloo\u003Cbr/\u003Eurn:tag:personal_style:qloo\u003Cbr/\u003Eurn:tag:philanthropy:qloo\u003Cbr/\u003Eurn:tag:religion:qloo\u003Cbr/\u003Eurn:tag:residence:qloo |\r\n| place | urn:tag:ambience:qloo\u003Cbr/\u003Eurn:tag:amenity:qloo\u003Cbr/\u003Eurn:tag:cuisine:qloo\u003Cbr/\u003Eurn:tag:decor:qloo\u003Cbr/\u003Eurn:tag:dietary_option:qloo\u003Cbr/\u003Eurn:tag:dining_option:qloo\u003Cbr/\u003Eurn:tag:good_for:qloo\u003Cbr/\u003Eurn:tag:noise_level:qloo\u003Cbr/\u003Eurn:tag:room_type:qloo\u003Cbr/\u003Eurn:tag:service_type:qloo\u003Cbr/\u003Eurn:tag:setting:qloo\u003Cbr/\u003Eurn:tag:sustainability_initiative:qloo\u003Cbr/\u003Eurn:tag:views:qloo\u003Cbr/\u003Eurn:tag:wellness_facility:qloo |\r\n| podcast | urn:tag:archetype:qloo\u003Cbr/\u003Eurn:tag:audience:qloo\u003Cbr/\u003Eurn:tag:content:qloo\u003Cbr/\u003Eurn:tag:host:qloo\u003Cbr/\u003Eurn:tag:keyword:qloo\u003Cbr/\u003Eurn:tag:style:qloo\u003Cbr/\u003Eurn:tag:subgenre:qloo\u003Cbr/\u003Eurn:tag:theme:qloo |\r\n| tv | urn:tag:archetype:qloo\u003Cbr/\u003Eurn:tag:audience:qloo\u003Cbr/\u003Eurn:tag:character:qloo\u003Cbr/\u003Eurn:tag:keyword:qloo\u003Cbr/\u003Eurn:tag:plot:qloo\u003Cbr/\u003Eurn:tag:style:qloo\u003Cbr/\u003Eurn:tag:subgenre:qloo |\r\n| urn:entity:actor | urn:tag:genre:media |\r\n| urn:entity:album | urn:tag:genre |\r\n| urn:entity:artist | urn:tag:artist:qloo\u003Cbr/\u003Eurn:tag:complexity:qloo\u003Cbr/\u003Eurn:tag:genre:music |\r\n| urn:entity:author | urn:tag:genre |\r\n| urn:entity:book | urn:tag:genre |\r\n| urn:entity:brand | urn:tag:adjective:qloo\u003Cbr/\u003Eurn:tag:aesthetic_property:qloo\u003Cbr/\u003Eurn:tag:genre:brand\u003Cbr/\u003Eurn:tag:wikipedia_category |\r\n| urn:entity:destination | urn:tag:genre |\r\n| urn:entity:director | urn:tag:genre:media |\r\n| urn:entity:event | \u003Cbr/\u003Eurn:tag:accessibility\u003Cbr/\u003Eurn:tag:age\u003Cbr/\u003Eurn:tag:ambience\u003Cbr/\u003Eurn:tag:attraction_type\u003Cbr/\u003Eurn:tag:environment\u003Cbr/\u003Eurn:tag:era\u003Cbr/\u003Eurn:tag:event_type\u003Cbr/\u003Eurn:tag:genre\u003Cbr/\u003Eurn:tag:group\u003Cbr/\u003Eurn:tag:keyword\u003Cbr/\u003Eurn:tag:restrictions\u003Cbr/\u003Eurn:tag:significance\u003Cbr/\u003Eurn:tag:size\u003Cbr/\u003Eurn:tag:streaming_service\u003Cbr/\u003Eurn:tag:transport\u003Cbr/\u003Eurn:tag:vibe\u003Cbr/\u003Eurn:tag:wikipedia_category |\r\n| urn:entity:movie | urn:tag:archetype:qloo\u003Cbr/\u003Eurn:tag:audience:qloo\u003Cbr/\u003Eurn:tag:character:qloo\u003Cbr/\u003Eurn:tag:genre:media\u003Cbr/\u003Eurn:tag:keyword:media\u003Cbr/\u003Eurn:tag:keyword:qloo\u003Cbr/\u003Eurn:tag:plot:qloo\u003Cbr/\u003Eurn:tag:streaming_service:media\u003Cbr/\u003Eurn:tag:style:qloo\u003Cbr/\u003Eurn:tag:subgenre:qloo |\r\n| urn:entity:person | urn:tag:genre\u003Cbr/\u003Eurn:tag:wikipedia_category |\r\n| urn:entity:place | urn:tag:accessibility:place\u003Cbr/\u003Eurn:tag:activities:place\u003Cbr/\u003Eurn:tag:ambience:place\u003Cbr/\u003Eurn:tag:ambience:qloo\u003Cbr/\u003Eurn:tag:amenity:place\u003Cbr/\u003Eurn:tag:amenity:qloo\u003Cbr/\u003Eurn:tag:business:place\u003Cbr/\u003Eurn:tag:category:place\u003Cbr/\u003Eurn:tag:children:place\u003Cbr/\u003Eurn:tag:collection:place\u003Cbr/\u003Eurn:tag:cost_description:place\u003Cbr/\u003Eurn:tag:credit_card:place\u003Cbr/\u003Eurn:tag:deities_represented:place\u003Cbr/\u003Eurn:tag:dining_options:place\u003Cbr/\u003Eurn:tag:event:place\u003Cbr/\u003Eurn:tag:exams:place\u003Cbr/\u003Eurn:tag:genre:place\u003Cbr/\u003Eurn:tag:getting_here:place\u003Cbr/\u003Eurn:tag:inclusivity:place\u003Cbr/\u003Eurn:tag:offerings:place\u003Cbr/\u003Eurn:tag:parking:place\u003Cbr/\u003Eurn:tag:payments:place\u003Cbr/\u003Eurn:tag:pets:place\u003Cbr/\u003Eurn:tag:planning:place\u003Cbr/\u003Eurn:tag:recycling:place\u003Cbr/\u003Eurn:tag:resy:collection:place\u003Cbr/\u003Eurn:tag:service_options:place\u003Cbr/\u003Eurn:tag:specialty_dish:place |\r\n| urn:entity:podcast | urn:tag:content:qloo\u003Cbr/\u003Eurn:tag:genre |\r\n| urn:entity:tv_show | urn:tag:genre:media\u003Cbr/\u003Eurn:tag:keyword:media\u003Cbr/\u003Eurn:tag:streaming_service:media |\r\n| urn:entity:videogame | urn:tag:genre\u003Cbr/\u003Eurn:tag:wikipedia_category |\r\n| videogame | urn:tag:art_style:qloo\u003Cbr/\u003Eurn:tag:audience:qloo\u003Cbr/\u003Eurn:tag:category:qloo\u003Cbr/\u003Eurn:tag:content_rating:qloo\u003Cbr/\u003Eurn:tag:content_warning:qloo\u003Cbr/\u003Eurn:tag:emotional_tone:qloo\u003Cbr/\u003Eurn:tag:gameplay_type:qloo\u003Cbr/\u003Eurn:tag:platform:qloo\u003Cbr/\u003Eurn:tag:player_mode:qloo\u003Cbr/\u003Eurn:tag:skill_level:qloo\u003Cbr/\u003Eurn:tag:subgenre:qloo |\r\n"
+}

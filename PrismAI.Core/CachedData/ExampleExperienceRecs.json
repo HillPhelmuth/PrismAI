@@ -1,0 +1,62 @@
+{
+  "Theme": "Urban Dystopia Adventure Day",
+  "Description": "Dive headfirst into a dazzling, gritty day inspired by the cyberpunk genre: your escape from the everyday into a neon-lit world of tech-noir and rebellion. Kick off with a mind-bending film, then unplug with a futuristic page-turner, immerse yourself in fierce cyber-industrial soundscapes, and finally, become the hero in your own story with a top indie video game. This cross-domain experience draws on anime, classic rock, and indie energy\u2014perfect for a one-day transformation into a cyberpunk protagonist.",
+  "Watch": {
+    "Title": "Total Recall",
+    "Type": "movie",
+    "EntityId": "936B174D-1F69-4E7A-A557-6AB6109A57E2",
+    "EntityType": "urn:entity:movie",
+    "Description": "Paul Verhoeven\u2019s unforgettable 1990 sci-fi thriller, where a construction worker is thrust into a reality-warping conspiracy with Mars colonists, mutants, and memory manipulation. It\u2019s a perfect cyberpunk classic blending mind games, tech, and society\u2019s gritty underbelly.",
+    "ImageUrl": "https://images.qloo.com/i/936B174D-1F69-4E7A-A557-6AB6109A57E2-420x-auto.jpg",
+    "Reasoning": "This film is a core cyberpunk classic, matching both your anime interest and dystopian craving with high affinity to the genre and your anchor preferences.",
+    "TimelineOrder": 1,
+    "EstimatedTimeToComplete": 120
+  },
+  "Eat": {
+    "Title": "Classic Rock Coffee Co.",
+    "Type": "place",
+    "EntityId": "9AA5E4C4-2FDA-4A23-B883-9F549A9D5CD2",
+    "EntityType": "urn:entity:place",
+    "Description": "Recharge at Classic Rock Coffee Co., a rock-themed coffeehouse with a relaxed, indie vibe\u2014perfect for imaginatively plotting your next cyberpunk adventure. Sip bold brews and soak up the atmosphere of rebellion and energy.",
+    "ImageUrl": "https://images.qloo.com/i/9AA5E4C4-2FDA-4A23-B883-9F549A9D5CD2-420x-auto.jpg",
+    "Reasoning": "The retro rock ambiance is a perfect real-world escape, connecting classic rock roots to your day\u2019s theme while bringing you modern comfort and edge.",
+    "TimelineOrder": 2,
+    "EstimatedTimeToComplete": 40
+  },
+  "Listen": {
+    "Title": "KMFDM",
+    "Type": "artist",
+    "EntityId": "94E6C6BC-580B-465C-B81A-E3C46D582CA5",
+    "EntityType": "urn:entity:artist",
+    "Description": "Plug into KMFDM\u2019s driving industrial beats and acerbic lyrics, a sonic companion for urban rebellion. Their music echoes the tech-heavy, anti-authoirty vibes of the cyberpunk sphere.",
+    "ImageUrl": "https://images.qloo.com/i/94E6C6BC-580B-465C-B81A-E3C46D582CA5-420x-auto.jpg",
+    "Reasoning": "KMFDM is at the cross-section of industrial and cyberpunk music, making them an electrifying fit for your culture adventure, with strong affinity for fans of both anime and dystopian soundscapes.",
+    "TimelineOrder": 3,
+    "EstimatedTimeToComplete": 40
+  },
+  "Visit": null,
+  "Read": {
+    "Title": "Nexus (Nexus, #1)",
+    "Type": "book",
+    "EntityId": "7A6C86E6-3D63-46E6-8853-40F57938F613",
+    "EntityType": "urn:entity:book",
+    "Description": "Ramez Naam\u2019s \u0027Nexus\u0027 is a hard-hitting, high-tech thriller where a mind-linking nano-drug blurs the line between human and machine. Explore themes of surveillance, corruption, and rebellion straight out of your cyberpunk dreams.",
+    "ImageUrl": "https://images.qloo.com/i/7A6C86E6-3D63-46E6-8853-40F57938F613-420x-auto.jpg",
+    "Reasoning": "This novel stands at the heart of neo-cyberpunk, capturing everything from technological advances to the social turmoil that marks the genre.",
+    "TimelineOrder": 4,
+    "EstimatedTimeToComplete": 70
+  },
+  "Buy": null,
+  "Play": {
+    "Title": "Deus Ex",
+    "Type": "videogame",
+    "EntityId": "8EBAD109-308A-4F81-AD3F-BBB93C4C7CA6",
+    "EntityType": "urn:entity:videogame",
+    "Description": "Step into the world of \u0027Deus Ex,\u0027 the genre-defining cyberpunk RPG where conspiracies, robotics, and noir intrigue await. Shape your narrative with every moral choice in a world where every system is corruptible\u2014just like the best classic dystopias.",
+    "ImageUrl": "https://images.qloo.com/i/8EBAD109-308A-4F81-AD3F-BBB93C4C7CA6-420x-auto.jpg",
+    "Reasoning": "Famed for its revolutionary blending of gameplay, story, and true cyberpunk spirit, \u0027Deus Ex\u0027 is a must for lovers of indie games, anime, and gritty escapism.",
+    "TimelineOrder": 5,
+    "EstimatedTimeToComplete": 90
+  },
+  "Explore": null
+}

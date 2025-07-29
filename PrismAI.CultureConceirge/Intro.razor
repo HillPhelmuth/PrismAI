@@ -1,0 +1,20 @@
+@using Microsoft.AspNetCore.Components
+
+<div class="intro-container">
+	<h1 class="intro-title">Prism AI</h1>
+	<p class="intro-description">
+		Prism AI is an AI-powered experience planner that transforms the way you discover and curate cross-domain adventures. By leveraging Qloo’s Taste AI™ Insights API alongside an AI “concierge,” the app stitches together personalized recommendations across movies, music, dining, and more into a seamless itinerary. Whether you’re in the mood for a cozy mystery–themed evening or a high-energy Marvel and EDM fusion night, Prism AI crafts a cohesive plan—suggesting the perfect film, pairing it with a thematic recipe or local restaurant, and complementing it with a fitting playlist—all grounded in data-driven affinities and cultural context.
+	</p>
+	<p class="intro-description">
+		Every recommendation is fully customizable from start to finish. Simply share a few details about yourself, a theme and a timeframe, and Prism AI curates suggestions across multiple domains. It then weaves them into a compelling narrative, presenting each choice with rich visuals and highlighting the cultural connections that bind your experience together. Want a tweak? Just swap an item or refine your preferences—Prism AI updates your personalized experience quickly, making every exciting night out or quiet day at home feel handcrafted just for you.
+	</p>
+
+    <button class="intro-start-btn" @onclick="OnStartClicked">Start Planning</button>
+</div>
+
+@code {
+    private async Task OnStartClicked()
+    {
+        await OnStart.InvokeAsync();
+    }
+}

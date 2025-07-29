@@ -1,0 +1,11 @@
+{
+  "ContentType": "Podcast Episode",
+  "Topic": "An interview with a master gardener about the common mistakes beginners make when starting their first vegetable garden and how to avoid them.",
+  "TargetAudience": "The ideal listener is looking for a rewarding, hands-on hobby. They may have a small yard or patio and are excited by the idea of growing their own food but feel intimidated and don't know where to start. They appreciate a calm, encouraging, and conversational tone.",
+  "CulturalReferences": [
+    "Gardening",
+    "DIY",
+    "Home & Garden Television (HGTV)"
+  ],
+  "AdditionalContext": "The episode should include a 'Listener Q&A' segment at the end. Please avoid overly technical jargon and focus on simple, actionable steps."
+}

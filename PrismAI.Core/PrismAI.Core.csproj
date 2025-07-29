@@ -1,0 +1,36 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net9.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+	</PropertyGroup>
+
+
+	<ItemGroup>
+		<EmbeddedResource Include="CachedData\*.json" />
+
+	</ItemGroup>
+
+
+	<ItemGroup>
+	  <Compile Remove="Models\ResponseModels\EntityTrendsResponse.cs" />
+
+	</ItemGroup>
+
+
+
+	<ItemGroup>
+		<PackageReference Include="Google.Apis.Books.v1" Version="1.68.0.3331" />
+		<PackageReference Include="Markdig" Version="0.41.3" />
+		<PackageReference Include="Microsoft.Extensions.Http" Version="9.0.7" />
+		<PackageReference Include="Microsoft.Extensions.Http.Resilience" Version="9.7.0" />
+		<PackageReference Include="Microsoft.SemanticKernel" Version="1.60.0" />
+		<PackageReference Include="Tiktoken" Version="2.2.0" />
+		<PackageReference Include="Blazored.LocalStorage" Version="4.5.0" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Folder Include="Prompts\" />
+	</ItemGroup>
+</Project>

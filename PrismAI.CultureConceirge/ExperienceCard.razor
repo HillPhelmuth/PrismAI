@@ -1,0 +1,71 @@
+<div class="experience-card @(IsActive ? "active" : "")" >
+    <!-- Card Image -->
+    <div class="card-image" @onclick="RequestImage" title="request new image">
+        @if (Recommendation != null)
+        {
+            @if (!string.IsNullOrEmpty(_imageUrl))
+            {
+                <img src="@_imageUrl" alt="@Recommendation.Title" @onclick:stopPropagation  />
+            }
+            else
+            {
+                <div class="image-loader">
+                    <div class="loader-spinner"></div>
+                    <div class="loader-text">Image Loading...</div>
+                </div>
+            }
+
+            <div class="image-overlay"></div>
+            <div class="card-icon-wrapper">
+                <div class="card-icon-bg" @onclick:stopPropagation>
+
+                    @if (Recommendation.EntityTypeId.Contains("place") || Recommendation.EntityTypeId.Contains("destination"))
+                    {
+                        <button class="map-fab" @onclick="ClickLocation">
+                            <span class="fab-icon">@Icon</span>
+                        </button>
+                    }
+                    else
+                    {
+                        <span class="card-icon">@Icon</span>
+                    }
+                </div>
+            </div>
+            <div class="card-type-wrapper">
+                <span class="card-type-badge">@Recommendation.Type</span>
+            </div>
+        }
+    </div>
+    <!-- Card Content -->
+    <div class="card-content">
+        @if (Recommendation != null)
+        {
+            <div class="card-header">
+                <h3 class="card-title">@Recommendation.Title</h3>
+            </div>
+            <p class="card-description">@Recommendation.Description</p>
+            @if (IsActive)
+            {
+                <div class="reasoning-section">
+                    <h4 class="reasoning-title">Why This Fits:</h4>
+                    <p class="reasoning-text">@Recommendation.Reasoning</p>
+                </div>
+            }
+        }
+        <button class="reasoning-fab" @onclick="OnClick" title="Show why this fits">
+            <span class="fab-icon">?</span>
+        </button>
+        
+
+        <div class="card-buttons" @onclick:stopPropagation>
+            <button @onclick="HandleRecommendationSelect" class="find-more-button">
+                <span class="find-more-icon">🔗</span>
+                <span>Learn More</span>
+            </button>
+            <button class="alt-button" @onclick="HandleAlternativeRequest">
+                <span class="alt-icon">🔀</span>
+                <span>Find Alternative</span>
+            </button>
+        </div>
+    </div>
+</div>
