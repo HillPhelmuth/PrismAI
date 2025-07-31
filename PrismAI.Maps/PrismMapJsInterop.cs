@@ -1,7 +1,5 @@
-using System.Text.Json;
 using Microsoft.JSInterop;
-using PrismAI.Core.Models;
-using PrismAI.Core.Models.CultureConciergeModels;
+using PrismAI.Core.Models.PrismAIModels;
 using Location = PrismAI.Core.Models.ResponseModels.Location;
 
 namespace PrismAI.Maps;
@@ -12,10 +10,10 @@ namespace PrismAI.Maps;
 // This class can be registered as scoped DI service and then injected into Blazor
 // components for use.
 
-public class HeatMapJsInterop(IJSRuntime jsRuntime) : IAsyncDisposable
+public class PrismMapJsInterop(IJSRuntime jsRuntime) : IAsyncDisposable
 {
     private readonly Lazy<Task<IJSObjectReference>> moduleTask = new(() => jsRuntime.InvokeAsync<IJSObjectReference>(
-        "import", "./_content/PrismAI.Maps/heatMapInterop.js").AsTask());
+        "import", "./_content/PrismAI.Maps/prismMapInterop.js").AsTask());
 
     public async ValueTask<string> Prompt(string message)
     {
@@ -23,13 +21,6 @@ public class HeatMapJsInterop(IJSRuntime jsRuntime) : IAsyncDisposable
         return await module.InvokeAsync<string>("showPrompt", message);
     }
 
-    public async ValueTask GenerateHeatmap(HeatmapResult result)
-    {
-        var module = await moduleTask.Value;
-        var json = JsonSerializer.Serialize(result);
-        Console.WriteLine($"Heatmap data: {json[..1000]}");
-        await module.InvokeVoidAsync("initHeatmap", json);
-    }
     public async ValueTask<GeolocationCoordinates?> GetCurrentLocation()
     {
         var item = await (await moduleTask.Value).InvokeAsync<string>("getLocation");
@@ -53,13 +44,7 @@ public class HeatMapJsInterop(IJSRuntime jsRuntime) : IAsyncDisposable
         var destinationObj = new { lat = destination.Lat, lng = destination.Lon };
         await (await moduleTask.Value).InvokeVoidAsync("initRoutesMap", originObj, destinationObj);
     }
-    public async ValueTask GenerateLocationsMap(PlacesSearchModel model)
-    {
-        var module = await moduleTask.Value;
-        var json = JsonSerializer.Serialize(model);
-        Console.WriteLine($"Locations map data: {json}");
-        await module.InvokeVoidAsync("initTaggedMap", json);
-    }
+
     public async ValueTask DisposeAsync()
     {
         if (moduleTask.IsValueCreated)

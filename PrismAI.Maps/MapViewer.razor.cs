@@ -6,23 +6,17 @@ using Location = PrismAI.Core.Models.ResponseModels.Location;
 namespace PrismAI.Maps;
 public partial class MapViewer
 {
-    [Parameter]
-
-    public HeatmapResult? HeatmapResult { get; set; }
-    [Parameter]
-    public PlacesSearchModel? PlacesSearchModel { get; set; }
     [Inject] private IJSRuntime JsRuntime { get; set; } = default!;
     [Parameter]
     public Location? Destination { get; set; }
 
     private double _prevLat;
     private double _prevLon;
-    private HeatMapJsInterop HeatMapInterop => new(JsRuntime);
+    private PrismMapJsInterop HeatMapInterop => new(JsRuntime);
     protected override async Task OnParametersSetAsync()
     {
-        if (HeatmapResult is not null) await HeatMapInterop.GenerateHeatmap(HeatmapResult);
-        else if (PlacesSearchModel is not null) await HeatMapInterop.GenerateLocationsMap(PlacesSearchModel);
-        else if (Destination?.Lat is not null && Destination?.Lon is not null && Math.Abs(Destination.Lat - _prevLat) > 0.001 && Math.Abs(Destination.Lon - _prevLon) > 0.001)
+        
+        if (Destination?.Lat is not null && Destination?.Lon is not null && Math.Abs(Destination.Lat - _prevLat) > 0.001 && Math.Abs(Destination.Lon - _prevLon) > 0.001)
         {
             _prevLat = Destination.Lat;
             _prevLon = Destination.Lon;
@@ -45,18 +39,5 @@ public partial class MapViewer
             }
         }
         await base.OnAfterRenderAsync(firstRender);
-    }
-
-    public async Task GenerateHeatmap()
-    {
-        if (HeatmapResult != null)
-        {
-            await HeatMapInterop.GenerateHeatmap(HeatmapResult);
-        }
-    }
-    public async Task SetPlacesSearch()
-    {
-        if (PlacesSearchModel is null) return;
-        await HeatMapInterop.GenerateLocationsMap(PlacesSearchModel);
     }
 }

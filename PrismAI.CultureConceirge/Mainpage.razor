@@ -2,7 +2,6 @@
 
 <div class="main-layout" @onclick="HandleOuterClick">
     <Header @ref="_header" OnStartOver="HandleStartOver" 
-            OnShowChatModal="HandleShowChat"
             OnShowSavedExperiences="HandleShowSavedExperiences"
             SavedExperienceItems="SavedExperiences" 
             ExperienceSelected="LoadExperienceAsync"
@@ -29,7 +28,7 @@
         else if (CurrentView == "results" && Experience != null)
         {
             <CascadingValue Name="Location" Value="_locationPoint">
-                <ExperienceDashboard @ref="_experienceDashboard" Experience="@Experience" OnStartOver="HandleStartOver"/>
+                <ExperienceDashboard @ref="_experienceDashboard" Experience="@Experience" ChatAgentOpen="HandleShowChat" OnStartOver="HandleStartOver"/>
             </CascadingValue>
         }
     </div>

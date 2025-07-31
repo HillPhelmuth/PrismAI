@@ -7,22 +7,20 @@ using Microsoft.SemanticKernel;
 using Microsoft.SemanticKernel.ChatCompletion;
 using Microsoft.SemanticKernel.Connectors.OpenAI;
 using PrismAI.Core.Models;
-using PrismAI.Core.Models.CultureConciergeModels;
 using PrismAI.Core.Models.Helpers;
+using PrismAI.Core.Models.PrismAIModels;
 using PrismAI.Core.Services;
 using PrismAI.Hubs;
-using PrismAI.Maps;
 using PrismAI.Plugins;
 using PrismAI.Services.HttpHandlers;
 
 namespace PrismAI.Services;
 
-public class LlmRequestService : ILlmRequestService, IAiAgentService
+public class LlmRequestService : IAiAgentService
 {
     private readonly AutoInvokeFilter _autoInvokeFilter = new();
     private readonly IConfiguration _configuration;
     private readonly IQlooService _qlooService;
-    public event Action<HeatmapResult>? HeatmapGenerated;
     private readonly IHubContext<EventHub> _hubContext;
     private readonly ILoggerFactory _loggerFactory;
     public LlmRequestService(IConfiguration configuration, IQlooService qlooService, IHubContext<EventHub> hubContext, ILoggerFactory loggerFactory)
@@ -31,11 +29,8 @@ public class LlmRequestService : ILlmRequestService, IAiAgentService
         _qlooService = qlooService;
         _hubContext = hubContext;
         _loggerFactory = loggerFactory;
-        _autoInvokeFilter.HeatmapGenerated += OnHeatmapGenerated;
-        _autoInvokeFilter.LocationsMapGenerated += HandleLocationsMapGenerated;
         _autoInvokeFilter.AutoFunctionInvocationStarted += OnAutoFunctionInvocationStarted;
         _autoInvokeFilter.AutoFunctionInvocationCompleted += OnAutoFunctionInvocationCompleted;
-        _autoInvokeFilter.DemographicInsightsGenerated += HandleDemographicInsightsGenerated;
     }
 
     private void OnAutoFunctionInvocationCompleted(AutoFunctionInvocationContext context, string connectionId)
@@ -61,19 +56,10 @@ public class LlmRequestService : ILlmRequestService, IAiAgentService
         }
     }
 
-    private DemographicsChartDto? _demographicInsightsResponse;
     private CancellationTokenSource _cancellationTokenSource = new();
     public event Action<string>? OnFunctionInvoked;
     public event Action<string>? OnFunctionInvocationCompleted;
-    public event Action<DemographicsChartDto>? OnDemographicInsightsGenerated;
     public event Action<Experience>? OnExperienceUpdated;
-    private void HandleDemographicInsightsGenerated(DemographicsChartDto obj, string connectionId)
-    {
-        _demographicInsightsResponse = obj;
-        Console.WriteLine($"Demographic insights Handled from Function Filter: {JsonSerializer.Serialize(obj)}");
-        if (!string.IsNullOrEmpty(connectionId))
-            _hubContext.Clients.Client(connectionId).SendAsync("DemographicInsightsGenerated", obj);
-    }
 
     private void OnAutoFunctionInvocationStarted(AutoFunctionInvocationContext context, string connectionId)
     {
@@ -87,99 +73,8 @@ public class LlmRequestService : ILlmRequestService, IAiAgentService
         }
     }
 
-    private void HandleLocationsMapGenerated(PlacesSearchModel obj)
-    {
-        _hubContext.Clients.All.SendAsync("LocationsMapGenerated", obj);
-    }
-
-    private void OnHeatmapGenerated(HeatmapResult heatMap)
-    {
-        _hubContext.Clients.All.SendAsync("HeatmapGenerated", heatMap);
-    }
-
-    public async Task<InsightsRequest> FormulateRequestAsync(QueryRequest query)
-    {
-        Console.WriteLine($"Formulating request for query: {query.Query}");
-        var kernelBuilder = Kernel.CreateBuilder().AddOpenAIChatCompletion("o3", _configuration["OpenAI:ApiKey"]);
-        kernelBuilder.Services.AddLogging();
-        kernelBuilder.Services.AddSingleton(_qlooService);
-        var kernel = kernelBuilder.Build();
-        kernel.AutoFunctionInvocationFilters.Add(_autoInvokeFilter);
-        var settings = new OpenAIPromptExecutionSettings() { ResponseFormat = typeof(InsightsRequest) };
-        var args = new KernelArguments(settings) { ["user_question"] = query.Query };
-        var response = await kernel.InvokePromptAsync<string>(Prompts.EntityRequestAgentPrompt, args);
-        Console.WriteLine($"\n==========================\nRaw LLM Response\n==========================\n{response}");
-        return JsonSerializer.Deserialize<InsightsRequest>(response);
-    }
-    public async Task<string> FunctionCallRequest(QueryRequest query)
-    {
-        Console.WriteLine($"Function call request for query: {query.Query}");
-        var kernelBuilder = Kernel.CreateBuilder().AddOpenAIChatCompletion("gpt-4.1", _configuration["OpenAI:ApiKey"]);
-        kernelBuilder.Services.AddLogging();
-        kernelBuilder.Services.AddSingleton(_qlooService);
-        var kernel = kernelBuilder.Build();
-        kernel.ImportPluginFromType<QlooPlugin>();
-        var googleSearch = new GoogleSearchService(_loggerFactory, _configuration);
-        var webCrawlPlugin = new WebCrawlPlugin(googleSearch, _loggerFactory, _configuration);
-        kernel.ImportPluginFromObject(webCrawlPlugin);
-        kernel.AutoFunctionInvocationFilters.Add(_autoInvokeFilter);
-        var settings = new OpenAIPromptExecutionSettings() { FunctionChoiceBehavior = FunctionChoiceBehavior.Auto() };
-        var args = new KernelArguments(settings) { ["user_question"] = query.Query };
-        var response = await kernel.InvokePromptAsync<string>(Prompts.FunctionCallPrompt, args);
-        var length = Math.Min(response.Length - 1, 1000);
-        Console.WriteLine($"\n==========================\nRaw LLM Response\n==========================\n{response[..length]}");
-        return response;
-    }
-
-    public async Task<string> InteractiveAgentChat(ChatHistory history, string creatorBrief)
-    {
-        var enginer = new KernelPromptTemplateFactory().Create(new PromptTemplateConfig(Prompts.ContentCreatorPrompt));
-        var args = new KernelArguments() { ["CREATOR_BRIEF"] = creatorBrief };
-
-        var kernelBuilder = Kernel.CreateBuilder().AddOpenAIChatCompletion("gpt-4.1", _configuration["OpenAI:ApiKey"]);
-        kernelBuilder.Services.AddLogging();
-        kernelBuilder.Services.AddSingleton(_qlooService);
-        var kernel = kernelBuilder.Build();
-        kernel.ImportPluginFromType<QlooPlugin>();
-        var googleSearch = new GoogleSearchService(_loggerFactory, _configuration);
-        var webCrawlPlugin = new WebCrawlPlugin(googleSearch, _loggerFactory, _configuration);
-        kernel.ImportPluginFromObject(webCrawlPlugin);
-        kernel.AutoFunctionInvocationFilters.Add(_autoInvokeFilter);
-        var systemPrompt = await enginer.RenderAsync(kernel, args);
-        history.AddSystemMessage(systemPrompt);
-        var settings = new OpenAIPromptExecutionSettings() { FunctionChoiceBehavior = FunctionChoiceBehavior.Auto() };
-        var chatService = kernel.Services.GetRequiredService<IChatCompletionService>();
-        var response = await chatService.GetChatMessageContentAsync(history, settings, kernel);
-        return response.ToString();
-    }
-
-    public async Task<(AudienceAnalysisResult, DemographicsChartDto?)> GenerateAnalysisResult(CreativeBrief creativeBrief, string connection)
-    {
-        Console.WriteLine($"Function call request for query: {JsonSerializer.Serialize(creativeBrief, new JsonSerializerOptions() { WriteIndented = true })}");
-        var modelId = "gpt-4.1";
-        var kernelBuilder = Kernel.CreateBuilder().AddOpenAIChatCompletion(modelId, _configuration["OpenAI:ApiKey"]);
-        kernelBuilder.Services.AddLogging();
-        kernelBuilder.Services.AddSingleton(_qlooService);
-        var kernel = kernelBuilder.Build();
-        kernel.Data["connectionId"] = connection;
-        var qloo = kernel.ImportPluginFromType<QlooPlugin>();
-        Console.WriteLine($"Qloo plugin functions:\n=================================\n{string.Join("\n", qloo.Select(x => x.Name))}");
-        //var googleSearch = new GoogleSearchService(_loggerFactory, _configuration);
-        //var webCrawlPlugin = new WebCrawlPlugin(googleSearch, _loggerFactory, _configuration);
-        //kernel.ImportPluginFromObject(webCrawlPlugin);
-        kernel.AutoFunctionInvocationFilters.Add(_autoInvokeFilter);
-        var settings = new OpenAIPromptExecutionSettings() { FunctionChoiceBehavior = FunctionChoiceBehavior.Auto(options: new FunctionChoiceBehaviorOptions() { AllowConcurrentInvocation = true, AllowParallelCalls = true }), ResponseFormat = typeof(AudienceAnalysisResult) };
-        var args = new KernelArguments(settings) { [nameof(CreativeBrief.Topic)] = creativeBrief.Topic, [nameof(CreativeBrief.ContentType)] = creativeBrief.ContentType, [nameof(CreativeBrief.TargetAudience)] = creativeBrief.TargetAudience, [nameof(CreativeBrief.CulturalReferences)] = creativeBrief.CulturalReferences, [nameof(CreativeBrief.AdditionalContext)] = creativeBrief.AdditionalContext };
-        var response = await kernel.InvokePromptAsync<string>(Prompts.GenerateInsightsPrompt2, args);
-        var length = Math.Min(response.Length - 1, 1000);
-        //Console.WriteLine($"\n==========================\nRaw LLM Response\n==========================\n{response[..length]}");
-        return (JsonSerializer.Deserialize<AudienceAnalysisResult>(response), _demographicInsightsResponse);
-    }
-
-
     public async Task<Experience> GetExperienceRecommendations(UserPreferences preferences, UserProfile userProfile,
-        string connectionId,
-        string locationPoint = "", CancellationToken token = default)
+        string connectionId, string locationPoint = "", CancellationToken token = default)
     {
         //var agent = CreateExperienceAgent();
         var kernel = CreateKernel(connectionId, location: locationPoint);
@@ -193,22 +88,19 @@ public class LlmRequestService : ILlmRequestService, IAiAgentService
         var youtubeService = new YouTubePlugin(_configuration["YouTube:ApiKey"]!);
         var youtubePlugin = kernel.ImportPluginFromObject(youtubeService);
 
-        //var plugin = KernelPluginFactory.CreateFromFunctions("ExperiencePlugin", agent.Functions);
-        //kernel.Plugins.Add(plugin);
-        //kernel.AutoFunctionInvocationFilters.Add(_autoInvokeFilter);
+        
         List<string> unneededFunctions = ["GenerateHeatmap", "GenerateLocationsMap", "CallQlooTastes",
             "CallQlooDemographicInsights"];
         var options = new FunctionChoiceBehaviorOptions()
         { AllowConcurrentInvocation = true, AllowParallelCalls = false };
         var settings = new OpenAIPromptExecutionSettings() { FunctionChoiceBehavior = FunctionChoiceBehavior.Auto(functions: qloo.Where(x => !unneededFunctions.Any(y => x.Name.Contains(y))).Concat(webPlugin.Where(webFunc => webFunc.Name.Contains("SearchWebImages"))), options: options), ResponseFormat = typeof(Experience) };
         Console.WriteLine($"OpenAI Exec Settings:\n============================\n{JsonSerializer.Serialize(settings.Clone(), new JsonSerializerOptions() { WriteIndented = true })}\n============================\n");
-        //var request = await FormulateEntityRequestAsync(preferences, connectionId, locationPoint, token);
         var allowedEntities = await GetEntityTypeResponse(preferences, connectionId, token);
-        //var allowedGroups = allowedEntities.EntityTypeResponseItems.GroupBy(x => x.EntityType);
+        kernel.Data["allowedEntities"] = allowedEntities.EntityTypeResponseItems.Select(x => x.EntityType).ToList();
         var allowedEntityCountBuilder = new StringBuilder();
         foreach (var group in allowedEntities.EntityTypeResponseItems)
         {
-            allowedEntityCountBuilder.AppendLine($"Number of {group.EntityType} recommendations - {group.NumberOfRecommendations}");
+            allowedEntityCountBuilder.AppendLine($"Number of {group.EntityType} recommendations - {group.NumberOfRecommendationSlots}");
         }
         Console.WriteLine($"Allowed Entity String: {allowedEntityCountBuilder.ToString()}");
         var args = new KernelArguments(settings)
@@ -216,20 +108,17 @@ public class LlmRequestService : ILlmRequestService, IAiAgentService
             ["theme"] = preferences.Theme ?? "none",
             ["timeframe"] = preferences.Timeframe ?? "none",
             ["anchorPreferences"] = userProfile.UserInterestsString,
-            //["preferredEntities"] = preferences.EntityTypeString ?? "none",
             ["preferredEntities"] = allowedEntityCountBuilder.ToString(),
             ["userLocation"] = locationPoint,
             ["partnerAnchorPreferences"] = string.IsNullOrEmpty(preferences.PartnerPreferencesString) ? "no partner" : preferences.PartnerPreferencesString
 
         };
-
-
-        var response = await kernel.InvokePromptAsync<string>(Prompts.CultureConciergePrompt, args, cancellationToken: token);
+        
+        var response = await kernel.InvokePromptAsync<string>(Prompts.PrismAIExperienceCuratorPrompt, args, cancellationToken: token);
         Console.WriteLine($"\n==========================\nRaw LLM Response from GetExperienceRecommendations\n==========================\n{response}");
 
         return JsonSerializer.Deserialize<Experience>(response);
     }
-
     private async Task<EntityTypeResponses> GetEntityTypeResponse(UserPreferences preferences, string connectionId, CancellationToken token = default)
     {
         var kernel = CreateKernel(connectionId, "gpt-4.1-mini");
@@ -247,80 +136,7 @@ public class LlmRequestService : ILlmRequestService, IAiAgentService
         return entityTypeResponses!;
     }
 
-    #region Experimental Partial Requests
-
-    //private async Task<InsightsRequest[]> FormulateEntityRequestAsync(UserPreferences preferences, string connectionId,
-    //    string locationPoint = "", CancellationToken token = default)
-    //{
-    //    var kernel = CreateKernel(connectionId);
-    //    var qloo = kernel.ImportPluginFromType<QlooPlugin>();
-    //    Console.WriteLine($"Qloo plugin functions:\n=================================\n{string.Join("\n", qloo.Select(x => x.Name))}");
-    //    var googleSearch = new GoogleSearchService(_loggerFactory, _configuration);
-    //    var webCrawlPlugin = new WebCrawlPlugin(googleSearch, _loggerFactory, _configuration);
-    //    var webPlugin = kernel.ImportPluginFromObject(webCrawlPlugin);
-    //    var youtubeService = new YouTubePlugin(_configuration["YouTube:ApiKey"]!);
-    //    var youtubePlugin = kernel.ImportPluginFromObject(youtubeService);
-
-    //    //var plugin = KernelPluginFactory.CreateFromFunctions("ExperiencePlugin", agent.Functions);
-    //    //kernel.Plugins.Add(plugin);
-    //    //kernel.AutoFunctionInvocationFilters.Add(_autoInvokeFilter);
-    //    List<string> unneededFunctions = ["GenerateHeatmap", "GenerateLocationsMap", "CallQlooTastes",
-    //        "CallQlooDemographicInsights"];
-    //    var settings = new OpenAIPromptExecutionSettings() { FunctionChoiceBehavior = FunctionChoiceBehavior.Auto(functions: qloo.Where(x => !unneededFunctions.Any(y => x.Name.Contains(y))).Concat(webPlugin.Where(webFunc => webFunc.Name.Contains("SearchWebImages")))), ResponseFormat = typeof(PartialInsightRequsts) };
-    //    var args = new KernelArguments(settings)
-    //    {
-    //        ["theme"] = preferences.Theme ?? "none",
-    //        ["timeframe"] = preferences.Timeframe ?? "none",
-    //        ["anchorPreferences"] = preferences.AnchorPreferencesString,
-    //        ["preferredEntities"] = preferences.EntityTypes is not null
-    //            ? string.Join("\n\t- ", preferences.EntityTypes.Select(x => x.ToString()))
-    //            : "none",
-    //        ["userLocation"] = locationPoint,
-    //    };
-    //    var response = await kernel.InvokePromptAsync<string>(Prompts.GeneratEntityRequestPrompt, args, cancellationToken: token);
-    //    Console.WriteLine($"\n==========================\nRaw LLM Response from FormulateEntityRequestAsync\n==========================\n{response}\n==========================\n");
-    //    var insightsRequests = JsonSerializer.Deserialize<PartialInsightRequsts>(response);
-    //    List<InsightsRequest> requestsResult = [];
-    //    foreach (var insightsRequest in insightsRequests.Requsts)
-    //    {
-    //        insightsRequest.Filter.EntityType = insightsRequest.Type;
-    //        insightsRequest.Filter.FilterType = FilterType.Entities;
-    //        var result = new InsightsRequest()
-    //        {
-    //            Filter = insightsRequest.Filter,
-    //            Signal = insightsRequest.Signal,
-    //            Explainability = insightsRequest.Explainability,
-    //            Output = insightsRequest.Output
-    //        };
-    //        requestsResult.Add(result);
-    //    }
-
-    //    return requestsResult.ToArray();
-    //}
-
-    private class PartialInsightRequsts
-    {
-        [Description("Create a minimum of 4 requests for different entity types.")]
-        public required List<PartialInsightsRequest> Requsts { get; set; }
-    }
-    private class PartialInsightsRequest
-    {
-        [Description("The entity type for the request")]
-        public required EntityType Type { get; set; }
-        [JsonPropertyName("filter")]
-        [Description("Filter parameters that constrain the query.")]
-        public required FilterParams Filter { get; set; }
-        [JsonPropertyName("signal")]
-        [Description("Audience or context signals that influence affinity scoring, the primary way to get good, solid recommendations.")]
-        public required SignalParams Signal { get; set; }
-
-        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
-        [Description("Options controlling pagination, sorting, and explainability.")]
-        public OutputParams? Output { get; set; }
-        [JsonPropertyName("feature.explainability")]
-        [Description("When set to true, the response includes explainability metadata for each recommendation and for the overall result set.")]
-        public bool Explainability { get; set; }
-    }
+   
     public async Task<ResultsBase> GetWebAndVideoRecommendations(Recommendation recommendation, string connectionId,
         CancellationToken token = default)
     {
@@ -336,8 +152,6 @@ public class LlmRequestService : ILlmRequestService, IAiAgentService
         };
     }
 
-    #endregion
-
     public async Task<Recommendation> GetAlternativeRecommendation(Recommendation recommendation, string connectionId,
         string location = "")
     {
@@ -346,7 +160,7 @@ public class LlmRequestService : ILlmRequestService, IAiAgentService
         var qloo = kernel.ImportPluginFromType<QlooPlugin>();
         Console.WriteLine($"Qloo plugin functions:\n=================================\n{string.Join("\n", qloo.Select(x => x.Name))}");
         List<string> unneededFunctions = ["GenerateHeatmap", "GenerateLocationsMap", "CallQlooTastes",
-            "CallQlooDemographicInsights" ];//"CallQlooEntityInsights" for non location or "FindRelatedAlternativeEntities" or locations
+            "CallQlooDemographicInsights" ];
         var isLocation = recommendation.EntityTypeId.Contains("place") || recommendation.EntityTypeId.Contains("destination");
         unneededFunctions.Add(isLocation ? "FindRelatedAlternativeEntities" : "CallQlooEntityInsights");
 
@@ -372,12 +186,12 @@ public class LlmRequestService : ILlmRequestService, IAiAgentService
                 JsonSerializer.Serialize(recommendation, new JsonSerializerOptions { WriteIndented = true }),
             ["currentImageUrl"] = recommendation.ImageUrl
         };
-        var response = await kernel.InvokePromptAsync<string>(Prompts.ImageSearchPrompt, args);
+        var response = await kernel.InvokePromptAsync<string>(Prompts.ImageSearchAgentPrompt, args);
         Console.WriteLine($"\n==========================\nRaw LLM Response from RequestImageSearch\n==========================\n{response}");
         return JsonSerializer.Deserialize<ImageResponse>(response)!;
     }
 
-    public async IAsyncEnumerable<string> CultureConceirgeChat(ChatHistory history, Experience experience,
+    public async IAsyncEnumerable<string> PrismAIAgentChat(ChatHistory history, Experience experience,
         UserPreferences preferences, string connectionId)
     {
         var kernel = CreateKernel(connectionId, location: preferences.Location);
@@ -407,7 +221,7 @@ public class LlmRequestService : ILlmRequestService, IAiAgentService
             ["userLocation"] = locationPoint,
             ["currentExperienceJson"] = currentExperienceJson
         };
-        var promptTemplate = new KernelPromptTemplateFactory().Create(new PromptTemplateConfig(Prompts.CultureUpdateChatPrompt));
+        var promptTemplate = new KernelPromptTemplateFactory().Create(new PromptTemplateConfig(Prompts.PrismAIAgentChatPrompt));
         var systemPrompt = await promptTemplate.RenderAsync(kernel, args);
         history.AddSystemMessage(systemPrompt);
         var chatService = kernel.Services.GetRequiredService<IChatCompletionService>();
@@ -433,7 +247,7 @@ public class LlmRequestService : ILlmRequestService, IAiAgentService
         var webPlugin = kernel.ImportPluginFromObject(webCrawlPlugin);
         var settings = new OpenAIPromptExecutionSettings() { FunctionChoiceBehavior = FunctionChoiceBehavior.Auto(), ResponseFormat = typeof(WebFindResult) };
         var args = new KernelArguments(settings) { ["title"] = recommendation.Title, ["description"] = recommendation.Description, ["type"] = recommendation.Type };
-        var response = await kernel.InvokePromptAsync<string>(Prompts.WebRecommenderPrompt, args);
+        var response = await kernel.InvokePromptAsync<string>(Prompts.WebSummaryAgentPrompt, args);
         Console.WriteLine($"\n==========================\nRaw LLM Response from GetWebAndVideoRecommendations\n==========================\n{response}");
         return JsonSerializer.Deserialize<WebFindResult>(response)!;
     }
@@ -446,7 +260,7 @@ public class LlmRequestService : ILlmRequestService, IAiAgentService
         var youtubePlugin = kernel.ImportPluginFromObject(youtubeService);
         var settings = new OpenAIPromptExecutionSettings() { FunctionChoiceBehavior = FunctionChoiceBehavior.Auto(), ResponseFormat = typeof(YoutubeMusicFindResults) };
         var args = new KernelArguments(settings) { ["title"] = recommendation.Title, ["description"] = recommendation.Description, ["type"] = recommendation.Type };
-        var response = await kernel.InvokePromptAsync<string>(Prompts.YoutubeMusicRecommenderPrompt, args);
+        var response = await kernel.InvokePromptAsync<string>(Prompts.YoutubeMusicRecommendationAgentPrompt, args);
         Console.WriteLine($"\n==========================\nRaw LLM Response from GetYoutubeMusicResult\n==========================\n{response}");
         return JsonSerializer.Deserialize<YoutubeMusicFindResults>(response)!;
     }
@@ -459,7 +273,7 @@ public class LlmRequestService : ILlmRequestService, IAiAgentService
         var youtubePlugin = kernel.ImportPluginFromObject(youtubeService);
         var settings = new OpenAIPromptExecutionSettings() { FunctionChoiceBehavior = FunctionChoiceBehavior.Auto(), ResponseFormat = typeof(YoutubeGeneralFindResults) };
         var args = new KernelArguments(settings) { ["title"] = recommendation.Title, ["description"] = recommendation.Description, ["type"] = recommendation.Type };
-        var response = await kernel.InvokePromptAsync<string>(Prompts.YoutubeGeneralVideoRecommenderPrompt, args);
+        var response = await kernel.InvokePromptAsync<string>(Prompts.YoutubeGeneralVideoRecommenderAgentPrompt, args);
         Console.WriteLine($"\n==========================\nRaw LLM Response from GetYoutubeSearchResult\n==========================\n{response}");
         return JsonSerializer.Deserialize<YoutubeGeneralFindResults>(response)!;
     }
@@ -472,18 +286,18 @@ public class LlmRequestService : ILlmRequestService, IAiAgentService
         var bookPlugin = kernel.ImportPluginFromObject(bookService);
         var settings = new OpenAIPromptExecutionSettings() { FunctionChoiceBehavior = FunctionChoiceBehavior.Auto(), ResponseFormat = typeof(BookFindResults) };
         var args = new KernelArguments(settings) { ["title"] = recommendation.Title, ["description"] = recommendation.Description, ["type"] = recommendation.Type };
-        var response = await kernel.InvokePromptAsync<string>(Prompts.BookRecommenderPrompt, args);
+        var response = await kernel.InvokePromptAsync<string>(Prompts.BookRecommenderAgentPrompt, args);
         Console.WriteLine($"\n==========================\nRaw LLM Response from GetBookFindResults\n==========================\n{response}");
         return JsonSerializer.Deserialize<BookFindResults>(response)!;
     }
     private Kernel CreateKernel(string connectionId, string modelId = "gpt-4.1", string location = "")
     {
         var kernelBuilder = Kernel.CreateBuilder().AddOpenAIChatCompletion(modelId, _configuration["OpenAI:ApiKey"]!);
-        if (modelId.Contains("gemini"))
+        if (modelId.Contains("deepseek"))
         {
-            var url = new Uri("https://generativelanguage.googleapis.com/v1beta/openai/");
+            var url = new Uri("https://openrouter.ai/api/v1/");
             var client = DelegateHandlerFactory.GetHttpClientWithHandler<LoggingHandler>();
-            kernelBuilder.AddOpenAIChatCompletion(modelId, url, _configuration["Google:Gemini:ApiKey"], httpClient: client);
+            kernelBuilder.AddOpenAIChatCompletion(modelId, url, _configuration["OpenRouter:ApiKey"], httpClient: client);
         }
         else
         {
@@ -507,7 +321,7 @@ public class LlmRequestService : ILlmRequestService, IAiAgentService
         var kernel = kernelBuilder.Build();
         var settings = new OpenAIPromptExecutionSettings() { ResponseFormat = typeof(RouterResponse) };
         var args = new KernelArguments(settings) { ["title"] = recommendation.Title, ["description"] = recommendation.Description, ["type"] = recommendation.Type };
-        var response = await kernel.InvokePromptAsync<string>(Prompts.FindMoreRouterPrompt, args);
+        var response = await kernel.InvokePromptAsync<string>(Prompts.FindMoreRouterAgentPrompt, args);
         Console.WriteLine($"\n==========================\nRaw LLM Response from Router\n==========================\n{response}");
         return JsonSerializer.Deserialize<RouterResponse>(response)!;
     }
@@ -518,71 +332,4 @@ public class LlmRequestService : ILlmRequestService, IAiAgentService
     }
     [JsonConverter(typeof(JsonStringEnumConverter<AgentType>))]
     private enum AgentType { WebRecommender, BookRecommender, MusicRecommender, YoutubeSearch }
-}
-
-public class AutoInvokeFilter : IAutoFunctionInvocationFilter
-{
-    public event Action<HeatmapResult>? HeatmapGenerated;
-    public event Action<PlacesSearchModel>? LocationsMapGenerated;
-    public event Action<AutoFunctionInvocationContext, string>? AutoFunctionInvocationStarted;
-    public event Action<AutoFunctionInvocationContext, string>? AutoFunctionInvocationCompleted;
-    public event Action<DemographicsChartDto, string>? DemographicInsightsGenerated;
-    public async Task OnAutoFunctionInvocationAsync(AutoFunctionInvocationContext context, Func<AutoFunctionInvocationContext, Task> next)
-    {
-        var connectionId = context.Kernel.Data["connectionId"] as string;
-        Console.WriteLine($"\n=============================\nFunction Called: {context.Function.Name}\n=============================\nconnection: {connectionId}\n=============================\n");
-        
-        AutoFunctionInvocationStarted?.Invoke(context, connectionId ?? "");
-        try
-        {
-            await next(context);
-        }
-        catch (Exception ex)
-        {
-            var value = $"An error has occurred. Move on to a different request.\n\n{ex}";
-            Console.WriteLine(value);
-            context.Result = new FunctionResult(context.Function, value);
-        }
-        //if (!string.IsNullOrEmpty(connectionId))
-        AutoFunctionInvocationCompleted?.Invoke(context, connectionId ?? "");
-        if (context.Function.Name == "GenerateHeatmap")
-        {
-            var results = context.Result.ToString();
-            var length = Math.Min(results.Length - 1, 1000);
-            Console.WriteLine($"\n==========================\nHeatmap Result\n==========================\n{results[..length]}");
-            var heatmapResult = JsonSerializer.Deserialize<HeatmapResult>(results);
-            if (heatmapResult != null)
-            {
-                HeatmapGenerated?.Invoke(heatmapResult);
-            }
-            else
-            {
-                Console.WriteLine("Heatmap generation failed or returned null.");
-            }
-        }
-        if (context.Function.Name == "GenerateLocationsMap")
-        {
-            var results = context.Result.ToString();
-            var length = Math.Min(results.Length - 1, 1000);
-            Console.WriteLine($"\n==========================\nLocations Map Result\n==========================\n{results[..length]}");
-            var placesSearch = JsonSerializer.Deserialize<PlacesSearchModel>(results);
-            if (placesSearch != null)
-            {
-                LocationsMapGenerated?.Invoke(placesSearch);
-            }
-            else
-            {
-                Console.WriteLine("Locations map generation failed or returned null.");
-            }
-        }
-
-        if (context.Function.Name == "CallQlooDemographicInsights")
-        {
-            var results = context.Result.ToString();
-
-            var insights = JsonSerializer.Deserialize<InsightsResponse>(results);
-            var output = DemographicsChartDto.FromQlooDemographics(insights!.Results);
-            DemographicInsightsGenerated?.Invoke(output, connectionId ?? "");
-        }
-    }
 }

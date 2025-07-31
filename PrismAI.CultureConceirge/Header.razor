@@ -3,9 +3,7 @@
         <div class="header-content">
             <div class="header-left">
                 <div class="header-logo">
-                    <!-- Sparkles icon placeholder -->
-                    @* <span class="header-logo-icon">✨</span> *@
-                    <img src="appicon.png" height="48" width="48" />
+                   <img src="appicon.png" height="48" width="48" />
                 </div>
                 <div>
                     <h1 class="header-title">Prism AI</h1>
@@ -14,11 +12,7 @@
             </div>
             
             <div class="header-right">
-                @* <button @onclick="OnStartOver" class="start-over-button">
-                    <!-- RotateCcw icon placeholder -->
-                    <span class="start-over-icon">⟲</span>
-                    <span class="start-over-text">Start Over</span>
-                </button> *@
+                
                 <div class="dropdown-container">
                     <button @onclick="ToggleDropdown" class="menu-dropdown-button" @onclick:stopPropagation="true">
                         <span class="menu-icon">☰</span>
@@ -40,39 +34,3 @@
         </div>
     </div>
 </header>
-
-@* Modal for Saved Experiences *@
-@* @if (_showSavedExperiencesModal)
-{
-    <div class="modal-backdrop" @onclick="CloseSavedExperiencesModal">
-        <div class="modal-content" @onclick:stopPropagation="true">
-            <div class="modal-header">
-                <h3>Saved Experiences</h3>
-                <button class="modal-close-btn" @onclick="CloseSavedExperiencesModal">×</button>
-            </div>
-            <div class="modal-body">
-                <SavedExperiences SavedExperienceItems="SavedExperienceItems" 
-                                  ExperienceSelected="HandleExperienceSelected" />
-            </div>
-        </div>
-    </div>
-}
-
-
-@* @if (_showChatModal)
-{
-    <div class="modal-backdrop" @onclick="CloseChatModal">
-        <div class="modal-content modal-content-large" @onclick:stopPropagation="true">
-            <div class="modal-header">
-                <h3>Chat Interface</h3>
-                <button class="modal-close-btn" @onclick="CloseChatModal">×</button>
-            </div>
-            <div class="modal-body modal-body-chat">
-                <ChatInterface Messages="@ChatMessages" 
-                               OnSendMessage="HandleSendMessage" 
-                               IsLoading="@IsChatLoading" />
-            </div>
-        </div>
-    </div>
-}
- *@ 

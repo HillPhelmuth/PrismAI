@@ -16,8 +16,9 @@ public partial class ChatInterface
     {
         if (!string.IsNullOrWhiteSpace(_newMessage))
         {
-            await OnSendMessage.InvokeAsync(_newMessage);
+            var message = _newMessage;
             _newMessage = string.Empty;
+            await OnSendMessage.InvokeAsync(message);
         }
     }
     private async Task HandleKeyDown(KeyboardEventArgs e)

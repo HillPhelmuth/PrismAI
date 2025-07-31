@@ -21,7 +21,7 @@
         }
     </div>
     <div class="input-area">
-        <InputText @bind-Value="_newMessage" @bind-Value:event="oninput" class="message-input" placeholder="Type your question..." @onkeydown="HandleKeyDown" />
+        <input @bind-value="@_newMessage" @bind-value:event="oninput" class="message-input" placeholder="Type your question..." @onkeydown="HandleKeyDown" />
         <button @onclick="SendMessage" class="send-button">
             <svg class="send-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <line x1="22" y1="2" x2="11" y2="13"></line>

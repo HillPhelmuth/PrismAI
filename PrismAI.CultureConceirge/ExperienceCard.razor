@@ -3,9 +3,9 @@
     <div class="card-image" @onclick="RequestImage" title="request new image">
         @if (Recommendation != null)
         {
-            @if (!string.IsNullOrEmpty(_imageUrl))
+            @if (!string.IsNullOrEmpty(Recommendation.ImageUrl))
             {
-                <img src="@_imageUrl" alt="@Recommendation.Title" @onclick:stopPropagation  />
+                <img src="@Recommendation.ImageUrl" alt="@Recommendation.Title" @onclick:stopPropagation  />
             }
             else
             {
@@ -18,18 +18,21 @@
             <div class="image-overlay"></div>
             <div class="card-icon-wrapper">
                 <div class="card-icon-bg" @onclick:stopPropagation>
-
-                    @if (Recommendation.EntityTypeId.Contains("place") || Recommendation.EntityTypeId.Contains("destination"))
-                    {
-                        <button class="map-fab" @onclick="ClickLocation">
-                            <span class="fab-icon">@Icon</span>
-                        </button>
-                    }
-                    else
-                    {
-                        <span class="card-icon">@Icon</span>
-                    }
+                 
+                    <span class="card-icon">@Icon</span>
+                    
+                    
                 </div>
+            </div>
+            <div class="map-fab-wrapper" @onclick:stopPropagation>
+                @if (Recommendation.EntityTypeId.Contains("place") || Recommendation.EntityTypeId.Contains("destination"))
+                {
+                    <button class="map-fab" @onclick="ClickLocation" title="Get Directions">
+                        <span class="fab-icon">
+                            <img src="map.png" alt="map icon"/>
+                        </span>
+                    </button>
+                }
             </div>
             <div class="card-type-wrapper">
                 <span class="card-type-badge">@Recommendation.Type</span>

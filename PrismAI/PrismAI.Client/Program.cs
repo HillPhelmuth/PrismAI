@@ -10,10 +10,11 @@ builder.Services.AddSingleton(config);
 //{
 //    client.BaseAddress = new Uri(builder.HostEnvironment.BaseAddress);
 //});
-builder.Services.AddHttpClient<ILlmRequestService, LlmRequestServiceClient>(nameof(LlmRequestServiceClient), client =>
-{
-    client.BaseAddress = new Uri(builder.HostEnvironment.BaseAddress);
-});
+//builder.Services.AddHttpClient<ILlmRequestService, LlmRequestServiceClient>(nameof(LlmRequestServiceClient), client =>
+//{
+//    client.BaseAddress = new Uri(builder.HostEnvironment.BaseAddress);
+//});
+builder.Services.AddHttpClient();
 builder.Services.AddScoped<IAiAgentService, LlmAgentClientService>();
 builder.Services.AddBlazoredLocalStorage();
 builder.Services.AddScoped<LocalBrowserStorageService>();

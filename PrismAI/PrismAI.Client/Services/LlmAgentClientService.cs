@@ -1,8 +1,7 @@
 ﻿using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.SignalR.Client;
 using Microsoft.SemanticKernel.ChatCompletion;
-using PrismAI.Core.Models;
-using PrismAI.Core.Models.CultureConciergeModels;
+using PrismAI.Core.Models.PrismAIModels;
 using PrismAI.Core.Services;
 
 namespace PrismAI.Client.Services;
@@ -15,24 +14,18 @@ public class LlmAgentClientService : IAiAgentService, IAsyncDisposable
     
     public event Action<string>? OnFunctionInvoked;
     public event Action<string>? OnFunctionInvocationCompleted;
-    
-
-    public event Action<DemographicsChartDto>? OnDemographicInsightsGenerated;
-    
-
+    public event Action<Experience>? OnExperienceUpdated;
     public LlmAgentClientService(NavigationManager navigationManager)
     {
         _navigationManager = navigationManager;
         Task.Run(async () => await EnsureConnectedAsync());
     }
-    private TaskCompletionSource<string> _responseTaskCompletionSource = new();
-    private TaskCompletionSource<(AudienceAnalysisResult, DemographicsChartDto)> _analysisResultTaskCompletionSource = new();
+
     private TaskCompletionSource<Experience> _experienceTaskCompletionSource = new();
     private TaskCompletionSource<WebFindResult> _webFindTaskCompletionSource = new();
     private TaskCompletionSource<Recommendation> _alternativeRecommendationTaskCompletionSource = new();
     private TaskCompletionSource<ImageResponse> _imageSearchTaskCompletionSource = new();
-    private DemographicsChartDto? _demographicInsightsResponse;
-    private event Action<string>? OnChatMessageReceived;
+
     private async Task EnsureConnectedAsync()
     {
         Console.WriteLine($"\n====================================\nEnsuring connection to SignalR hub...\n====================================\n");
@@ -42,17 +35,7 @@ public class LlmAgentClientService : IAiAgentService, IAsyncDisposable
                 .WithUrl(_navigationManager.ToAbsoluteUri("/eventHub"))
                 .WithAutomaticReconnect()
                 .Build();
-            _hubConnection.On<string>("ReceiveLlmAgentResponse", response =>
-            {
-                Console.WriteLine($"Received response from ReceiveAgentResponse");
-                _responseTaskCompletionSource.TrySetResult(response);
-            });
-            _hubConnection.On<AudienceAnalysisResult, DemographicsChartDto>("ReceiveAnalysisResult", (result, chart) =>
-            {
-                Console.WriteLine($"Received analysis result from ReceiveAnalysisResult");
-                _demographicInsightsResponse = chart;
-                _analysisResultTaskCompletionSource.TrySetResult((result,chart));
-            });
+           
             _hubConnection.On<string>("FunctionInvoked", functionName =>
             {
                 Console.WriteLine($"Function invoked: {functionName}");
@@ -62,11 +45,6 @@ public class LlmAgentClientService : IAiAgentService, IAsyncDisposable
             {
                 Console.WriteLine($"Function invocation completed: {functionName}");
                 OnFunctionInvocationCompleted?.Invoke(functionName);
-            });
-            _hubConnection.On<DemographicsChartDto>("DemographicInsightsGenerated", result =>
-            {
-                Console.WriteLine($"Demographic insights generated");
-                OnDemographicInsightsGenerated?.Invoke(result);
             });
             _hubConnection.On<Experience>("ReceiveExperienceRecommendations", experience =>
             {
@@ -88,11 +66,6 @@ public class LlmAgentClientService : IAiAgentService, IAsyncDisposable
                 Console.WriteLine($"Received image search response");
                 _imageSearchTaskCompletionSource.TrySetResult(response);
             });
-            _hubConnection.On<string>("ReceiveChatMessage", message =>
-            {
-                Console.WriteLine($"Received chat message: {message}");
-                OnChatMessageReceived?.Invoke(message);
-            });
             _hubConnection.On<Experience>("ExperienceUpdated", experience =>
             {
                 Console.WriteLine($"Experience updated: {experience.Title}");
@@ -102,7 +75,6 @@ public class LlmAgentClientService : IAiAgentService, IAsyncDisposable
         if (_hubConnection.State != HubConnectionState.Connected)
         {
             await _hubConnection.StartAsync();
-            //var item = _hubConnection.ConnectionId;
             _isConnected = true;
         }
     }
@@ -133,14 +105,14 @@ public class LlmAgentClientService : IAiAgentService, IAsyncDisposable
         return response;
     }
 
-    public event Action<Experience>? OnExperienceUpdated;
+    
 
-    public async IAsyncEnumerable<string> CultureConceirgeChat(ChatHistory history, Experience experience, UserPreferences preferences,
+    public async IAsyncEnumerable<string> PrismAIAgentChat(ChatHistory history, Experience experience, UserPreferences preferences,
         string connectionId)
     {
         await EnsureConnectedAsync();
         var stream = _hubConnection!.StreamAsync<string>(
-            "CultureConceirgeChat", history, experience, preferences);
+            "PrismAIAgentChat", history, experience, preferences);
 
         await foreach (var item in stream)
         {
@@ -149,27 +121,6 @@ public class LlmAgentClientService : IAiAgentService, IAsyncDisposable
 
     }
 
-    public async Task<string> InteractiveAgentChat(ChatHistory history, string creatorBrief)
-    {
-        await EnsureConnectedAsync();
-        // Call the SignalR hub method and return the result (if any)
-        // The server method does not return a value, so for now just invoke it
-        await _hubConnection!.InvokeAsync("SendLlmAgentQuery", history, creatorBrief);
-        // For demo, return a placeholder until server returns a response
-        var response = await _responseTaskCompletionSource.Task;
-        _responseTaskCompletionSource = new TaskCompletionSource<string>();
-        return response;
-    }
-
-    public async Task<(AudienceAnalysisResult, DemographicsChartDto?)> GenerateAnalysisResult(CreativeBrief creativeBrief, string connection = "")
-    {
-        await EnsureConnectedAsync();
-        await _hubConnection!.InvokeAsync("GenerateAnalysisResult", creativeBrief, _hubConnection.ConnectionId);
-        // For demo, return a placeholder until server returns a response
-        var response = await _analysisResultTaskCompletionSource.Task;
-        _analysisResultTaskCompletionSource = new TaskCompletionSource<(AudienceAnalysisResult, DemographicsChartDto)>();
-        return response;
-    }
     public async Task<Experience> GetExperienceRecommendations(UserPreferences preferences, UserProfile userProfile,
         string connectionId = "",
         string locationPoint = "", CancellationToken token = default)

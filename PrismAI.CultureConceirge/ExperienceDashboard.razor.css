@@ -85,9 +85,15 @@
 }
 
 .concierge-icon {
-    height: 1.25rem;
-    width: 1.25rem;
-    color: rgb(147, 51, 234);
+    margin-bottom:.5rem;
+}
+.prism-name {
+    /*font-family: 'Baloo 2', 'Comic Sans MS', cursive, sans-serif;*/
+    /*font-size: 2.7rem;*/
+    color: #4f46e5;
+    /*margin-bottom: 1.2rem;
+    letter-spacing: 1px;*/
+    text-shadow: 0 2px 8px #e0e7ff;
 }
 
 .concierge-title {
@@ -261,3 +267,27 @@
     .modal-close-button:hover {
         color: rgb(147, 51, 234);
     }
+
+.chat-concierge-btn {
+    background: linear-gradient(to right, rgb(147, 51, 234), rgb(20, 184, 166));
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    font-weight: 500;
+    font-size: 1rem;
+    border: none;
+    box-shadow: 0 2px 8px 0 rgba(30, 41, 59, 0.10);
+    transition: box-shadow 0.2s, transform 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-left: auto;
+    margin-right: auto;
+    cursor: pointer;
+}
+
+.chat-concierge-btn:hover {
+    box-shadow: 0 4px 16px 0 rgba(147, 51, 234, 0.25);
+    transform: translateY(-2px) scale(1.03);
+}

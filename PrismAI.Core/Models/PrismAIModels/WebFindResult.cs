@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel;
 using System.Text.Json.Serialization;
 
-namespace PrismAI.Core.Models.CultureConciergeModels;
+namespace PrismAI.Core.Models.PrismAIModels;
 
 [JsonPolymorphic]
 [JsonDerivedType(typeof(YoutubeMusicFindResults), nameof(YoutubeMusicFindResults))]

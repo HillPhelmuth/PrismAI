@@ -1,6 +1,6 @@
 using Blazored.LocalStorage;
 using Microsoft.AspNetCore.Components;
-using PrismAI.Core.Models.CultureConciergeModels;
+using PrismAI.Core.Models.PrismAIModels;
 
 namespace PrismAI.Components.MenuItems;
 public partial class SavedExperiences

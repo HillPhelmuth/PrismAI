@@ -1,7 +1,7 @@
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 
-namespace PrismAI.Core.Models.CultureConciergeModels;
+namespace PrismAI.Core.Models.PrismAIModels;
 
 /// <summary>
 /// Represents a recommendation with details such as title, type, description, image, and reasoning.
@@ -66,7 +66,7 @@ public class EntityTypeResponse
     
     [Description("The entity type selected")]
     public required EntityType EntityType { get; set; }
-    [Description("Number of recommendations to return for this entity type. Must be between 1 and 3")]
+    [Description("Number of recommendation slots to return for this entity type. Must be between 1 and 3")]
     [Range(1, 3)]
-    public required int NumberOfRecommendations { get; set; }
+    public required int NumberOfRecommendationSlots { get; set; }
 }

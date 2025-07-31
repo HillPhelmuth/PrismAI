@@ -1,8 +1,8 @@
 ﻿using System.Text.Json;
 using System.Text.Json.Serialization;
 using Microsoft.AspNetCore.Components;
-using PrismAI.Core.Models.CultureConciergeModels;
 using PrismAI.Core.Models.Helpers;
+using PrismAI.Core.Models.PrismAIModels;
 using PrismAI.Core.Models.ResponseModels;
 using PrismAI.Core.Services;
 
@@ -12,9 +12,12 @@ public partial class ExperienceDashboard
 {
     [Parameter][EditorRequired] public Experience Experience { get; set; }
     [Parameter] public EventCallback OnStartOver { get; set; }
+    [Parameter] public EventCallback ChatAgentOpen { get; set; }
     [CascadingParameter(Name = "Location")]
     [Inject]
     private IHttpClientFactory HttpClientFactory { get; set; } = default!;
+    [Inject]
+    private LocalBrowserStorageService LocalBrowserStorage { get; set; } = default!;
     public string? Location { get; set; }
     private string ActiveCard { get; set; }
     private bool ShowFindMoreModal { get; set; }
@@ -110,12 +113,22 @@ public partial class ExperienceDashboard
         await InvokeAsync(StateHasChanged);
     }
 
+    private async Task HandleRecChanged(Recommendation recommendation)
+    {
+        var recTitle = recommendation.Title;
+        var populatedRecs = Experience.PopulatedRecommendationSlots();
+        var matchedKey = populatedRecs.FirstOrDefault(x => x.Value.Title == recTitle).Key;
+        if (!Enum.TryParse<RecommendationSlot>(matchedKey, out var slot)) return;
+        Experience.UpdateRecommendation(slot, recommendation);
+        await LocalBrowserStorage.UpdateExperience(Experience);
+    }
     private async Task HandleGetAlternative(Recommendation recommendation)
     {
         _modalText = $"Finding alternative for {recommendation.Title}...";
         IsLoadingFindMore = true;
         await InvokeAsync(StateHasChanged);
-        var alternative = await AgentService.GetAlternativeRecommendation(recommendation, string.Empty, Location ?? "");
+        var location = await LocalBrowserStorage.GetLocationAsync();
+        var alternative = await AgentService.GetAlternativeRecommendation(recommendation, string.Empty, location ?? "");
         Console.WriteLine($"Alternative recommendation:\n===============================\n{JsonSerializer.Serialize(alternative, new JsonSerializerOptions() { WriteIndented = true })}");
         // Replace the Card experience with the alternative
         if (alternative != null)

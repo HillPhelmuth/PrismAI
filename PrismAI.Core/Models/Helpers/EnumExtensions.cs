@@ -1,5 +1,5 @@
 ﻿using System.ComponentModel;
-using PrismAI.Core.Models.CultureConciergeModels;
+using PrismAI.Core.Models.PrismAIModels;
 
 namespace PrismAI.Core.Models.Helpers;
 

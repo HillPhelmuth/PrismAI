@@ -1,6 +1,6 @@
 using System.ComponentModel;
 
-namespace PrismAI.Core.Models.CultureConciergeModels;
+namespace PrismAI.Core.Models.PrismAIModels;
 
 /// <summary>
 /// Represents a curated cultural experience with themed recommendations across various entity types.
@@ -111,6 +111,20 @@ public class Experience
         {
             throw new ArgumentException($"Invalid slot name: {slotName}");
         }
+    }
+
+    public Dictionary<string, Recommendation> PopulatedRecommendationSlots()
+    {
+        // Use reflection to get all properties of type Recommendation with non-null values
+        var recommendations = new Dictionary<string, Recommendation>();
+        foreach (var property in GetType().GetProperties())
+        {
+            if (property.PropertyType == typeof(Recommendation) && property.GetValue(this) is Recommendation rec)
+            {
+                recommendations[property.Name] = rec;
+            }
+        }
+        return recommendations;
     }
 }
 

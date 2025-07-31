@@ -2,9 +2,10 @@ using System.Text.Json;
 using Blazored.LocalStorage;
 using Microsoft.AspNetCore.Components;
 using Microsoft.JSInterop;
+using Microsoft.SemanticKernel.ChatCompletion;
 using PrismAI.Components.MenuItems;
 using PrismAI.Core.Models;
-using PrismAI.Core.Models.CultureConciergeModels;
+using PrismAI.Core.Models.PrismAIModels;
 using PrismAI.Core.Services;
 
 namespace PrismAI.Components;
@@ -84,7 +85,7 @@ public partial class Mainpage
         try
         {
             var asyncResponse =
-                AgentService.CultureConceirgeChat(ChatMessages.ToChatHistory(), Experience, UserPreferences, "");
+                AgentService.PrismAIAgentChat(ChatMessages.ToChatHistory(), Experience, UserPreferences, "");
             await foreach (var item in asyncResponse)
             {
                 // Add assistant message token by token
@@ -123,10 +124,28 @@ public partial class Mainpage
     }
     private bool _showSavedExperiencesModal = false;
     private bool _showChatModal = false;
-    private void HandleShowChat(bool show)
+    private Header _header;
+    private async void HandleShowChat()
     {
-        _showChatModal = show;
-        InvokeAsync(StateHasChanged);
+        _showChatModal = true;
+        if (ChatMessages.Count == 0)
+        {
+            // If no messages, add a welcome message
+            IsChatLoading = true;
+            await InvokeAsync(StateHasChanged);
+            var history = new ChatHistory();
+            history.AddUserMessage("Introduce yourself in a friendly way and quickly describe what you can do for me.");
+            var asyncResponse =
+                AgentService.PrismAIAgentChat(history, Experience!, UserPreferences, "");
+            await foreach (var item in asyncResponse)
+            {
+                // Add assistant message token by token
+                ChatMessages.UpsertAssistantMessage(item);
+                //IsChatLoading = true;
+                await InvokeAsync(StateHasChanged);
+            }
+        }
+        await InvokeAsync(StateHasChanged);
     }
     private void HandleShowSavedExperiences(bool show)
     {
@@ -160,7 +179,7 @@ public partial class Mainpage
         InvokeAsync(StateHasChanged);
     }
 
-    private Header _header;
+    
     private void HandleOuterClick()
     {
         _header.CloseDropdown();

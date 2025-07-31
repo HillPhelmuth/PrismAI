@@ -1,9 +1,9 @@
 using Microsoft.AspNetCore.Components;
-using PrismAI.Core.Models.CultureConciergeModels;
 using PrismAI.Core.Services;
 using System.Globalization;
 using System.Text.Json;
 using System.Text.Json.Serialization;
+using PrismAI.Core.Models.PrismAIModels;
 
 namespace PrismAI.Components;
 public partial class UserProfileForm

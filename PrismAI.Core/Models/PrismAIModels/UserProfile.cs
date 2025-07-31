@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel;
 
-namespace PrismAI.Core.Models.CultureConciergeModels;
+namespace PrismAI.Core.Models.PrismAIModels;
 
 public class UserProfile
 {

@@ -1,5 +1,5 @@
 ﻿using Microsoft.AspNetCore.Components;
-using PrismAI.Core.Models.CultureConciergeModels;
+using PrismAI.Core.Models.PrismAIModels;
 
 namespace PrismAI.Components;
 

@@ -5,13 +5,12 @@ using System.Text.Json.Serialization;
 using System.Web;
 using PrismAI.Core.Models;
 using PrismAI.Core.Models.Attributes;
-using PrismAI.Core.Models.CultureConciergeModels;
 using PrismAI.Core.Models.Helpers;
+using PrismAI.Core.Models.PrismAIModels;
 using PrismAI.Core.Models.RequestModels;
 using PrismAI.Core.Models.ResponseModels;
 using PrismAI.Core.Services;
 
-//using static System.Net.WebRequestMethods;
 
 namespace PrismAI.Services;
 
@@ -25,13 +24,9 @@ public class QlooService(ILoggerFactory loggerFactory, HttpClient httpClient) : 
     public async Task<InsightsResponse> GetInsightsAsync(InsightsRequest request,
         bool requireEntities = false, CancellationToken cancellationToken = default)
     {
-        //if (!InsightsRequestValidator.TryValidate(request, out var errors))
-        //{
-        //    Console.WriteLine($"{string.Join("\n", errors)}");
-        //}
+        
         _queryStringBuilder = new StringBuilder();
         var queryString = ToQueryString(request);
-        //File.WriteAllText($"QueryString-{Guid.NewGuid().ToString()}.txt", _queryStringBuilder.ToString());
         var url = $"{BaseUrl}/v2/insights/?{queryString}";
         Console.WriteLine($"\n================================\nGET Query String\n===============================\n{StartBlue}{url}{EndBlue}\n===============================\n");
         
@@ -54,7 +49,7 @@ public class QlooService(ILoggerFactory loggerFactory, HttpClient httpClient) : 
         return data;
     }
 
-    // Builds query string from flattened request object using JsonPropertyName attributes
+    // Builds query string from flattened request object using JsonPropertyName/QueryStringPart attributes
     public static string ToQueryString(object obj, string prefix = "")
     {
         if (obj == null) return string.Empty;
@@ -66,7 +61,6 @@ public class QlooService(ILoggerFactory loggerFactory, HttpClient httpClient) : 
             var value = prop.GetValue(obj);
             if (value == null) continue;
             
-            // Skip properties marked with JsonIgnore
             
             var jsonProp = prop.GetCustomAttribute<JsonPropertyNameAttribute>()?.Name;
             var queryStringPartAttribute = prop.GetCustomAttribute<QueryStringPartAttribute>()?.Name;
@@ -188,7 +182,7 @@ public class QlooService(ILoggerFactory loggerFactory, HttpClient httpClient) : 
         return entitiesJson;
     }
 
-    public async Task<string> ComareEntities(InsightsComparisonQuery entityCompareQuery)
+    public async Task<string> CompareEntitiesAsync(InsightsComparisonQuery entityCompareQuery)
     {
         var queryString = ToQueryString(entityCompareQuery);
         var url = $"{BaseUrl}/v2/insights/compare?{queryString}";
@@ -217,14 +211,6 @@ public class QlooService(ILoggerFactory loggerFactory, HttpClient httpClient) : 
         var responseJson = await response.Content.ReadAsStringAsync();
         return responseJson;
     }
-    //public async Task<EntityTrendsResponse> GetTrendingEntities(string entityType, int page = 1, int take = 5)
-    //{
-    //    var url = $"{BaseUrl}/trends/category?type={entityType}&page={page}&take={take}";
-        
-    //    Console.WriteLine($"\n================================\nGET Trending Entities Query String\n===============================\n{url}");
-    //    var response = await httpClient.GetFromJsonAsync<EntityTrendsResponse>(url);
-    //    return response;
-    //}
 
     public async Task<AnalysisResponse> GetAnalysisResponse(AnalysisQueryParameters analysisQuery)
     {

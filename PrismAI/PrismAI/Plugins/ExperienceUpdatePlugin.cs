@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel;
 using System.Text.Json;
 using Microsoft.SemanticKernel;
-using PrismAI.Core.Models.CultureConciergeModels;
+using PrismAI.Core.Models.PrismAIModels;
 
 namespace PrismAI.Plugins;
 

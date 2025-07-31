@@ -2,7 +2,7 @@
 using System.Text.Json.Serialization;
 using PrismAI.Core.Models.Helpers;
 
-namespace PrismAI.Core.Models.CultureConciergeModels;
+namespace PrismAI.Core.Models.PrismAIModels;
 
 [TypeConverter(typeof(GenericTypeConverter<EntityCompareQuery>))]
 public class EntityCompareQuery

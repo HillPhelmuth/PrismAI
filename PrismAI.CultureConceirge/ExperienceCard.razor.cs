@@ -1,5 +1,5 @@
 ﻿using Microsoft.AspNetCore.Components;
-using PrismAI.Core.Models.CultureConciergeModels;
+using PrismAI.Core.Models.PrismAIModels;
 using PrismAI.Core.Services;
 
 namespace PrismAI.Components;
@@ -26,15 +26,11 @@ public partial class ExperienceCard
     private bool _showReasoning = false;
     protected override async Task OnParametersSetAsync()
     {
-        if (string.IsNullOrEmpty(Recommendation?.ImageUrl) && string.IsNullOrEmpty(_imageUrl) && !_isRequesting)
+        if (string.IsNullOrEmpty(Recommendation?.ImageUrl) && !_isRequesting)
         {
             await RequestImage();
         }
-        else if (string.IsNullOrEmpty(_imageUrl))
-        {
-            _imageUrl = Recommendation?.ImageUrl;
-            StateHasChanged();
-        }
+        
         await base.OnParametersSetAsync();
     }
 
@@ -46,7 +42,8 @@ public partial class ExperienceCard
         _imageUrl = response.ImageUrl;
         Console.WriteLine($"New Image url: {_imageUrl}");
         await InvokeAsync(StateHasChanged);
-        //await RecommendationChanged.InvokeAsync(Recommendation);
+        Recommendation!.ImageUrl = _imageUrl;
+        await RecommendationChanged.InvokeAsync(Recommendation);
 
         _isRequesting = false;
         await InvokeAsync(StateHasChanged);

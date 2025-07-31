@@ -118,10 +118,10 @@ public class FilterParams
     [Description("Filter by properties.geocode.country_code. Exact match (two-letter country code).")]
     public string? GeocodeCountryCode { get; set; }
 
-    [JsonPropertyName("geocode.name")]
-    [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
-    [Description("Filter by properties.geocode.name. Exact match (usually city or town name).")]
-    public string? GeocodeName { get; set; }
+    //[JsonPropertyName("geocode.name")]
+    //[JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+    //[Description("Filter by properties.geocode.name. Exact match (usually city or town name).")]
+    //public string? GeocodeName { get; set; }
 
 
     [JsonPropertyName("hours")]
@@ -141,7 +141,7 @@ public class FilterParams
 
     [JsonPropertyName("location.query")]
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
-    [Description("A query used to search for one or more named urn:entity:locality Qloo IDs for filtering requests, equivalent to passing the same Locality Qloo ID(s) into location.")]
+    [Description("A query used to search for one or more named locality Qloo IDs for filtering requests. Always use this for location filter if no WKT POINT is available")]
     public string? LocationQuery { get; set; }
 
     [JsonPropertyName("location.geohash")]

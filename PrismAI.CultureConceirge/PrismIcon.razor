@@ -1,0 +1,36 @@
+<!-- Prism AI icon -->
+<svg xmlns="http://www.w3.org/2000/svg"
+     width="32" height="32" viewBox="0 0 64 64" role="img" aria-labelledby="prismTitle">
+    <title id="prismTitle">Prism AI Icon</title>
+
+    <!-- Gradient + subtle shadow -->
+    <defs>
+        <linearGradient id="spectrum" x1="0%" y1="50%" x2="100%" y2="50%">
+            <stop offset="0%" stop-color="#7F54FF" />  <!-- violet -->
+            <stop offset="33%" stop-color="#586BFF" />  <!-- indigo/blue -->
+            <stop offset="66%" stop-color="#3FC7C9" />  <!-- teal -->
+            <stop offset="100%" stop-color="#3DD68C" />  <!-- green-ish -->
+        </linearGradient>
+
+        <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+            <feDropShadow dx="0" dy="1" stdDeviation="2" flood-opacity="0.25" />
+        </filter>
+    </defs>
+
+    <!-- Triangular prism -->
+    <polygon points="8,52 32,12 56,52"
+             fill="url(#spectrum)" filter="url(#shadow)" />
+
+    <!-- Incoming white beam -->
+    <line x1="4" y1="36" x2="20" y2="36"
+          stroke="#ffffff" stroke-width="4" stroke-linecap="round" />
+
+    <!-- Prism bevel (gives the ‘glass’ edge) -->
+    <line x1="20" y1="36" x2="44" y2="36"
+          stroke="#ffffff" stroke-opacity="0.55" stroke-width="2" stroke-linecap="round" />
+
+    <!-- Outgoing rainbow beam -->
+    <polyline points="44,36 60,30 60,42"
+              stroke="url(#spectrum)" stroke-width="4"
+              stroke-linecap="round" fill="none" />
+</svg>

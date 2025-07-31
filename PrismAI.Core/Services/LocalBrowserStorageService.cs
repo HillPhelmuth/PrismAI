@@ -1,5 +1,5 @@
 ﻿using Blazored.LocalStorage;
-using PrismAI.Core.Models.CultureConciergeModels;
+using PrismAI.Core.Models.PrismAIModels;
 
 namespace PrismAI.Core.Services;
 

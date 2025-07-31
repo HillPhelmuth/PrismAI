@@ -2,9 +2,6 @@
 
 namespace PrismAI.Core.Models;
 
-public class DemographicInsightsChartData
-{
-}
 public sealed record DemographicsChartDto
 {
     /// <summary>Display order for the age categories.</summary>

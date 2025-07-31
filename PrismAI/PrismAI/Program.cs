@@ -18,7 +18,7 @@ builder.Services.AddHttpClient<IQlooService, QlooService>(nameof(QlooService),
         client.BaseAddress = new Uri("https://hackathon.api.qloo.com");
         client.DefaultRequestHeaders.Add("X-Api-Key", config["Qloo:ApiKey"]);
     });
-builder.Services.AddSingleton<ILlmRequestService, LlmRequestService>();
+//builder.Services.AddSingleton<ILlmRequestService, LlmRequestService>();
 builder.Services.AddScoped<IAiAgentService, LlmRequestService>();
 builder.Services.AddBlazoredLocalStorage();
 builder.Services.AddScoped<LocalBrowserStorageService>();

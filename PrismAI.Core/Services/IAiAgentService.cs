@@ -1,18 +1,14 @@
 ﻿using Microsoft.SemanticKernel.ChatCompletion;
-using PrismAI.Core.Models;
-using PrismAI.Core.Models.CultureConciergeModels;
+using PrismAI.Core.Models.PrismAIModels;
 
 namespace PrismAI.Core.Services;
 
 public interface IAiAgentService
 {
-    Task<string> InteractiveAgentChat(ChatHistory history, string creatorBrief);
-    Task<(AudienceAnalysisResult, DemographicsChartDto?)> GenerateAnalysisResult(CreativeBrief creativeBrief, string connection = "");
     event Action<string>? OnFunctionInvoked;
-    event Action<DemographicsChartDto>? OnDemographicInsightsGenerated;
+
     Task<Experience> GetExperienceRecommendations(UserPreferences preferences, UserProfile userProfile,
-        string connectionId = "",
-        string locationPoint = "", CancellationToken token = default);
+        string connectionId = "", string locationPoint = "", CancellationToken token = default);
     Task<ResultsBase> GetWebAndVideoRecommendations(Recommendation recommendation, string connectionId,
         CancellationToken token = default);
 
@@ -23,6 +19,6 @@ public interface IAiAgentService
     Task<ImageResponse> RequestImageSearch(Recommendation recommendation, string connectionId = "");
     event Action<Experience>? OnExperienceUpdated;
 
-    IAsyncEnumerable<string> CultureConceirgeChat(ChatHistory history, Experience experience,
+    IAsyncEnumerable<string> PrismAIAgentChat(ChatHistory history, Experience experience,
         UserPreferences preferences, string connectionId);
 }

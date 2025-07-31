@@ -52,8 +52,8 @@ public class QlooPlugin
     public async Task<string> CallQlooEntityInsights(Kernel kernel, [FromKernelServices] IQlooService service, [Description("Parameters used to narrow down the results based on criteria such as type, popularity, and tags.")] FilterParams filterParams,  [Description(EntityTypeDescription)] EntityType entityType, [Description("Parameters that influence recommendations by weighting factors such as demographics, biases, and user interests.")] SignalParams signal, [Description("Parameters used to control the output, including the pagination of results.")] OutputParams? outputParams = null)
     {
         var location = "";
-        if (kernel.Data.TryGetValue("location", out var locationobj))
-            location = locationobj as string ?? "";
+        if (kernel.Data.TryGetValue("location", out var locationObj))
+            location = locationObj as string ?? "";
         var age = "";
         if (kernel.Data.TryGetValue("age", out var ageObj))
             age = ageObj as string ?? "";
@@ -74,7 +74,7 @@ public class QlooPlugin
             filterParams.Tags = null;
         }
 
-        if (!string.IsNullOrEmpty(gender))
+        if (!string.IsNullOrEmpty(gender) && entityType != EntityType.Movie)
         {
             signal.DemographicsGender = gender;
             signal.DemographicsGenderWeight = "high";
@@ -84,8 +84,8 @@ public class QlooPlugin
             signal.DemographicsAge = age;
             signal.DemographicsAgeWeight = "high";
         }
-        var interestArray = signal.InterestsTags.Split(',').Distinct();
-        signal.InterestsTags = string.Join(',', interestArray);
+        var interestArray = signal.InterestsTags?.Split(',').Distinct();
+        signal.InterestsTags = string.Join(',', interestArray ?? []);
         try
         {
             var insightsRequest = new InsightsRequest()
@@ -99,11 +99,18 @@ public class QlooPlugin
             {
                 insightsRequest.Filter.EntityType = entityType;
             }
-            if (insightsRequest.Filter.EntityType is EntityType.Place or EntityType.Destination && !string.IsNullOrEmpty(location))
+            if (insightsRequest.Filter.EntityType is EntityType.Destination && !string.IsNullOrEmpty(location))
             {
                 insightsRequest.Filter.Location ??= location;
-                insightsRequest.Filter.LocationRadius ??= insightsRequest.Filter.EntityType is EntityType.Place ? 15000 : 300000;
+                insightsRequest.Filter.LocationRadius ??= 300000;
+            }
 
+            if (insightsRequest.Filter.EntityType is EntityType.Place)
+            {
+                if (insightsRequest.Filter?.Location?.Contains("POINT") == true)
+                {
+                    insightsRequest.Filter.LocationRadius ??= 20000;
+                }
             }
             var response = await service.GetInsightsAsync(insightsRequest, true);
             return JsonSerializer.Serialize(response, _jsonSerializerOptions);
@@ -134,72 +141,72 @@ public class QlooPlugin
         - `VideoGame`
         """;
     //[KernelFunction, Description(HeatmapRules)]
-    public async Task<string> GenerateHeatmap([FromKernelServices] IQlooService service, [Description("Request body for api request.")] InsightsRequest insightsRequest)
-    {
-        try
-        {
-            var response = await service.GetInsightsAsync(insightsRequest);
-            if (response?.Results?.Heatmap == null)
-            {
-                return "No data available for heatmap generation.";
-            }
+    //public async Task<string> GenerateHeatmap([FromKernelServices] IQlooService service, [Description("Request body for api request.")] InsightsRequest insightsRequest)
+    //{
+    //    try
+    //    {
+    //        var response = await service.GetInsightsAsync(insightsRequest);
+    //        if (response?.Results?.Heatmap == null)
+    //        {
+    //            return "No data available for heatmap generation.";
+    //        }
 
-            var heatmapData = response.Results.ToHeatmapResult();
-            return JsonSerializer.Serialize(heatmapData, _jsonSerializerOptions);
+    //        var heatmapData = response.Results.ToHeatmapResult();
+    //        return JsonSerializer.Serialize(heatmapData, _jsonSerializerOptions);
 
-        }
-        catch (Exception ex)
-        {
-            Console.WriteLine($"Error generating heatmap: {ex.Message}");
-            return $"Error: {ex.Message}. Make the necessary adjustments and try again.";
-        }
-    }
+    //    }
+    //    catch (Exception ex)
+    //    {
+    //        Console.WriteLine($"Error generating heatmap: {ex.Message}");
+    //        return $"Error: {ex.Message}. Make the necessary adjustments and try again.";
+    //    }
+    //}
 
-    [KernelFunction, Description(LocationsMapRules)]
-    public async Task<string> GenerateLocationsMap(Kernel kernel, [FromKernelServices] IQlooService service, [Description("Request body for api request.")] InsightsRequestModels insightsRequestModel, [Description("A cleaned up representation of the original user query")] string userRequestDescription, [Description("The maximum number of heatmap points that should be used for a locations search. This will depend on the percieved area of the expected map. Valid values are between 5 and 100")] int maxPoints = 10)
-    {
-        try
-        {
-            var insightsRequest = insightsRequestModel.InsightsRequest;
-            var response = await service.GetInsightsAsync(insightsRequest);
-            if (response?.Results?.Heatmap == null)
-            {
-                return "No data available for locations generation.";
-            }
+    //[KernelFunction, Description(LocationsMapRules)]
+    //public async Task<string> GenerateLocationsMap(Kernel kernel, [FromKernelServices] IQlooService service, [Description("Request body for api request.")] InsightsRequestModels insightsRequestModel, [Description("A cleaned up representation of the original user query")] string userRequestDescription, [Description("The maximum number of heatmap points that should be used for a locations search. This will depend on the percieved area of the expected map. Valid values are between 5 and 100")] int maxPoints = 10)
+    //{
+    //    try
+    //    {
+    //        var insightsRequest = insightsRequestModel.InsightsRequest;
+    //        var response = await service.GetInsightsAsync(insightsRequest);
+    //        if (response?.Results?.Heatmap == null)
+    //        {
+    //            return "No data available for locations generation.";
+    //        }
 
-            if (!response.Success)
-            {
-                var errorBuilder = new StringBuilder();
-                errorBuilder.AppendLine("Error generating locations map:");
-                foreach (var error in response.Errors ?? [])
-                {
-                    errorBuilder.AppendLine($"- {error}");
-                }
-            }
+    //        if (!response.Success)
+    //        {
+    //            var errorBuilder = new StringBuilder();
+    //            errorBuilder.AppendLine("Error generating locations map:");
+    //            foreach (var error in response.Errors ?? [])
+    //            {
+    //                errorBuilder.AppendLine($"- {error}");
+    //            }
+    //        }
 
-            var heatmapData = response.Results.ToHeatmapResult();
-            var json = JsonSerializer.Serialize(heatmapData, _jsonSerializerOptions);
-            var settings = new OpenAIPromptExecutionSettings() { ResponseFormat = typeof(PlacesSearchModel) };
-            var args = new KernelArguments(settings)
-            {
-                ["heatMapJson"] = json,
-                ["query"] = userRequestDescription,
-                ["maxPoints"] = maxPoints
-            };
-            var responseText = await kernel.InvokePromptAsync<string>(ConvertToPlacesPrompt, args);
-            var length = Math.Min(responseText.Length - 1, 1000);
-            Console.WriteLine($"\n========================================\nLocations Map Response:\n========================================\n {responseText[..length]}");
-            var placesSearch = JsonSerializer.Deserialize<PlacesSearchModel>(responseText);
-            return JsonSerializer.Serialize(placesSearch, _jsonSerializerOptions);
+    //        var heatmapData = response.Results.ToHeatmapResult();
+    //        var json = JsonSerializer.Serialize(heatmapData, _jsonSerializerOptions);
+    //        var settings = new OpenAIPromptExecutionSettings() { ResponseFormat = typeof(PlacesSearchModel) };
+    //        var args = new KernelArguments(settings)
+    //        {
+    //            ["heatMapJson"] = json,
+    //            ["query"] = userRequestDescription,
+    //            ["maxPoints"] = maxPoints
+    //        };
+    //        var responseText = await kernel.InvokePromptAsync<string>(ConvertToPlacesPrompt, args);
+    //        var length = Math.Min(responseText.Length - 1, 1000);
+    //        Console.WriteLine($"\n========================================\nLocations Map Response:\n========================================\n {responseText[..length]}");
+    //        var placesSearch = JsonSerializer.Deserialize<PlacesSearchModel>(responseText);
+    //        return JsonSerializer.Serialize(placesSearch, _jsonSerializerOptions);
 
 
-        }
-        catch (Exception ex)
-        {
-            Console.WriteLine($"Error generating heatmap: {ex.Message}");
-            return $"Error: {ex.Message}. Make the necessary adjustments and try again.";
-        }
-    }
+    //    }
+    //    catch (Exception ex)
+    //    {
+    //        Console.WriteLine($"Error generating heatmap: {ex.Message}");
+    //        return $"Error: {ex.Message}. Make the necessary adjustments and try again.";
+    //    }
+    //}
 
     [KernelFunction, Description("Get the available unique entity ids.")]
     public async Task<string> SearchForEntities([FromKernelServices] IQlooService service, [Description("The unique entity")] string entityQuery)
@@ -291,117 +298,5 @@ public class QlooPlugin
     private const string AudienceSearchTypeDescription =
         """
         The Find Audiences API retrieves a list of audience IDs that can be used for filtering results and refining targeting in recommendations. You can use the returned audience IDs as values for `signal.demographics.audiences` to filter Insights API query results by specific audiences.
-        """;
-    private const string HeatmapRules =
-        $$$"""
-        # Heatmap Generation Rules
-        _Important: If your first attempt fails, try adjusting your request parameters or signal details and trying again._
-        ## Requirments
-        
-        - `filter.type` with a value of `urn:heatmap`
-        - Only one of the following parameters is required:
-          - `filter.location` always using the `POINT (longitude latitude)` format
-          - `filter.location.query` with a specific valid location query (e.g., "Chicago")
-          
-        - Any signal parameter from the list below
-        
-        ## Optional
-        
-        - `bias.trends`
-        - `output.heatmap.boundary`
-        - `signal.demographics.audiences.weight`
-        - `signal.demographics.age`
-        - `signal.demographics.gender`
-        - `signal.interests.entities` // always try this first
-        - `signal.interests.tags` // try this if entities fails
-        
-        ## Examples
-        
-        User Request: Where are jazz-genre fans concentrated in Chicago, IL?
-        
-        **Valid request**
-        ```json
-        {
-          "filter": {
-            "type": "urn:heatmap",
-            "location.query": "Chicago"
-          },
-          "signal": {
-            "interests": {
-              "entities": :"5CD48936-B0B2-48D0-8216-ECDC35750F68" // entity id for jazz
-            }
-          }
-        }
-        ```
-        User Request: Map sci-fi movie lovers across Austin
-        
-        **Valid request**
-        ```json
-        {
-          "filter": {
-            "type": "urn:heatmap",
-            "location": "POINT (-97.7486938819297 30.297527293138376)" // from entity search for Austin
-          },
-          "signal": {
-            "interests": {
-              "tags": [
-                { "tag": "urn:tag:genre:media:science_fiction" } // the tag id for sci-fi genre from tag search
-              ]
-          }
-        }
-        
-        ```
-        """;
-
-    public const string LocationsMapRules =
-        $$$"""
-           # Locations Map Generation Rules
-           This function generates a map of locations based on the heatmap data. Follow the rules below to ensure successful map generation.
-           DO NOT INCLUDE ANY LOCATION **TYPE TAGS** PARAMETERS IN THE HEATMAP QUERY.
-           {{{HeatmapRules}}}
-           """;
-
-    public const string ConvertToPlacesPrompt =
-        """
-        You are “GeoHeat Optimizer”, an expert at distilling Qloo heat-map output into a
-        small set of search anchors for the Google Places API.
-        
-        INPUTS
-        ====== 
-        **USER QUERY:**
-        {{ $query }}
-        **HEATMAP JSON:**
-        {{ $heatMapJson }}
-        **MAX POINTS:**
-        {{ $maxPoints }}
-        
-        TASKS
-        ===== 
-        A. **Derive a Google Places text search string**  
-           • Extract the POI type(s) (e.g. “coffee shops”, “vegan restaurants”,  
-             “indie record stores”) implied by USER_QUERY.  
-           • Transform it into a concise *places_query* suitable for the Places *textSearch*  
-             or *nearbySearch* endpoint (no location params here).  
-             *Example*: USER_QUERY = “best indie cafés in Chicago” →  
-             places_query = “indie coffee shop”.
-        
-        B. **Select anchor coordinates** from HEATMAP_JSON  
-           • Sort primarily by **affinity_rank** (higher is better), break ties with  
-             higher **affinity**, then higher **popularity**.  
-           • Merge any points whose centers are < 500 m apart (Haversine distance); keep  
-             the point with the highest ranking.  
-           • Return at most MAX_POINTS anchors.
-        
-        C. **Prepare Google Places search objects**  
-           For each selected point emit { "lat": <latitude>, "lng": <longitude>,  
-           "radius_m": 1000 }. The radius must be ≤ 50 000 m per Google docs.
-           (Feel free to shrink radius in dense urban areas if > 3 points still overlap.)
-        
-        RULES
-        ===== 
-        * Do not hallucinate coordinates; use only those in HEATMAP_JSON.  
-        * Respect MAX_POINTS after merging.  
-        * Ensure every latitude ∈ [-90, 90] and longitude ∈ [-180, 180].  
-        
         """;
 }

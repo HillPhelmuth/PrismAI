@@ -4,17 +4,7 @@
         <h2 class="form-title">What kind of experience are you craving?</h2>
         <p class="form-subtitle">Tell me your mood, interests, or theme, and I'll curate a perfect multi-sensory experience just for you.</p>
     </div>
-    @if (_isDebug)
-    {
-       @*  <div >
-            @for (var x = 0; x <= 4; x++)
-            {
-
-                var x1 = x;
-                <button class="px-3 py-1 rounded-full text-sm transition-colors bg-gray-100 text-gray-700 hover:bg-gray-200" @onclick="@(() => LoadDemo(x1))">Ex @x1</button>
-            }
-        </div> *@
-    }
+   
     <EditForm Model="Preferences" OnValidSubmit="HandleSubmit">
         <div class="form-sections">
             <!-- Quick Theme Selection by Category -->

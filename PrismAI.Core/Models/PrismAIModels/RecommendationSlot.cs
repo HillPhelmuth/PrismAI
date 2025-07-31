@@ -1,4 +1,4 @@
-﻿namespace PrismAI.Core.Models.CultureConciergeModels;
+﻿namespace PrismAI.Core.Models.PrismAIModels;
 
 public enum RecommendationSlot
 {

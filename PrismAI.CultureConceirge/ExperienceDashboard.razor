@@ -20,15 +20,19 @@
     <div class="header-section">
         <div class="header-card">
             <h1 class="main-title">@Experience.Theme</h1>
-            @* <p class="main-description">@Experience.Description</p> *@
             <div class="concierge-section">
                 <div class="concierge-header">
-                    <span class="concierge-icon">💬</span>
-                    <h3 class="concierge-title">Your Concierge Says:</h3>
+                    <span class="concierge-icon">
+                        <PrismIcon />
+                    </span>
+                    <h3 class="concierge-title">Your Personal <span class="prism-name">Prism</span> Agent Says:</h3>
                 </div>
                 <p class="concierge-text">
                     @Experience.Description
                 </p>
+                <button class="chat-concierge-btn" @onclick="ChatAgentOpen">
+                    <span>Chat with Prism</span>
+                </button>
             </div>
         </div>
     </div>
@@ -37,7 +41,7 @@
         @foreach (var card in Cards)
         {
 
-            <ExperienceCard Icon="@card.Icon" Title="@card.Title" @bind-Recommendation="@card.Data" IsActive="@(ActiveCard == card.Key)" OnClick="() => ActiveCard = ActiveCard == card.Key ? null : card.Key" RecommendationSelected="HandleFindRequest" AlternativeRequested="HandleGetAlternative" LocationSelected="HandleLocation" />
+            <ExperienceCard Icon="@card.Icon" Title="@card.Title" Recommendation="@card.Data" RecommendationChanged="HandleRecChanged" IsActive="@(ActiveCard == card.Key)" OnClick="() => ActiveCard = ActiveCard == card.Key ? null : card.Key" RecommendationSelected="HandleFindRequest" AlternativeRequested="HandleGetAlternative" LocationSelected="HandleLocation" />
 
         }
     </div>
@@ -59,7 +63,7 @@
                         <div class="timeline-content">
                             <h3 class="timeline-item-title">@card.Title: @card.Data.Title</h3>
                             <p class="timeline-item-description">@card.Data.Description</p>
-                            <p class="timeline-item-reasoning">@card.Data.Reasoning</p>
+                            <p class="timeline-item-reasoning">@card.Data.ThemeJustification</p>
                             <p class="timeline-item-duration">For about @card.Data.EstimatedTimeToComplete minutes</p>
                         </div>
                     </div>

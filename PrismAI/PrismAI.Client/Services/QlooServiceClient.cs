@@ -1,6 +1,6 @@
 ﻿using System.Net.Http.Json;
 using PrismAI.Core.Models;
-using PrismAI.Core.Models.CultureConciergeModels;
+using PrismAI.Core.Models.PrismAIModels;
 using PrismAI.Core.Models.RequestModels;
 using PrismAI.Core.Models.ResponseModels;
 using PrismAI.Core.Services;
@@ -54,7 +54,7 @@ public class QlooServiceClient(HttpClient client) : IQlooService
         throw new NotImplementedException();
     }
 
-    public Task<string> ComareEntities(InsightsComparisonQuery entityCompareQuery)
+    public Task<string> CompareEntitiesAsync(InsightsComparisonQuery entityCompareQuery)
     {
         throw new NotImplementedException();
     }

@@ -1,6 +1,6 @@
 ﻿using System.Text.Json.Serialization;
 
-namespace PrismAI.Core.Models.CultureConciergeModels;
+namespace PrismAI.Core.Models.PrismAIModels;
 
 public class GeolocationCoordinates
 {
