@@ -211,6 +211,7 @@ public partial class Mainpage
         Experience = null;
         _toolCalls = [];
         _currentStep = StepLevel.Analyzing;
+        ChatMessages.Clear();
         InvokeAsync(StateHasChanged);
 
     }

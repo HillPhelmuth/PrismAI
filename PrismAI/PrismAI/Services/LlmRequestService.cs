@@ -23,12 +23,14 @@ public class LlmRequestService : IAiAgentService
     private readonly IQlooService _qlooService;
     private readonly IHubContext<EventHub> _hubContext;
     private readonly ILoggerFactory _loggerFactory;
-    public LlmRequestService(IConfiguration configuration, IQlooService qlooService, IHubContext<EventHub> hubContext, ILoggerFactory loggerFactory)
+    private readonly LocalBrowserStorageService _localStorageService;
+    public LlmRequestService(IConfiguration configuration, IQlooService qlooService, IHubContext<EventHub> hubContext, ILoggerFactory loggerFactory, LocalBrowserStorageService localStorageService)
     {
         _configuration = configuration;
         _qlooService = qlooService;
         _hubContext = hubContext;
         _loggerFactory = loggerFactory;
+        _localStorageService = localStorageService;
         _autoInvokeFilter.AutoFunctionInvocationStarted += OnAutoFunctionInvocationStarted;
         _autoInvokeFilter.AutoFunctionInvocationCompleted += OnAutoFunctionInvocationCompleted;
     }
@@ -77,8 +79,17 @@ public class LlmRequestService : IAiAgentService
         string connectionId, string locationPoint = "", CancellationToken token = default)
     {
         //var agent = CreateExperienceAgent();
+        if (string.IsNullOrEmpty(locationPoint))
+        {
+            locationPoint = await _localStorageService.GetLocationAsync() ?? "";
+        }
         var kernel = CreateKernel(connectionId, location: locationPoint);
-        kernel.Data["age"] = userProfile.UserAge;
+        kernel.Data["age"] = userProfile.UserAge.GetDescriptionAttribute();
+        if (preferences.EntityTypes.Any(x => x == EntityType.Destination))
+        {
+            kernel.Data["hasDestination"] = true;
+        }
+
         kernel.Data["gender"] = userProfile.UserGender is "male" or "female" ? userProfile.UserGender : null;
         var qloo = kernel.ImportPluginFromType<QlooPlugin>();
         Console.WriteLine($"Qloo plugin functions:\n=================================\n{string.Join("\n", qloo.Select(x => x.Name))}");

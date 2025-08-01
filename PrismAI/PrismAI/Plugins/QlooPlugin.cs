@@ -1,6 +1,7 @@
 ﻿using System.ComponentModel;
 using System.Text;
 using System.Text.Json;
+using System.Text.RegularExpressions;
 using Microsoft.SemanticKernel;
 using Microsoft.SemanticKernel.Connectors.OpenAI;
 using PrismAI.Core.Models;
@@ -84,8 +85,12 @@ public class QlooPlugin
             signal.DemographicsAge = age;
             signal.DemographicsAgeWeight = "high";
         }
-        var interestArray = signal.InterestsTags?.Split(',').Distinct();
+        var interestArray = signal.InterestsTags?.Split(',').Distinct().ToList();
+        var uuidRegex = new Regex(@"^[0-9a-fA-F]{8}-([0-9a-fA-F]{4}-){3}[0-9a-fA-F]{12}$");
+        var entitiesArray = interestArray?.Where(x => uuidRegex.IsMatch(x)).ToList();
+        interestArray = interestArray?.Where(x => !uuidRegex.IsMatch(x)).ToList();
         signal.InterestsTags = string.Join(',', interestArray ?? []);
+        signal.InterestsEntities = string.Join(',', entitiesArray ?? []);
         try
         {
             var insightsRequest = new InsightsRequest()
@@ -105,7 +110,8 @@ public class QlooPlugin
                 insightsRequest.Filter.LocationRadius ??= 300000;
             }
 
-            if (insightsRequest.Filter.EntityType is EntityType.Place)
+            var hasDestination = kernel.Data.ContainsKey("hasDestination");
+            if (insightsRequest.Filter.EntityType is EntityType.Place && !hasDestination)
             {
                 if (insightsRequest.Filter?.Location?.Contains("POINT") == true)
                 {

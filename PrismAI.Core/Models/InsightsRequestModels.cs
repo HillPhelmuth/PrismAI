@@ -269,7 +269,7 @@ public class SignalParams
 
     [JsonPropertyName("interests.tags")]
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
-    [Description("Comma seperated tag interests (e.g. `urn:tag:genre:media:horror,urn:tag:genre:media:thriller`)")]
+    [Description("Comma seperated tag interests that **must** each start with 'urn:' (e.g. `urn:tag:genre:media:horror,urn:tag:genre:media:thriller`)")]
     public string? InterestsTags { get; set; }
 
     [JsonPropertyName("interests.tags.operator")]
