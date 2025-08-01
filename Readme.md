@@ -4,7 +4,7 @@
 
 > Your Personal Experience Curator
 
-**Demo:** [https://qloo-hackathon-demo.azurewebsites.net](https://qloo-hackathon-demo.azurewebsites.net)
+**Demo:** [PrismAI Demo](https://prismai-demo-g8cngeadbrdgf5c8.centralus-01.azurewebsites.net)
 
 ## Overview
 Prism AI is an AI-powered experience planner that curates cross-domain adventures tailored to your tastes. By combining Qloo’s Taste AI™ Insights API with a custom AI "concierge," Prism AI delivers seamless, personalized recommendations—spanning movies, music, dining, and more—into a cohesive, data-driven itinerary.
@@ -64,7 +64,7 @@ These integrations are orchestrated by the AI agents to supplement and expand up
 - **Seamless, cross-domain curation** for memorable experiences
 - **LLM-powered, real-time Qloo API integration**
 - **Instant customization** with AI-powered alternatives
-- **Engaging, judge-ready demo**: [Try it live](https://qloo-hackathon-demo.azurewebsites.net)
+- **Engaging, judge-ready demo**: [Try it live](https://prismai-demo-g8cngeadbrdgf5c8.centralus-01.azurewebsites.net)
 
 ---
 *Prism AI: Making every outing or night in feel handcrafted just for you.*
